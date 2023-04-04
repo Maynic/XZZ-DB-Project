@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CEAA361B-38BD-A2CB-DE41-A63AEBDAA09C" name="XZZ Parking">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="937272A3-A14F-FEE7-C703-E6F1BE9BC221" name="XZZ Payment">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>B4EDB4AB-BF24-3D0D-2164-113FCA5F6828</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>2D539D39-AC8F-8450-A3FD-2E7C26D971EA</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -16,10 +16,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Parking ID" id="2335CC45-F510-F002-9599-7E3128FD0457">
+<Attribute name="Payment ID" id="DADC7471-D9A0-3D33-D46D-D618BE559E81">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>A6F5A021-D5BC-0A70-F9F9-C595054EF163</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>AC86659C-EB10-ABAE-8F5B-C205F6C5C189</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -29,23 +29,24 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Lot" id="89AB154F-356E-BA33-ECD6-F971E1C5A3BC">
+<Attribute name="Payment Method" id="90660F60-2F13-A14F-1BA7-02AE587AABA3">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>146C3899-C417-37B7-99E7-66CA02E851F5</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>2F4E5BE9-AA58-9371-E360-9CFF6A349BDC</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>C99E2864-DEE0-B859-DE73-206FD2BE1DB7</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Spot" id="6F3173F5-5A27-5968-E0BA-BB7E42078459">
+<Attribute name="Payment Amount" id="81BE293B-468E-CADD-5646-7B037780D90A">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>E3F37471-5213-DCDA-20B8-31C8D81DF0F9</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>6BFA169E-E03A-1E36-EE10-1B8A0FCEEC0B</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -55,23 +56,39 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Time In" id="FF2EE040-EE73-6A10-84BE-96E80BDE00A4">
+<Attribute name="Name On Card" id="AEC20169-55D2-C2F0-5EDF-E8E9410903BD">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>D5EBD733-F562-6FFF-91FB-C49160BA06D7</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>9FA964D2-B70E-34D3-F233-98CCFC20AFDD</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Card Number" id="30EFE45F-947D-7BCD-3E58-402A5C907BF3">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>446863B4-7205-8259-04DE-4A00E7E9905B</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Time Out" id="DF881699-98DD-5D4D-561B-1D29610CBB69">
+<Attribute name="Expiration Date" id="39E37032-C7F9-C09E-3271-C38D885C21A3">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>D4444396-2196-B633-A902-568A07D276E6</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>F9A04AE2-415A-0CE9-2EC6-847F718A98D4</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -82,28 +99,29 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Fee" id="D8CA218A-3130-7673-D06C-ABFA6337F727">
+<Attribute name="CVV" id="086F7814-C4A2-9013-91B9-0638567C04E4">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>304388E9-1C5A-8DB6-2DAB-B3E4CAA486DB</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>AC1C2624-CE46-5BA0-A8C4-DD8740DC45F3</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Order ID" id="8727F714-3E08-6CCD-D352-8C8CCD5E4152">
+<Attribute name="Order ID" id="50D8E06A-04A2-4EC5-5C83-08F9ACB6DABC">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>B41AEFB1-0A68-C981-FAF7-3CAD9376CC0C</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>321292F7-6A0A-BD01-4A8B-212BB575D844</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<referedAttribute>88C5E8E0-60FA-F3BF-5EC3-BDC4F8145C2D</referedAttribute>
+<referedAttribute>701EEB42-7D1E-5C67-731B-DC52BA5C92AA</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -111,17 +129,17 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="74725DA1-0754-FA03-0A37-04920FDB091C" name="XZZ Parking PK">
+<identifier id="557F674C-C6AD-7389-C881-6889ABA67725" name="XZZ Payment PK">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>A7BEFA20-280B-E831-EA2A-2F71015D714F</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>A644F6BA-B827-08F7-2ADA-D1936DCE22C7</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>2335CC45-F510-F002-9599-7E3128FD0457</attributeRef>
+<attributeRef>DADC7471-D9A0-3D33-D46D-D618BE559E81</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

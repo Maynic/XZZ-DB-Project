@@ -77,7 +77,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Accessible" id="08466F71-C201-EC4F-1FCE-6FF203ECD799">
+<Column name="Show_Accessible" id="08466F71-C201-EC4F-1FCE-6FF203ECD799">
 <createdBy>maynic</createdBy>
 <createdTime>2023-04-04 02:00:43 UTC</createdTime>
 <commentInRDBMS><![CDATA[Wheelchair]]></commentInRDBMS>

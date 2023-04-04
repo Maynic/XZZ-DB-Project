@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="29068FE2-7784-D547-ECE3-EE298848395D" name="XZZ Ticket">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="605CBAAD-07A5-5EFA-6354-E9254BBD7468" name="XZZ Parking">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>74C485BF-68C8-8A5D-0610-6CE572338C90</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>B4EDB4AB-BF24-3D0D-2164-113FCA5F6828</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -16,10 +16,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Ticket ID" id="33538215-85C8-7DD4-7F4E-95CC8434DC03">
+<Attribute name="Parking ID" id="E913B043-D397-E875-AC57-15580CAE22DC">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>9ECBE524-7FE0-B130-DB17-E83FB5DBF4A3</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>A6F5A021-D5BC-0A70-F9F9-C595054EF163</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -29,24 +29,36 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Ticket Method" id="20C25187-6589-9426-E3BE-D277A96350D2">
+<Attribute name="Lot" id="2B455A58-DADF-58D7-EDE4-4978B38A9EBA">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>E215BA2F-A18E-67F4-A824-A7C324405B3E</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>146C3899-C417-37B7-99E7-66CA02E851F5</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>C99E2864-DEE0-B859-DE73-206FD2BE1DB7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Spot" id="50A90446-CC55-49D3-5F88-B71155C0337F">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>E3F37471-5213-DCDA-20B8-31C8D81DF0F9</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>6</dataTypeSize>
-<ownDataTypeParameters>6,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Visit Date" id="A293F46C-E06A-FCD1-D1F0-E0974610D3D7">
+<Attribute name="Time In" id="B64A284B-CCB3-74CD-D1F3-489BA016F7E2">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>813523CE-BE37-0864-58C6-66FB611DD412</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>D5EBD733-F562-6FFF-91FB-C49160BA06D7</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -56,10 +68,24 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Ticket Price" id="D409C76D-0DB8-A03B-24BB-BA8A0FF0D1E5">
+<Attribute name="Time Out" id="5CD4FF81-BDE5-1B8B-BC7C-A4C24419FFBF">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>64467609-F852-5ACF-051C-238D4A84D718</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>D4444396-2196-B633-A902-568A07D276E6</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Fee" id="70E4FC6E-C7C2-F725-C715-5770697652AD">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>304388E9-1C5A-8DB6-2DAB-B3E4CAA486DB</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -69,29 +95,15 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Order ID" id="26AA654F-0BC2-C92F-B0E5-C345086C1C58">
+<Attribute name="Order ID" id="8EA7FF60-991E-8DE6-B467-6FF6400D5A47">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>4FF5EA57-BC23-3800-98AC-F07325647876</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>CD516F9C-9667-D85C-8549-F032ACDFD4A7</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<referedAttribute>88C5E8E0-60FA-F3BF-5EC3-BDC4F8145C2D</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Visitor ID" id="0C064387-979D-891A-B827-EB91723F2C5C">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>068D62EE-B5C3-0707-77E3-5CF0F922094C</generatorID>
-<ownerDesignName>design</ownerDesignName>
-<engineerTo>
-<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
-</engineerTo>
-<referedAttribute>98F09E0D-631C-4C8E-9114-C570E4FC9B40</referedAttribute>
+<referedAttribute>701EEB42-7D1E-5C67-731B-DC52BA5C92AA</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -99,17 +111,17 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="4EFBD7BB-6A83-BBCD-7935-6FF0D485982A" name="XZZ Ticket PK">
+<identifier id="BDE946C5-550A-6DFF-334C-A84C6DCE17A1" name="XZZ Parking PK">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>B6E708ED-24D2-1C84-954D-9E5C15394FD3</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>A7BEFA20-280B-E831-EA2A-2F71015D714F</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>33538215-85C8-7DD4-7F4E-95CC8434DC03</attributeRef>
+<attributeRef>E913B043-D397-E875-AC57-15580CAE22DC</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

@@ -1,0 +1,177 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BE6917BA-67FC-371E-DD22-E9F2BFDAC470" name="XZZ Visitor">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>1D3B5AED-5D3F-2203-1806-DB56A49F6466</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Visitor ID" id="12E06E69-4DB3-2A27-5968-90A3548440FC">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>0A338B4C-A30E-9126-C8B9-DEDEA25CAA83</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Visitor Name" id="C4274372-1693-9D5F-0399-9C4D396BFB18">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>CC767432-F722-86F3-262B-EBC14FFFAC29</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Birth Date" id="9CFD9651-3930-2C69-DA0B-B7E915AE0DA0">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>8DD778BF-BCCA-3AB2-2047-3556780ED699</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Visitor Type" id="B7A2CEDC-A87F-0CA6-1BF1-D6B9BB2ABEE5">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>5D69264A-CB55-C599-70DF-AAA1F77DD89F</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Address" id="ACA4A60B-51F7-3720-CB11-178D093AE3E3">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>8F60B213-E314-4B01-7004-AF735144DE48</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="City" id="29246C74-E9BD-5728-4789-963B2DD9C53F">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>0B9E598A-621F-FE08-13EF-0FA56675A0DE</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="State" id="ACAA59C1-C2D1-D193-1B2B-ED72FBDE7C84">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>E18FCB0B-1F8E-5E56-BA2E-BC706485B600</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Zip" id="9DDD3C70-65AB-01B2-462A-5EFA8472E1BA">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>0646EF9E-1E3C-8678-C14E-15C34EAC333D</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Email" id="E54C5624-9A4D-F71D-BCE4-23ADDFEEABD8">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>BB8D6C1F-E7FC-0EFF-A2DE-B370C9A37FDA</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Phone" id="1580E2CF-48FF-4250-7535-AA52BAE6992B">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>EFBC4E82-8689-FA57-76E7-E6D1B2D6EFD4</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2EAB7CBD-22E2-A3F5-9442-59CEB9DB0C95" name="XZZ Visitor PK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>937AD867-E7ED-1616-2A48-BA463122B344</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>12E06E69-4DB3-2A27-5968-90A3548440FC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

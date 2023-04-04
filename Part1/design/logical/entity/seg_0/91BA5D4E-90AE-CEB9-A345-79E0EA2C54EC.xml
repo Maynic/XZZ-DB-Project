@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="781C2D02-8D02-DD63-2071-5B3684A53DCC" name="XZZ Attraction">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="91BA5D4E-90AE-CEB9-A345-79E0EA2C54EC" name="XZZ Show">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>AC042BB6-972B-4584-A9A3-12E7A4518BD4</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>DC5F068B-0FB0-ABA9-8BDE-DB64E3606068</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -16,10 +16,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Attraction ID" id="A2AFD2F8-5935-144A-9AC9-B2369B84553E">
+<Attribute name="Show ID" id="FE4B81E0-A3E8-DAC3-2685-E04F8660E75C">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>9F46744C-D8D5-6B77-7C10-E07F687D10DF</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>D77173A4-02B7-C11B-0165-140FD8DA570A</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -29,10 +29,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Attraction Name" id="772E075B-87BF-A522-76F4-C1EE0CB68624">
+<Attribute name="Show Name" id="BACAB5D0-BA7B-80DB-CD01-19D14E436805">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>DB480938-CFD9-0B4D-845E-B17311EE7969</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>F6FA4B17-08B2-CAC5-CEF8-4F0EA972A658</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -40,13 +40,13 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>60</dataTypeSize>
-<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Attraction Description" id="D6830DB9-CDC3-2930-CCE6-102CEF3FE3E8">
+<Attribute name="Show Description" id="78E337DC-979F-AF6B-1BBF-0EFBB7C0C9CB">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>8A7EE7D0-7DF8-A855-4A5E-479D7458B4BB</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>FE20A7FA-2052-4E16-9A7D-A3F3629931AE</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -57,10 +57,10 @@
 <dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Attraction Type" id="7C694751-4E8D-BC14-B0B7-E3C743842E80">
+<Attribute name="Show Type" id="5E77A880-578D-E5DC-6C6F-A59CB3152252">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>D2CFA28B-2DEF-4806-73CD-AD411F476F4D</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>23636DAB-335D-E875-CEE7-8321D970327B</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -68,13 +68,40 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Status" id="CA954626-BF44-D7E9-A408-35EFA0B7992A">
+<Attribute name="Start Time" id="18B586EC-8382-91BA-E11D-706B89935CA5">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>DBBE4212-955E-F7FA-D0E2-AE8BA141AC29</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>79817690-5595-2F02-7F94-6F49CB02827D</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="End Time" id="EF2289A3-B993-EE1B-2255-70C3C4DA59D0">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>7D0A5AF8-A554-F804-D585-642B303BABF9</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Show Accessible" id="88B7D921-8867-637D-BD94-0C9BE57E4ECA">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<commentInRDBMS><![CDATA[Wheelchair]]></commentInRDBMS>
+<generatorID>08466F71-C201-EC4F-1FCE-6FF203ECD799</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -82,13 +109,13 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Capacity" id="09611B5B-A696-5FE6-6A18-62729C12B1FF">
+<Attribute name="Show Price" id="F6E5A150-1B15-DBDC-8E87-70EF94EFE4E2">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>0FA23442-D981-D306-DB7B-0EA18B124810</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>DBBAA629-83A0-D6D4-0900-292EAA64C876</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -97,62 +124,20 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Min Height" id="00943B4D-E978-C61F-E9D0-09739F153FD3">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<commentInRDBMS><![CDATA[Assume in cm]]></commentInRDBMS>
-<generatorID>229FA85D-276E-14C8-7DDF-6086622000A2</generatorID>
-<ownerDesignName>design</ownerDesignName>
-<engineerTo>
-<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Duration" id="56597F62-46FA-F13A-0573-E2C869EFED49">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<commentInRDBMS><![CDATA[In Minutes]]></commentInRDBMS>
-<generatorID>7391643C-922B-CD59-C406-7C6BBF6D67D9</generatorID>
-<ownerDesignName>design</ownerDesignName>
-<engineerTo>
-<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Location" id="2EC67CD3-F3BC-0C5F-588B-D1094196F0C1">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>E96DB42D-FD75-AB1D-2E86-AEBBC044296A</generatorID>
-<ownerDesignName>design</ownerDesignName>
-<engineerTo>
-<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>10,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="10E0C42A-7E0F-3ED1-264A-E8280566E205" name="XZZ Attraction PK">
+<identifier id="0EF652C4-4910-8F80-EC38-2EA9D0A100C0" name="XZZ Show PK">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>106268CA-6834-1059-80CC-F144F823286B</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>CEBE1FD3-EAB9-2E27-4594-2AD2BF79F45D</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>A2AFD2F8-5935-144A-9AC9-B2369B84553E</attributeRef>
+<attributeRef>FE4B81E0-A3E8-DAC3-2685-E04F8660E75C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

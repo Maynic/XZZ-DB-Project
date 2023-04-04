@@ -1,20 +1,20 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="XZZ_Orde_Stor_XZZ_Store_FK" directorySegmentName="seg_0" id="ADD8267B-D132-3BEA-DC5F-F136A2077979">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="XZZ_Parking_XZZ_Order_FK" directorySegmentName="seg_0" id="CD516F9C-9667-D85C-8549-F032ACDFD4A7">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>C52E56AF-A7E3-92E6-F862-1F5BC71676DF</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>062C7DA5-23AA-EE5F-D6B9-C27F6C8025DF</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<sourcePk>5472FCFB-9AA8-3F0F-3C0F-E2DD5EB11E88</sourcePk>
+<sourcePk>AADDE829-FB4D-3424-E485-502C824BEC97</sourcePk>
 <identifying>false</identifying>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
-<sourceEntity>67C70030-5BBA-F31C-2401-4D15C6F9FE60</sourceEntity>
+<sourceEntity>7F635263-546B-04E8-67D3-AA505B9D34A9</sourceEntity>
 <targetCardinalityString>*</targetCardinalityString>
-<targetEntity>626DD0DC-4E7D-59B2-52F6-24AA0332F5E0</targetEntity>
+<targetEntity>605CBAAD-07A5-5EFA-6354-E9254BBD7468</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>
 </Relation>

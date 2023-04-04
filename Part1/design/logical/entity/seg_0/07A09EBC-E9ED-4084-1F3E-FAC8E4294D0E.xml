@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A49F0D3C-3C3B-5981-5CDB-792B21D53444" name="XZZ Attr Visi">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="07A09EBC-E9ED-4084-1F3E-FAC8E4294D0E" name="XZZ Attr Visi">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
 <generatorID>ED1176CE-B652-B7D3-0B09-6B6785E306F7</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
@@ -16,9 +16,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="R ID" id="301261C0-BB5C-0B99-928C-A8228862C26C">
+<Attribute name="R ID" id="CB24DE48-00EF-EEF4-AEE4-A26F9AA3DE22">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
 <generatorID>3FB552CC-D958-5981-12D1-4F479E1819E1</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
@@ -29,9 +29,9 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="R In Time" id="FB337110-B07A-4507-EB7A-AF41FBB55189">
+<Attribute name="R In Time" id="42DA5529-6AB7-5521-B9DA-4576F1F5BC08">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
 <generatorID>075F7D8B-5C31-58B5-C091-84BD32B65497</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
@@ -42,29 +42,29 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Visitor ID" id="24B2DCF7-EE11-AC1B-1454-8EEA7C4FAEBF">
+<Attribute name="Visitor ID" id="B8742067-95E5-CA90-322D-0CD8771A9DDC">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>75AE1A93-58AA-9D55-32AE-F16F6630953C</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>2D3FF854-BDA1-1D40-5DEC-4C951BFB59C0</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<referedAttribute>98F09E0D-631C-4C8E-9114-C570E4FC9B40</referedAttribute>
+<referedAttribute>12E06E69-4DB3-2A27-5968-90A3548440FC</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Attraction ID" id="0740E028-4E59-AB8E-253E-A4E724A5F54B">
+<Attribute name="Attraction ID" id="7C494853-6B72-FA2D-F8EB-F41609A0AED2">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>0E3D760F-77F3-EA00-887F-B0C58EA7A2B3</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>55487DD3-516D-F396-39B2-F654736576A4</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<referedAttribute>A2AFD2F8-5935-144A-9AC9-B2369B84553E</referedAttribute>
+<referedAttribute>AE1494BF-B631-7976-0901-D4BC6FB80E3D</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -72,9 +72,9 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="7AFB9FA4-C271-7396-8C46-CC6D2D0AF47B" name="XZZ Attr Visi PK">
+<identifier id="E8B508B4-FEBF-8CF2-EC9A-5C62CC8FCA94" name="XZZ Attr Visi PK">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
 <generatorID>EE9B71C7-D3C8-2199-9793-9EE3E218842E</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
@@ -82,7 +82,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>301261C0-BB5C-0B99-928C-A8228862C26C</attributeRef>
+<attributeRef>CB24DE48-00EF-EEF4-AEE4-A26F9AA3DE22</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

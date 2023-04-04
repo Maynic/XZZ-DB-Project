@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="25663085-CC73-6E61-175D-BADFF7C6FDDA" name="XZZ Order">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2C8F7294-2537-32E7-5A2F-8EC57FF70CF5" name="XZZ Orde Show">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>C41EB1AB-0082-3D6C-463E-2716DCED54BB</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>783C6371-16FD-C0FE-3E74-D0C8B2D6F2BF</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -16,10 +16,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Order ID" id="88C5E8E0-60FA-F3BF-5EC3-BDC4F8145C2D">
+<Attribute name="OS ID" id="21A3D73D-BFD3-1283-CC72-4AF624ED7B47">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>A0BA023F-5FAD-5DBA-7646-96B8AB76065A</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>186CEE42-26F5-7137-A9C7-C9180FD9D696</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -29,41 +29,29 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Order Date" id="7E177585-70E2-7493-979B-6826C37B73D9">
+<Attribute name="Show ID" id="2CA9E8D1-747C-2C42-F777-CC6DD67EEF5F">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>AB37A7DC-ADDA-F596-BDAB-972143736FA8</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>E73FF94F-9624-8C39-A50F-9625F451549B</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Order Quantity" id="C5C55ED4-ED1A-F328-4C4B-8070850B6C5C">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>7409E478-AA9B-494F-D77A-25D795D6DE53</generatorID>
-<ownerDesignName>design</ownerDesignName>
-<engineerTo>
-<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
-</engineerTo>
+<referedAttribute>FE4B81E0-A3E8-DAC3-2685-E04F8660E75C</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Visitor ID" id="C4DED5B0-3491-3C07-D51F-4F2F96DCD575">
+<Attribute name="Order ID" id="226CB085-9CD2-B39D-40DC-BA6FE4B0DC41">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>7CC53E58-D325-3B6F-D7B6-584920573279</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>C02EBE7A-068B-7BC7-F328-30FBA1DD7AE7</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<referedAttribute>98F09E0D-631C-4C8E-9114-C570E4FC9B40</referedAttribute>
+<referedAttribute>701EEB42-7D1E-5C67-731B-DC52BA5C92AA</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -71,17 +59,17 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="1DEAA845-28BC-7D4F-FAAD-020B5984B60D" name="XZZ Order PK">
+<identifier id="FF40E17A-F779-507E-5373-CAABA420A4BD" name="XZZ Orde Show PK">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 03:47:16 UTC</createdTime>
-<generatorID>62B3CDF4-87FB-CB69-13E4-EACB4F7ABFA6</generatorID>
+<createdTime>2023-04-04 04:34:12 UTC</createdTime>
+<generatorID>D7A7FE20-9107-2D39-B5A4-289012A0DC65</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>88C5E8E0-60FA-F3BF-5EC3-BDC4F8145C2D</attributeRef>
+<attributeRef>21A3D73D-BFD3-1283-CC72-4AF624ED7B47</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
