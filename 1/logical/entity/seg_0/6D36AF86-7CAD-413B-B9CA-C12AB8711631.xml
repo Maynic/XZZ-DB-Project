@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6D36AF86-7CAD-413B-B9CA-C12AB8711631" name="XZZ_Order">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 16:09:38 UTC</createdTime>
+<generatorID>5C568887-3F76-9611-7AD1-E132C387C333</generatorID>
+<ownerDesignName>1</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Order_ID" id="4621A405-0D9F-2DB9-6375-2DE48252B90F">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 16:09:38 UTC</createdTime>
+<generatorID>515E5551-C2DC-D260-21FF-A253097FACFD</generatorID>
+<ownerDesignName>1</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Order_Date" id="B7AED2AE-0E02-E270-A114-BFF4E1760041">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 01:39:27 UTC</createdTime>
+<generatorID>515E5551-C2DC-D260-21FF-A253097FACFD</generatorID>
+<ownerDesignName>1</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Order_Quantity" id="EB59CA62-7DF2-B2D6-AEAD-4324FB9D5D95">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 01:39:23 UTC</createdTime>
+<generatorID>515E5551-C2DC-D260-21FF-A253097FACFD</generatorID>
+<ownerDesignName>1</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Visitor_ID" id="D0AA9259-E35D-B911-481D-5E096E1D6E6D">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 23:53:50 UTC</createdTime>
+<generatorID>1D4AA1E6-0F77-E307-3B95-B96C5B1801FE</generatorID>
+<ownerDesignName>1</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<referedAttribute>4DA09712-2B84-FFC2-F027-042DD15525B0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8AD71863-B7E4-B6A2-9642-673AFD99208D" name="Orders PK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 16:09:38 UTC</createdTime>
+<generatorID>A2DE5A50-9480-E7D1-C022-F8BF835B4DC8</generatorID>
+<ownerDesignName>1</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4621A405-0D9F-2DB9-6375-2DE48252B90F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
