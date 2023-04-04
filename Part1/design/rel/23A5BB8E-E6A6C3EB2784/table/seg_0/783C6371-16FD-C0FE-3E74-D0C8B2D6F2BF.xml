@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="783C6371-16FD-C0FE-3E74-D0C8B2D6F2BF" name="XZZ_Orde_Show">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>102E8900-525C-4B02-B0AE-70C0ED2DB5E0</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="OS_ID" id="186CEE42-26F5-7137-A9C7-C9180FD9D696">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>7C58AB43-A255-9BEA-CCAD-D64D010DD201</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Show_ID" id="B9DC9ED6-B7ED-EFC7-2454-534483B1E919">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>E3203284-265D-AD10-F202-A6AD0D3BA9E7</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AC366CDD-F19E-5569-8A6D-C80495B4B36F" referredColumn="D77173A4-02B7-C11B-0165-140FD8DA570A"/>
+</associations>
+</Column>
+<Column name="Order_ID" id="7D783EAF-8AFE-2A72-4DB2-84375B51DE78">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>E25A239D-C2F8-1691-7845-D11F2032214D</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="54D7DD2E-2891-F4B6-4377-8CFD219E5DBC" referredColumn="A0BA023F-5FAD-5DBA-7646-96B8AB76065A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D7A7FE20-9107-2D39-B5A4-289012A0DC65" name="XZZ_Orde_Show_PK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>57AF612B-7E48-8FC1-7B18-B6CAA9571EE4</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="186CEE42-26F5-7137-A9C7-C9180FD9D696"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="64106793-0C2B-3F34-196F-8A5F0BBA91E9" name="XZZ_Orde_Show_XZZ_Show_FK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>C357539C-A5D6-E1D0-9D01-89DC4D84A7EF</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B9DC9ED6-B7ED-EFC7-2454-534483B1E919"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="907A5CE4-035C-C8FA-4137-5E23037FE6FC" name="XZZ_Orde_Show_XZZ_Order_FK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>4939F53D-E7C9-6A3B-435E-C2A631E095EF</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7D783EAF-8AFE-2A72-4DB2-84375B51DE78"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

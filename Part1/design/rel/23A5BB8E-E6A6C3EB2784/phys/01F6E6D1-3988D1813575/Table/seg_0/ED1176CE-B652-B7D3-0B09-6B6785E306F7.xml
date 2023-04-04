@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="XZZ_Attr_Visi" directorySegmentName="seg_0" id="ED1176CE-B652-B7D3-0B09-6B6785E306F7">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="R_In_Time" id="075F7D8B-5C31-58B5-C091-84BD32B65497">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="R_ID" id="3FB552CC-D958-5981-12D1-4F479E1819E1">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Attraction_ID" id="89F4B825-3039-6EDF-8BD3-BD114563DD05">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Visitor_ID" id="EE3CA521-416B-95F2-C172-A3E346E7F875">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="XZZ_Attr_Visi_XZZ_Attraction_FK" id="3913367F-A50E-2D33-D830-865901474263">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="XZZ_Attr_Visi_XZZ_Visitor_FK" id="990FA15C-F99A-8533-8EA0-FF7C8434544A">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="XZZ_Attr_Visi_PK" id="EE9B71C7-D3C8-2199-9793-9EE3E218842E">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DC5F068B-0FB0-ABA9-8BDE-DB64E3606068" name="XZZ_Show">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>5EE05B01-51A2-668A-2B1D-5B96855F9EA1</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Show_ID" id="D77173A4-02B7-C11B-0165-140FD8DA570A">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>5BAEABE8-3130-6C03-6EF7-A91A7D564075</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Show_Name" id="F6FA4B17-08B2-CAC5-CEF8-4F0EA972A658">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>1214132A-E51B-C619-DCF6-E6D2BB61F1E7</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Show_Description" id="FE20A7FA-2052-4E16-9A7D-A3F3629931AE">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>B81763B8-C64F-CD3A-C078-65D30E2DEF00</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Show_Type" id="23636DAB-335D-E875-CEE7-8321D970327B">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>87217177-B9C7-37D1-D932-979C594388F0</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Start_Time" id="79817690-5595-2F02-7F94-6F49CB02827D">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>DE2ED230-2E61-D44A-768E-3D69BE855B77</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="End_Time" id="7D0A5AF8-A554-F804-D585-642B303BABF9">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>9D2A17A7-80C7-3CD2-1460-FDCEDD93AEE5</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Accessible" id="08466F71-C201-EC4F-1FCE-6FF203ECD799">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Wheelchair]]></commentInRDBMS>
+<generatorID>D4B91634-E216-25EC-A1EA-F402AA2C86BB</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Show_Price" id="DBBAA629-83A0-D6D4-0900-292EAA64C876">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>BD3D2218-4D04-9C38-44C5-4CEF000701D8</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CEBE1FD3-EAB9-2E27-4594-2AD2BF79F45D" name="XZZ_Show_PK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>2849E653-B417-7E9C-1138-DAF9011D7462</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D77173A4-02B7-C11B-0165-140FD8DA570A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

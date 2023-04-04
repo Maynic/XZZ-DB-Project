@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="74C485BF-68C8-8A5D-0610-6CE572338C90" name="XZZ_Ticket">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>CB7ABD80-3B35-4167-95FD-179A740596A5</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Ticket_ID" id="9ECBE524-7FE0-B130-DB17-E83FB5DBF4A3">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>53865315-E32A-2175-D954-10FA0B98B398</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ticket_Method" id="E215BA2F-A18E-67F4-A824-A7C324405B3E">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>FC152C24-E7C0-DCBB-D9FD-2CF417DB2999</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>6,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Visit_Date" id="813523CE-BE37-0864-58C6-66FB611DD412">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>D5EF1666-07BE-FBAF-373A-965E7BFBD67D</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ticket_Price" id="64467609-F852-5ACF-051C-238D4A84D718">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>5FECDD5F-30E5-9EE0-009F-3FE5BF38A363</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ticket_Discount" id="F462B9F4-7975-3BC1-B6D4-48300B55A10C">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>12DBE658-1F81-EF67-6114-317897B820DD</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Order_ID" id="E0083F49-A0F2-8A0F-4360-57C763467D6F">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>A2569D7E-E242-06E9-6DD2-5EA947EA551E</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="80512D11-5FE3-BB72-2CBE-71230B423308" referredColumn="A0BA023F-5FAD-5DBA-7646-96B8AB76065A"/>
+</associations>
+</Column>
+<Column name="Visitor_ID" id="B3DB20FC-A2A6-D09E-4914-B7440375F81D">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>8DA89256-3252-B489-E4A5-E83B1F536CD6</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="19188AD4-EDDF-CCB3-DD9B-E67ACBC695A6" referredColumn="0A338B4C-A30E-9126-C8B9-DEDEA25CAA83"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B6E708ED-24D2-1C84-954D-9E5C15394FD3" name="XZZ_Ticket_PK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>D08B61AC-D4EA-A57B-5A92-A429437AC4AA</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9ECBE524-7FE0-B130-DB17-E83FB5DBF4A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EFFC982C-5E8C-61A4-B25F-1FE134B2D56B" name="XZZ_Ticket__IDX">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>9B8843D8-FC8C-5B9F-82BD-88274E3ED198</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="B3DB20FC-A2A6-D09E-4914-B7440375F81D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3CE73524-35B3-4B91-81CF-D08EDC0C77C1" name="XZZ_Ticket_XZZ_Visitor_FK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>9B8843D8-FC8C-5B9F-82BD-88274E3ED198</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B3DB20FC-A2A6-D09E-4914-B7440375F81D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5BF1F9C6-506D-BC65-D711-26C312A86AFD" name="XZZ_Ticket_XZZ_Order_FK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 02:00:43 UTC</createdTime>
+<generatorID>D84A3352-8696-91DC-145E-29ED51A4D74E</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E0083F49-A0F2-8A0F-4360-57C763467D6F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

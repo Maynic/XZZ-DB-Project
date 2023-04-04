@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C1975475-0923-2CEB-D910-87472D853F67" name="XZZ_Attr_Visi">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 23:56:10 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="R_ID" id="36B6176F-E692-1442-7CAF-15D5AE6986EF">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 23:57:01 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="R_In_Time" id="49E2FB11-B5B8-3524-1AF4-6329D8A8ABC3">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 23:58:18 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Visitor_ID" id="554323F5-9F14-F978-8328-03BC5E552940">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 23:59:00 UTC</createdTime>
+<generatorID>7C91F661-CD5A-7C27-37C7-8D2C344E131B</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<referedAttribute>4DA09712-2B84-FFC2-F027-042DD15525B0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Attraction_ID" id="9A17934B-98EF-B10A-5E68-A54F36F1E86F">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 23:59:17 UTC</createdTime>
+<generatorID>4AD8A78D-FD43-629F-21AA-663B2297440A</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<referedAttribute>B64D2DAD-1232-3D77-14ED-B9C8B9BEFBEB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9E441982-AC45-DBC4-269D-C108DAB61F22" name="Attr_Visi PK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 23:57:28 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>36B6176F-E692-1442-7CAF-15D5AE6986EF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4C47A124-345B-0505-CB83-EAB0B2A62B2F" name="XZZ_Store">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 16:09:38 UTC</createdTime>
+<generatorID>AB7D70B1-14C9-ABE1-F6F6-EE6D21547D35</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Store_ID" id="6FA721A7-ACE9-ECC8-616E-66CAA0B9C499">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 16:09:38 UTC</createdTime>
+<generatorID>0E6ECC9F-D2DB-E9E7-3F60-EA0833216C2A</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>AD0686D1-7C04-3A9B-E804-1F5F2BC73237</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Store_Name" id="519B0B88-4C38-475D-8FBA-E6E2D9762CB1">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 16:09:38 UTC</createdTime>
+<generatorID>75F27FC2-2712-FCCD-E13B-C3B943AA1F69</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>13A47CA4-5AFF-A940-D2D6-0CFCCD9D3D83</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Category" id="6976C925-F18B-BA65-A869-E8B963436C9D">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 16:09:38 UTC</createdTime>
+<generatorID>FA5BC34E-11FD-2124-017E-EC2ED13B0AD6</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="34F35921-F8CB-2655-1828-84FB2F9F112D" name="Stores PK">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-03 16:09:38 UTC</createdTime>
+<generatorID>52053D58-032F-9819-BE14-7A49F84598F0</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6FA721A7-ACE9-ECC8-616E-66CAA0B9C499</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
