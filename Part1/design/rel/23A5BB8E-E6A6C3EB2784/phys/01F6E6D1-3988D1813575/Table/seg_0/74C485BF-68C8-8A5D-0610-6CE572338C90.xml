@@ -39,11 +39,6 @@
 <createdTime>2023-04-04 02:00:43 UTC</createdTime>
 <ownerDesignName>design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="Ticket_Discount" id="F462B9F4-7975-3BC1-B6D4-48300B55A10C">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-04 02:00:43 UTC</createdTime>
-<ownerDesignName>design</ownerDesignName>
-</ColumnProxy>
 </columnProxies>
 <indexProxies>
 <IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="XZZ_Ticket__IDX" id="EFFC982C-5E8C-61A4-B25F-1FE134B2D56B">

@@ -1,7 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="102E8900-525C-4B02-B0AE-70C0ED2DB5E0" name="XZZ_Orde_Show">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A49F0D3C-3C3B-5981-5CDB-792B21D53444" name="XZZ Attr Visi">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:07:19 UTC</createdTime>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>ED1176CE-B652-B7D3-0B09-6B6785E306F7</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -15,9 +16,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="OS_ID" id="7C58AB43-A255-9BEA-CCAD-D64D010DD201">
+<Attribute name="R ID" id="301261C0-BB5C-0B99-928C-A8228862C26C">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:07:29 UTC</createdTime>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>3FB552CC-D958-5981-12D1-4F479E1819E1</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -27,45 +29,60 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Show_ID" id="E3203284-265D-AD10-F202-A6AD0D3BA9E7">
+<Attribute name="R In Time" id="FB337110-B07A-4507-EB7A-AF41FBB55189">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:08:33 UTC</createdTime>
-<generatorID>C357539C-A5D6-E1D0-9D01-89DC4D84A7EF</generatorID>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>075F7D8B-5C31-58B5-C091-84BD32B65497</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<referedAttribute>5BAEABE8-3130-6C03-6EF7-A91A7D564075</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Visitor ID" id="24B2DCF7-EE11-AC1B-1454-8EEA7C4FAEBF">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>75AE1A93-58AA-9D55-32AE-F16F6630953C</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<referedAttribute>98F09E0D-631C-4C8E-9114-C570E4FC9B40</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Order_ID" id="E25A239D-C2F8-1691-7845-D11F2032214D">
+<Attribute name="Attraction ID" id="0740E028-4E59-AB8E-253E-A4E724A5F54B">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:08:42 UTC</createdTime>
-<generatorID>4939F53D-E7C9-6A3B-435E-C2A631E095EF</generatorID>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>0E3D760F-77F3-EA00-887F-B0C58EA7A2B3</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<referedAttribute>4621A405-0D9F-2DB9-6375-2DE48252B90F</referedAttribute>
+<referedAttribute>A2AFD2F8-5935-144A-9AC9-B2369B84553E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="57AF612B-7E48-8FC1-7B18-B6CAA9571EE4" name="Orde_Show PK">
+<identifier id="7AFB9FA4-C271-7396-8C46-CC6D2D0AF47B" name="XZZ Attr Visi PK">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:07:58 UTC</createdTime>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>EE9B71C7-D3C8-2199-9793-9EE3E218842E</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>7C58AB43-A255-9BEA-CCAD-D64D010DD201</attributeRef>
+<attributeRef>301261C0-BB5C-0B99-928C-A8228862C26C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

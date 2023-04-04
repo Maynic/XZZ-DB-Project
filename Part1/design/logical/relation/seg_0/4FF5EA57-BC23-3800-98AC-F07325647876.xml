@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="XZZ_Ticket_XZZ_Order_FK" directorySegmentName="seg_0" id="4FF5EA57-BC23-3800-98AC-F07325647876">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>80512D11-5FE3-BB72-2CBE-71230B423308</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<sourcePk>1DEAA845-28BC-7D4F-FAAD-020B5984B60D</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>25663085-CC73-6E61-175D-BADFF7C6FDDA</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>29068FE2-7784-D547-ECE3-EE298848395D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

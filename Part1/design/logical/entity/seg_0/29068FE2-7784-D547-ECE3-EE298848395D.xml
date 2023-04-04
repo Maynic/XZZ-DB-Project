@@ -1,7 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5CE293BF-FE79-8FF5-24CC-A9B6ED05DD40" name="XZZ_Orde_Stor">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="29068FE2-7784-D547-ECE3-EE298848395D" name="XZZ Ticket">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:09:57 UTC</createdTime>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>74C485BF-68C8-8A5D-0610-6CE572338C90</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -15,9 +16,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Menu_Item_ID" id="CF015138-3558-349B-6779-FB78F6D54C55">
+<Attribute name="Ticket ID" id="33538215-85C8-7DD4-7F4E-95CC8434DC03">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:10:09 UTC</createdTime>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>9ECBE524-7FE0-B130-DB17-E83FB5DBF4A3</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -27,9 +29,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Menu_Item_Name" id="67356342-14D8-C7A6-9155-06A0CFE3F667">
+<Attribute name="Ticket Method" id="20C25187-6589-9426-E3BE-D277A96350D2">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:10:29 UTC</createdTime>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>E215BA2F-A18E-67F4-A824-A7C324405B3E</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -37,25 +40,26 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>6,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Menu_Item_Description" id="6EE46FDD-B30B-3320-A99D-A5455346A32B">
+<Attribute name="Visit Date" id="A293F46C-E06A-FCD1-D1F0-E0974610D3D7">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:11:41 UTC</createdTime>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>813523CE-BE37-0864-58C6-66FB611DD412</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Menu_Item_Unit_Price" id="ED321AAA-0058-363F-AC5F-E899F6E29C2B">
+<Attribute name="Ticket Price" id="D409C76D-0DB8-A03B-24BB-BA8A0FF0D1E5">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:12:01 UTC</createdTime>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>64467609-F852-5ACF-051C-238D4A84D718</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -65,45 +69,47 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Store_ID" id="CD870BF2-4BF1-2D91-1E0A-6ADB32911E4B">
+<Attribute name="Order ID" id="26AA654F-0BC2-C92F-B0E5-C345086C1C58">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:12:56 UTC</createdTime>
-<generatorID>71614962-9352-AF97-7A46-1C6A170BEE5F</generatorID>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>4FF5EA57-BC23-3800-98AC-F07325647876</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<referedAttribute>6FA721A7-ACE9-ECC8-616E-66CAA0B9C499</referedAttribute>
-<use>0</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<domain>AD0686D1-7C04-3A9B-E804-1F5F2BC73237</domain>
+<referedAttribute>88C5E8E0-60FA-F3BF-5EC3-BDC4F8145C2D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Order_ID" id="24E2D501-A49B-A293-31B6-AB02355ED7A5">
+<Attribute name="Visitor ID" id="0C064387-979D-891A-B827-EB91723F2C5C">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:13:17 UTC</createdTime>
-<generatorID>4BC813E7-AD17-EDA7-EB40-387BC514EC7B</generatorID>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>068D62EE-B5C3-0707-77E3-5CF0F922094C</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<referedAttribute>4621A405-0D9F-2DB9-6375-2DE48252B90F</referedAttribute>
+<referedAttribute>98F09E0D-631C-4C8E-9114-C570E4FC9B40</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="2EF8D1E4-FC75-2255-EE13-192790CC5EDD" name="Orde_Stor PK">
+<identifier id="4EFBD7BB-6A83-BBCD-7935-6FF0D485982A" name="XZZ Ticket PK">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 00:10:28 UTC</createdTime>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>B6E708ED-24D2-1C84-954D-9E5C15394FD3</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>CF015138-3558-349B-6779-FB78F6D54C55</attributeRef>
+<attributeRef>33538215-85C8-7DD4-7F4E-95CC8434DC03</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

@@ -53,18 +53,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Ticket_Discount" id="F462B9F4-7975-3BC1-B6D4-48300B55A10C">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-04 02:00:43 UTC</createdTime>
-<generatorID>12DBE658-1F81-EF67-6114-317897B820DD</generatorID>
-<ownerDesignName>design</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="Order_ID" id="E0083F49-A0F2-8A0F-4360-57C763467D6F">
 <createdBy>maynic</createdBy>
 <createdTime>2023-04-04 02:00:43 UTC</createdTime>

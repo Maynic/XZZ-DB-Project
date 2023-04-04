@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CB7ABD80-3B35-4167-95FD-179A740596A5" name="XZZ_Ticket">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="05DD5F91-6E36-BA0B-80F8-23ECD6E7433A" name="XZZ Payment">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-03 16:09:38 UTC</createdTime>
-<generatorID>E39870C6-788E-BF41-93CA-F5E3908C93ED</generatorID>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>2D539D39-AC8F-8450-A3FD-2E7C26D971EA</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -16,10 +16,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Ticket_ID" id="53865315-E32A-2175-D954-10FA0B98B398">
+<Attribute name="Payment ID" id="A11B163C-0CC9-9A11-A078-B51EF0904F7F">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-03 16:09:38 UTC</createdTime>
-<generatorID>1AEC03A4-D6EA-4455-ABDE-C3A2E235F6C8</generatorID>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>AC86659C-EB10-ABAE-8F5B-C205F6C5C189</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -29,10 +29,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Ticket_Method" id="FC152C24-E7C0-DCBB-D9FD-2CF417DB2999">
+<Attribute name="Payment Method" id="E24797E9-EB7B-1F98-8E9D-A63B56021768">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-03 16:09:38 UTC</createdTime>
-<generatorID>C69FD243-3E72-9D05-8B07-2C6D3F0ED54F</generatorID>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>2F4E5BE9-AA58-9371-E360-9CFF6A349BDC</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -40,26 +40,13 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>6</dataTypeSize>
-<ownDataTypeParameters>6,,</ownDataTypeParameters>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Visit_Date" id="D5EF1666-07BE-FBAF-373A-965E7BFBD67D">
+<Attribute name="Payment Amount" id="056EFB5B-A439-F83E-D9C9-97A8CF36AE26">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-03 16:09:38 UTC</createdTime>
-<generatorID>5030541A-9320-A5A3-AAD1-6D491547D85B</generatorID>
-<ownerDesignName>design</ownerDesignName>
-<engineerTo>
-<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Ticket_Price" id="5FECDD5F-30E5-9EE0-009F-3FE5BF38A363">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-03 16:09:38 UTC</createdTime>
-<generatorID>721DDF3C-2A06-02F8-9BAB-314CCF52EF72</generatorID>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>6BFA169E-E03A-1E36-EE10-1B8A0FCEEC0B</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -69,36 +56,25 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Order_ID" id="A2569D7E-E242-06E9-6DD2-5EA947EA551E">
+<Attribute name="Name On Card" id="82818CBC-B2AC-54A7-26EE-597C2DC03A9B">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-03 23:52:38 UTC</createdTime>
-<generatorID>D84A3352-8696-91DC-145E-29ED51A4D74E</generatorID>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>9FA964D2-B70E-34D3-F233-98CCFC20AFDD</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
-<referedAttribute>4621A405-0D9F-2DB9-6375-2DE48252B90F</referedAttribute>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Visitor_ID" id="8DA89256-3252-B489-E4A5-E83B1F536CD6">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-03 23:54:56 UTC</createdTime>
-<generatorID>9B8843D8-FC8C-5B9F-82BD-88274E3ED198</generatorID>
-<ownerDesignName>design</ownerDesignName>
-<engineerTo>
-<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
-</engineerTo>
-<referedAttribute>4DA09712-2B84-FFC2-F027-042DD15525B0</referedAttribute>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Ticket_Discount" id="12DBE658-1F81-EF67-6114-317897B820DD">
+<Attribute name="Card Number" id="C19A9EB7-6556-76CA-8F38-96ED6F067B14">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-04 01:46:42 UTC</createdTime>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>446863B4-7205-8259-04DE-4A00E7E9905B</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
@@ -109,19 +85,61 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="Expiration Date" id="93268462-99EC-9433-06E3-AEC90479EDCD">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>F9A04AE2-415A-0CE9-2EC6-847F718A98D4</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CVV" id="01A64912-43DC-DAFE-C219-28B50A227D20">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>AC1C2624-CE46-5BA0-A8C4-DD8740DC45F3</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Order ID" id="32874EB3-1AFB-71CE-060A-CCC7DF150A10">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>6100B628-B10D-9E8D-50BD-0A4499F87106</generatorID>
+<ownerDesignName>design</ownerDesignName>
+<engineerTo>
+<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
+</engineerTo>
+<referedAttribute>88C5E8E0-60FA-F3BF-5EC3-BDC4F8145C2D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="D08B61AC-D4EA-A57B-5A92-A429437AC4AA" name="Tickets PK">
+<identifier id="AF78814B-EECC-09DC-0175-A2BC3E11064D" name="XZZ Payment PK">
 <createdBy>maynic</createdBy>
-<createdTime>2023-04-03 16:09:38 UTC</createdTime>
-<generatorID>6BEBC51C-E445-2EEF-BB92-9CC3A56BF4FE</generatorID>
+<createdTime>2023-04-04 03:47:16 UTC</createdTime>
+<generatorID>A644F6BA-B827-08F7-2ADA-D1936DCE22C7</generatorID>
 <ownerDesignName>design</ownerDesignName>
 <engineerTo>
 <item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>53865315-E32A-2175-D954-10FA0B98B398</attributeRef>
+<attributeRef>A11B163C-0CC9-9A11-A078-B51EF0904F7F</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
