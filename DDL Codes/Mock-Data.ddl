@@ -40,7 +40,7 @@ VALUES
   (7, 'Splash Mountain', 'A thrilling water ride that culminates in a huge drop into a briar patch', 'water ride', 'open', 18, 102, 6, 'Lot D'),
   (8, 'Sesame Street Safari of Fun', 'A colorful kid ride featuring all of your favorite Sesame Street characters', 'kid ride', 'open', 30, 61, 2, 'Lot D'),
   (9, 'Kingda Ka', 'The tallest and fastest roller coaster in the world', 'roller coaster', 'closed', 20, 139, 2, 'Lot E'),
-  (10, 'It''s a Small World', 'A charming dark ride that takes guests on a musical journey around the world', 'dark ride', 'open', 24, 91, 8, 'Lot E'),
+  (10, 'Its a Small World', 'A charming dark ride that takes guests on a musical journey around the world', 'dark ride', 'open', 24, 91, 8, 'Lot E'),
   (11, 'The Hulk', 'A thrilling roller coaster that takes guests through a series of twists, turns, and inversions', 'roller coaster', 'open', 30, 137, 3, 'Lot F'),
   (12, 'Kali River Rapids', 'A wet and wild water ride through the heart of the jungle', 'water ride', 'under maintenance', 16, 107, 4, 'Lot F'),
   (13, 'Toy Story Midway Mania!', 'A fun-filled ride that lets guests compete in carnival', 'kid ride', 'open', 24, 91, 5, 'Lot G'),
