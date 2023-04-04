@@ -43,17 +43,17 @@ VALUES
   (10, 'It''s a Small World', 'A charming dark ride that takes guests on a musical journey around the world', 'dark ride', 'open', 24, 91, 8, 'Lot E'),
   (11, 'The Hulk', 'A thrilling roller coaster that takes guests through a series of twists, turns, and inversions', 'roller coaster', 'open', 30, 137, 3, 'Lot F'),
   (12, 'Kali River Rapids', 'A wet and wild water ride through the heart of the jungle', 'water ride', 'under maintenance', 16, 107, 4, 'Lot F'),
-  (13, 'Toy Story Midway Mania!', 'A fun-filled ride that lets guests compete in carnival games with their favorite Toy Story characters', 'kid ride', 'open', 24, 91, 5, 'Lot G'),
+  (13, 'Toy Story Midway Mania!', 'A fun-filled ride that lets guests compete in carnival', 'kid ride', 'open', 24, 91, 5, 'Lot G'),
   (14, 'Expedition Everest', 'A thrilling roller coaster that takes guests on a journey through the Himalayas', 'roller coaster', 'open', 20, 122, 4, 'Lot G'),
   (15, 'Harry Potter and the Forbidden Journey', 'A magical dark ride that takes guests on a journey through the world of Harry Potter', 'dark ride', 'closed', 12, 122, 5, 'Lot H'),
-  (16, 'The Cat in the Hat', 'A whimsical kid ride that lets guests join the Cat in the Hat and his friends for a fun-filled adventure', 'kid ride', 'open', 32, 76, 2, 'Lot H'),
+  (16, 'The Cat in the Hat', 'A whimsical kid ride that lets guests join the Cat in the Hat', 'kid ride', 'open', 32, 76, 2, 'Lot H'),
   (17, 'The Incredible Hulk Coaster', 'A thrilling roller coaster that takes guests through a series of high-speed inversions and twists', 'roller coaster', 'under maintenance', 30, 137, 3, 'Lot I'),
-  (18, 'Journey to Atlantis', 'A water ride that takes guests on a journey through the lost city of Atlantis', 'water ride', 'open', 18, 107, 5, 'Lot I'),
+  (18, 'Journey to Atlantis', 'A water ride that takes guests on a journey through', 'water ride', 'open', 18, 107, 5, 'Lot I'),
   (19, 'Peter Pan''s Flight', 'A classic dark ride that takes guests on a journey through the world of Peter Pan', 'dark ride', 'open', 12, 91, 3, 'Lot J'),
   (20, 'Flying Fish', 'A gentle kid ride that lets guests soar through the air on colorful fish', 'kid ride', 'open', 24, 76, 2, 'Lot J'),
   (21, 'Top Thrill Dragster', 'A record-breaking roller coaster that launches riders from 0 to 120 mph in just a few seconds', 'roller coaster', 'open', 20, 137, 1, 'Lot K'),
   (22, 'Raging Rapids', 'A wild water ride that takes guests through turbulent rapids and cascading waterfalls', 'water ride', 'closed', 16, 107, 4, 'Lot K'),
-  (23, 'Transformers: The Ride 3D', 'A thrilling dark ride that puts guests in the middle of an epic battle between the Autobots and Decepticons', 'dark ride', 'open', 12, 107, 4, 'Lot L'),
+  (23, 'Transformers: The Ride 3D', 'A thrilling dark ride that puts guests in the middle of', 'dark ride', 'open', 12, 107, 4, 'Lot L'),
   (24, 'The Magic Carpets of Aladdin', 'A fun kid ride that lets guests fly through the air on magical carpets', 'kid ride', 'open', 32, 76, 2, 'Lot L'),
   (25, 'Steel Vengeance', 'A record-breaking roller coaster that features a wooden and steel hybrid track', 'roller coaster', 'open', 24, 137, 2, 'Lot M');
 
@@ -70,8 +70,8 @@ VALUES
   (7, 'Wicked', 'A magical musical that tells the untold story of the witches of Oz', 'musical', '2023-04-11 14:00:00', '2023-04-11 17:00:00', 'Yes', 130.00),
   (8, 'The Book of Mormon', 'A hilarious and irreverent musical about two young missionaries who are sent to Uganda', 'musical', '2023-04-12 19:30:00', '2023-04-12 22:00:00', 'No', 95.00),
   (9, 'Death of a Salesman', 'A classic drama about an aging salesman who struggles to cope with his life and career', 'drama', '2023-04-13 20:00:00', '2023-04-13 22:30:00', 'Yes', 85.00),
-  (10, 'The Rocky Horror Picture Show', 'A cult classic musical about a couple who stumble upon a strange castle and its even stranger inhabitants', 'musical', '2023-04-14 23:00:00', '2023-04-15 01:00:00', 'No', 70.00),
-  (11, 'The Exorcist', 'A terrifying horror show about a young girl possessed by a demon', 'horror', '2023-04-15 22:00:00', 'Yes', 120.00),
+  (10, 'The Rocky Horror Picture Show', 'A cult classic musical about a couple who stumble upon a strange castle', 'musical', '2023-04-14 23:00:00', '2023-04-15 01:00:00', 'No', 70.00),
+  (11, 'The Exorcist', 'A terrifying horror show about a young girl possessed by a demon', 'horror', '2023-04-15 22:00:00', '2023-04-15 23:00:00','Yes', 120.00),
   (12, 'The Importance of Being Earnest', 'A witty and humorous comedy of manners about two young men who assume false identities', 'comedy', '2023-04-16 15:00:00', '2023-04-16 17:30:00', 'Yes', 95.00),
   (13, 'Cats', 'A beloved musical about a tribe of cats who gather for their annual Jellicle Ball', 'musical', '2023-04-17 14:00:00', '2023-04-17 16:30:00', 'Yes', 110.00),
   (14, 'Dracula', 'A thrilling horror show about the legendary vampire and his encounters with the living', 'horror', '2023-04-18 20:00:00', '2023-04-18 22:30:00', 'No', 80.00),
@@ -81,8 +81,8 @@ VALUES
   (18, 'The Great Gatsby', 'A dramatic adaptation of F. Scott Fitzgerald''s iconic novel about the excesses of the Jazz Age', 'drama', '2023-04-22 20:00:00', '2023-04-22 22:30:00', 'Yes', 85.00),
   (19, 'Little Shop of Horrors', 'A zany musical about a down-on-his-luck florist who discovers a plant with a taste for human blood', 'musical', '2023-04-23 14:00:00', '2023-04-23 16:30:00', 'Yes', 95.00),
   (20, 'A Streetcar Named Desire', 'A powerful drama about a southern belle who moves in with her sister and her brutish husband', 'drama', '2023-04-24 19:30:00', '2023-04-24 22:00:00', 'Yes', 90.00),
-  (21, 'The Rocky Horror Show', 'A live stage production of the cult classic musical about a couple who stumble upon a strange castle and its even stranger inhabitants', 'musical', '2023-04-25 23:00:00', '2023-04-26 01:00:00', 'No', 70.00),
-  (22, 'Carrie', 'A chilling horror show about a high school student with telekinetic powers who is pushed to her breaking point', 'horror','2023-04-26 20:00:00', '2023-04-26 22:30:00', 'Yes', 80.00),
+  (21, 'The Rocky Horror Show', 'A live stage production of the cult classic musical about a couple', 'musical', '2023-04-25 23:00:00', '2023-04-26 01:00:00', 'No', 70.00),
+  (22, 'Carrie', 'A chilling horror show about a high school student with telekinetic powers', 'horror','2023-04-26 20:00:00', '2023-04-26 22:30:00', 'Yes', 80.00),
   (23, 'The Importance of Being Earnest', 'A witty and humorous comedy of manners about two young men who assume false identities', 'comedy', '2023-04-27 15:00:00', '2023-04-27 17:30:00', 'Yes', 95.00),
   (24, 'Les Misérables', 'A legendary musical about a former convict who seeks redemption in 19th century France', 'musical', '2023-04-28 19:30:00', '2023-04-28 22:30:00', 'Yes', 130.00),
   (25, 'The Glass Menagerie', 'A poignant drama about a family struggling to come to terms with their past and their present', 'drama', '2023-04-29 20:00:00', '2023-04-29 22:30:00', 'Yes', 85.00);
@@ -117,25 +117,6 @@ VALUES
   (24, 'Yankee Candle', 'Gift Shop'),
   (25, 'Adidas', 'Apparels');
 
-
-/* r */
-INSERT INTO xzz_visitor (visitor_id, visitor_name, birth_date, visitor_type, address, city, state, zip, email, phone) 
-VALUES
-    (100, 'John Smith', '1990-01-01', 'Adult', '123 Main St', 'New York', 'NY', 10001, 'john.smith@example.com', 555-1234),
-    (101, 'Jane Doe', '1995-05-05', 'Student', '456 Elm St', 'Los Angeles', 'CA', 90001, 'jane.doe@example.com', 555-5678),
-    (102, 'Bob Johnson', '1985-03-15', 'Adult', '789 Oak St', 'Chicago', 'IL', 60007, 'bob.johnson@example.com', 555-9012),
-    (103, 'Mary Lee', '1992-12-25', 'Senior', '246 Maple St', 'Houston', 'TX', 77002, 'mary.lee@example.com', 555-3456),
-    (104, 'David Chen', '2000-06-10', 'Student', '369 Pine St', 'San Francisco', 'CA', 94110, 'david.chen@example.com', 555-7890),
-    (105, 'Julia Park', '1975-08-20', 'Senior', '135 Cedar St', 'Seattle', 'WA', 98101, 'julia.park@example.com', 555-2345),
-    (106, 'Samuel Kim', '1988-11-30', 'Adult', '579 Walnut St', 'Boston', 'MA', 02108, 'samuel.kim@example.com', 555-6789),
-    (107, 'Karen Wong', '1998-04-02', 'Student', '246 Oak St', 'Los Angeles', 'CA', 90001, 'karen.wong@example.com', 555-1234),
-    (108, 'Michael Chan', '1980-07-20', 'Adult', '369 Elm St', 'San Francisco', 'CA', 94110, 'michael.chan@example.com', 555-5678),
-    (109, 'Amy Chen', '1993-02-14', 'Student', '123 Pine St', 'New York', 'NY', 10001, 'amy.chen@example.com', 555-9012),
-    (110, 'Tom Brown', '1972-09-30', 'Senior', '789 Maple St', 'Chicago', 'IL', 60007, 'tom.brown@example.com', 555-3456),
-    (111, 'Cathy Lee', '1991-07-05', 'Adult', '246 Oak St', 'Houston', 'TX', 77002, 'cathy.lee@example.com', 555-7890),
-    (112, 'Kevin Smith', '2002-01-20', 'Student', '579 Cedar St', 'Seattle', 'WA', 98101, 'kevin.smith@example.com', 555-2345),
-    (113, 'Emily Wang', '1978-04-18', 'Senior', '135 Walnut St', 'Boston', 'MA', 02108, 'emily.wang@example.com', 555-6789),
-    (114, 'Jake Johnson', '1997-11-05', 'Student', '369 Oak St', 'San Francisco', 'CA', 94110, 'jake.johnson@example.com', 555-1234);
 
 
 /* Order */
@@ -342,7 +323,7 @@ VALUES
 /* xzz_orde_stor */
 INSERT INTO xzz_orde_stor (menu_item_id, menu_item_name, menu_item_description, menu_item_unit_price, store_id, order_id) VALUES
 (1, 'Cheeseburger', 'Juicy beef patty topped with melted cheese and served on a toasted bun with lettuce and tomato', 9.99, 3, 14),
-(2, 'Chicken Caesar Salad', 'Grilled chicken breast, crisp romaine lettuce, and garlic croutons tossed with creamy Caesar dressing', 8.49, 16, 20),
+(2, 'Chicken Caesar Salad', 'Grilled chicken breast, crisp romaine lettuce', 8.49, 16, 20),
 (3, 'Margherita Pizza', 'Traditional pizza topped with tomato sauce, mozzarella cheese, and fresh basil leaves', 12.99, 11, 22),
 (4, 'French Fries', 'Crispy golden fries served with ketchup or your choice of dipping sauce', 4.99, 5, 19),
 (5, 'Fish and Chips', 'Beer-battered fish and crispy fries, served with tartar sauce and lemon wedges', 11.99, 9, 23),
@@ -357,22 +338,22 @@ INSERT INTO xzz_orde_stor (menu_item_id, menu_item_name, menu_item_description, 
 (14, 'Cheese Pizza', 'Traditional pizza topped with tomato sauce and mozzarella cheese', 10.99, 8, 6),
 (15, 'Mushroom Risotto', 'Creamy risotto with sautéed mushrooms and Parmesan cheese', 12.99, 24, 1),
 (16, 'Hamburger', 'Juicy beef patty served on a toasted bun with lettuce and tomato', 8.99, 7, 12),
-(17, 'Caesar Salad with Grilled Shrimp', 'Grilled shrimp, crisp romaine lettuce, and garlic croutons tossed with creamy Caesar dressing', 12.49, 21, 17),
+(17, 'Caesar Grilled Shrimp', 'Grilled shrimp, crisp romaine lettuce', 12.49, 21, 17),
 (18, 'Onion Rings', 'Crispy fried onion rings served with your choice of dipping sauce', 5.99, 14, 4),
 (19, 'Fish Tacos', 'Three soft-shell tacos filled with grilled fish, lettuce, cheese, and salsa', 12.99, 20, 24),
 (20, 'Lemon Chicken','Grilled chicken breast topped with lemon butter sauce and served with your choice of side dish', 11.99, 15, 16),
 (21, 'Pesto Chicken Pizza', 'Traditional pizza topped with basil pesto sauce, mozzarella cheese, and grilled chicken', 13.49, 10, 8),
 (22, 'Beef Stir-Fry', 'Tender strips of beef stir-fried with fresh vegetables in a savory sauce', 12.99, 13, 7),
-(23, 'Chicken Parmesan', 'Breaded chicken breast topped with marinara sauce and melted mozzarella cheese, served with a side of spaghetti', 14.99, 1, 11),
-(24, 'Greek Salad', 'Crisp lettuce, juicy tomatoes, cucumbers, red onion, Kalamata olives, and feta cheese tossed with Greek dressing', 9.99, 23, 13),
-(25, 'Spicy Buffalo Wings', 'Crispy chicken wings coated in spicy buffalo sauce, served with blue cheese dressing and celery sticks', 8.99, 25, 5),
+(23, 'Chicken Parmesan', 'Breaded chicken breast topped with marinara sauce and melted mozzarella cheese', 14.99, 1, 11),
+(24, 'Greek Salad', 'Crisp lettuce, juicy tomatoes, cucumbers, red onion, Kalamata olives', 9.99, 23, 13),
+(25, 'Spicy Buffalo Wings', 'Crispy chicken wings coated in spicy buffalo sauce', 8.99, 25, 5),
 (26, 'Grilled Salmon', 'Fresh salmon fillet grilled to perfection and served with your choice of side dish', 15.99, 9, 24),
 (27, 'Vegetable Pizza', 'Traditional pizza topped with tomato sauce, mozzarella cheese, and assorted fresh vegetables', 12.99, 2, 14),
-(28, 'Shrimp Scampi', 'Sauteed shrimp tossed with garlic, butter, lemon juice, and white wine, served over a bed of linguine', 16.49, 18, 6),
+(28, 'Shrimp Scampi', 'Sauteed shrimp tossed with garlic, butter, lemon juice, and white wine', 16.49, 18, 6),
 (29, 'Crispy Chicken Sandwich', 'Crispy fried chicken breast served on a toasted bun with lettuce, tomato, and mayo', 9.99, 5, 20),
 (30, 'Caprese Salad', 'Fresh mozzarella cheese, ripe tomatoes, and fresh basil leaves drizzled with balsamic glaze', 8.99, 7, 19),
 (31, 'Beef and Broccoli Stir-Fry', 'Tender strips of beef and fresh broccoli florets stir-fried in a savory sauce', 11.99, 12, 3),
 (32, 'Fettuccine Alfredo', 'Creamy Alfredo sauce tossed with fettuccine noodles and Parmesan cheese', 10.99, 16, 15),
 (33, 'Chicken Fajitas', 'Sizzling hot chicken fajitas served with warm tortillas, guacamole, sour cream, and salsa', 13.99, 21, 2),
-(34, 'Caesar Salad with Grilled Chicken', 'Grilled chicken breast, crisp romaine lettuce, and garlic croutons tossed with creamy Caesar dressing', 10.49, 24, 18),
+(34, 'Caesar Grilled Chicken', 'Grilled chicken breast, crisp romaine lettuce', 10.49, 24, 18),
 (35, 'Margarita', 'Classic tequila-based cocktail made with lime juice and triple sec, served with salt on the rim', 7.99, 3, 9);
