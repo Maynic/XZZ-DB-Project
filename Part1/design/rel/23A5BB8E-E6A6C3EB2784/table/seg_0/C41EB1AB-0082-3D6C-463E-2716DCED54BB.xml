@@ -30,17 +30,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Order_Quantity" id="7409E478-AA9B-494F-D77A-25D795D6DE53">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-04 02:00:43 UTC</createdTime>
-<generatorID>EB59CA62-7DF2-B2D6-AEAD-4324FB9D5D95</generatorID>
-<ownerDesignName>design</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="Visitor_ID" id="C6AE9D05-6C47-95C0-5E93-6030FDDC96FF">
 <createdBy>maynic</createdBy>
 <createdTime>2023-04-04 02:00:43 UTC</createdTime>

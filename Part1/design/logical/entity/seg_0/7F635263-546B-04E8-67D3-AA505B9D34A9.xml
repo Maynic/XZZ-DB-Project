@@ -42,19 +42,6 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Order Quantity" id="031CBE59-27BE-4564-EF1B-16D820256236">
-<createdBy>maynic</createdBy>
-<createdTime>2023-04-04 04:34:12 UTC</createdTime>
-<generatorID>7409E478-AA9B-494F-D77A-25D795D6DE53</generatorID>
-<ownerDesignName>design</ownerDesignName>
-<engineerTo>
-<item key="23A5BB8E-4E99-41F3-486A-E6A6C3EB2784" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="Visitor ID" id="FE712D60-A903-0650-C6F1-E0B9E8978DFC">
 <createdBy>maynic</createdBy>
 <createdTime>2023-04-04 04:34:12 UTC</createdTime>
