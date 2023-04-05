@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="807526C1-8BEB-A080-CB66-3CA6EC49BD69" containerWithKeyObject="1B1938A5-0404-CBE9-3389-98151D97E357" localFKIndex="762BB44F-38AD-C820-6107-3494FB83D925" name="xzz_attr_visi_xzz_attraction_fk">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<referredTableLongName>xzz_attraction</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>965BFB31-3010-A4C7-8DE9-1CE4C3EED0B4</referredTableID>
+<keyObject>4FA27955-A5CC-207D-EBA7-23DE8E1FFC0E</keyObject>
+<referredKeyID>4FA27955-A5CC-207D-EBA7-23DE8E1FFC0E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>attraction_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

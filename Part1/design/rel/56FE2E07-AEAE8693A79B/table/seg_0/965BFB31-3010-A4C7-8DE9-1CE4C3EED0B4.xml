@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="965BFB31-3010-A4C7-8DE9-1CE4C3EED0B4" name="xzz_attraction">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="attraction_id" id="1A666E6C-4120-33B9-9657-4B5CCD2E8A2F">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="attraction_name" id="8F3BF87B-82BB-75A8-9BED-8619342EDF8E">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>342282CC-72F3-86DD-219C-F968B60E392E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="attraction_description" id="AAA8E874-9A0B-61E2-3B9B-54B7C210F6BE">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5BE46E22-7146-9DE5-B064-F93A7DA971C6</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="attraction_type" id="93A2E24A-C3C5-52E3-721D-1F36E6BF9D68">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="attraction_status" id="3A6FFF3F-FC39-61EF-31C5-E8BC19AEC581">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacity" id="ED34A45A-A163-ADBC-FA12-AAB4C4B36AC6">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="min_height" id="956ECACD-927D-9CA6-D12D-B9A5314133B1">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="duration" id="3322B26F-1409-5F89-65A1-C8EB40BC4941">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="location" id="BFE6F8DF-4BF1-B3CA-3802-8EC039D01194">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4FA27955-A5CC-207D-EBA7-23DE8E1FFC0E" name="xzz_attraction_pk">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1A666E6C-4120-33B9-9657-4B5CCD2E8A2F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

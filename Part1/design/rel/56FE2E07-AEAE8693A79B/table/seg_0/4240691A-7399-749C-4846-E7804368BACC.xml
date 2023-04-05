@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4240691A-7399-749C-4846-E7804368BACC" name="xzz_store">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="store_id" id="61C02418-DDBC-9E90-EF6E-A1A4FE880F34">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="store_name" id="4A2849D0-4C62-F5B9-AE3D-CB1BD076FB34">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>13A47CA4-5AFF-A940-D2D6-0CFCCD9D3D83</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="category" id="A8032BF3-3506-AA32-C330-AEBD044BEF37">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>299635BA-C1CD-92F0-4DDC-0CB7A5FA8AE9</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6BCBEB26-E297-F441-A1D5-8463837471E2" name="xzz_store_pk">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="61C02418-DDBC-9E90-EF6E-A1A4FE880F34"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

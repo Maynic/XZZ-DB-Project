@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="78AFCAAE-25E9-C30E-B16C-54E163381B84" name="xzz_orde_show">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="os_id" id="85224C2C-F78D-ED92-D264-E6F0DACFCD99">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="show_id" id="A4757BAE-7B62-279B-9402-392A22385543">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D3BA13EA-89FC-25AC-15D8-DB3F2AD59469" referredColumn="33D8385B-EC1C-AA4D-9416-CC6F9211FB41"/>
+</associations>
+</Column>
+<Column name="order_id" id="E7E34E3D-CE0E-80DE-5BC2-A4D72027770F">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A70F2DEC-9C22-8235-BC65-E91BC2553BC2" referredColumn="763B5992-2869-2DD8-43B0-63A8E44534B1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7B5B2D87-F2DA-5C1C-C43F-94F9E0F735D8" name="xzz_orde_show_pk">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="85224C2C-F78D-ED92-D264-E6F0DACFCD99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CD2E3EAB-01CA-63A3-481C-72DA32D640F8" name="xzz_orde_show_xzz_order_fk">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E7E34E3D-CE0E-80DE-5BC2-A4D72027770F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="91F059AA-F39A-D958-1667-61ED2438DF3A" name="xzz_orde_show_xzz_show_fk">
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A4757BAE-7B62-279B-9402-392A22385543"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

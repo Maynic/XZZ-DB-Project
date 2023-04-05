@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E2D08F80-D5B9-4527-A6EA-16A6CA67B202" containerWithKeyObject="4A5D1073-CF7B-5A8C-F046-4B8B34B9DBE0" localFKIndex="97C1826B-586C-1DC8-BD50-B433A5B32AF2" name="xzz_orde_stor_xzz_order_fk">
+<sourceDDLFile>v4-mysql.ddl</sourceDDLFile>
+<createdBy>maynic</createdBy>
+<createdTime>2023-04-04 20:30:55 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<referredTableLongName>xzz_order</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>EE38B4A5-2677-E632-7BFD-BE8AD6F2DF04</referredTableID>
+<keyObject>A14BBF3B-A2F3-1E45-D917-E4BC77764D49</keyObject>
+<referredKeyID>A14BBF3B-A2F3-1E45-D917-E4BC77764D49</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>order_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
