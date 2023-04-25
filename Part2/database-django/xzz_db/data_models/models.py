@@ -36,7 +36,7 @@ class xzz_visitor(models.Model):
     address = models.CharField("Street", max_length=60)
     city = models.CharField("City", max_length=20)
     state = models.CharField("State", max_length=2)
-    zip = models.CharField("ZIP Code", validators=[validate_zip])
+    zip = models.CharField("ZIP Code", max_length = 5, validators=[validate_zip])
 
     class visitor_type_choices(models.TextChoices):
         INDIVIDUAL = "IN", _("Individual")
