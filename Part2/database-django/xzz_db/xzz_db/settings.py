@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'data_models' #custom data models
+    'data_models', #custom data models
+    'test_api_connect' #test for api interface
 ]
 
 MIDDLEWARE = [

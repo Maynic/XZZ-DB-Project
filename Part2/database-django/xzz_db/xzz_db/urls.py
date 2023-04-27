@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from data_models import views
+from test_api_connect import views as tviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^api/data_models/$', views.visitor_list),
     re_path(r'^api/data_models/([0-9])$', views.visitor_detail),
+    re_path(r'^api/test_api_connect/$', tviews.ticket_list)
 ]
