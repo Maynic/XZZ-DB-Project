@@ -178,8 +178,8 @@
 						<h5><span>01</span> What to do?</h5>
 						<div class="row">
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="attractions" value="form1" />
-								<label for="attractions">Attractions</label>
+								<input type="radio" name="radio" id="ticket" value="form1" />
+								<label for="ticket">Ticket</label>
 							</div>
 							<div class="f-item one-half">
 								<input type="radio" name="radio" id="show" value="form2" />
@@ -201,33 +201,9 @@
 						<!--form attractions-->
 						<div class="form row" id="form1">
 							<div class="column  one-half">
-								<h5><span>02</span> Which attractions you'd like to visit?</h5>
+								<h5><span>02</span> When you'd like to visit our park?</h5>
 								<div class="row">
-									<div class="f-item one-half datepicker">
-										<label>Attractions</label>
-										<select>
-											<option>I Don't Mind</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-											<option>Placeholder</option>
-										</select>
-
-									</div>
-									
-									<div class="f-item one-half datepicker">
+									<div class="f-item full-width datepicker">
 										<label for="datepicker1">Date</label>
 										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker1" name="datepicker1" /></div>
 									</div>
@@ -278,13 +254,7 @@
 
 									<div class="f-item one-half">
 										<label for="datepicker2">Date</label>
-										<select>
-											<option>Select time</option>
-											<option>Morning</option>
-											<option>Midday</option>
-											<option>Afternoon</option>
-											<option>Evening</option>
-										</select>
+										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker2" name="datepicker2" /></div>
 									</div>							
 								</div>
 							</div>
@@ -318,7 +288,7 @@
 						<div class="form row" id="form3">
 							<!--column-->
 							<div class="column full-width">
-								<h5><span>02</span> What to buy?</h5>
+								<h5><span>02</span> Choose the category </h5>
 								<div class="row">
 									<div class="f-item one-half">
 										<label for="destination1">Category</label>
@@ -340,10 +310,10 @@
 						<!--form parking-->
 						<div class="form row" id="form4">
 							<!--column-->
-							<div class="column two-third">
+							<div class="column one-third">
 								<h5><span>02</span> Where to park?</h5>
 								<div class="row">
-									<div class="f-item one-half">
+									<div class="f-item full-width">
 										<label for="destination2">Park at</label>
 										<select>
 											<option>Select choice</option>
@@ -352,7 +322,15 @@
 											<option>stores</option>
 										</select>
 									</div>
-									<div class="f-item one-half">
+								</div>
+							</div>
+							<!--//column-->
+						
+							<!--column-->
+							<div class="column two-third">
+								<h5><span>03</span> Parking duration</h5>
+								<div class="row">
+									<div class="f-item full-width">
 										<div class="f-item full-width datepicker">
 											<label for="datepicker3">Time in</label>
 											<div class="row">
@@ -425,34 +403,6 @@
 												</div>
 											</div>
 										</div>
-									</div>
-								</div>
-							</div>
-							<!--//column-->
-						
-							<!--column-->
-							<div class="column one-third">
-								<h5><span>03</span> Additional Infos</h5>
-								<div class="row">
-									<div class="f-item one-half spinner small">
-										<label for="spinner7">Car id</label>
-										<input type="text" placeholder="" id="spinner7" name="spinner7" />
-									</div>
-									<div class="f-item one-half">
-										<label for="spinner8">Car type:</label>
-										<select>
-											<option>No Preference</option>
-											<option>Economy</option>
-											<option>Compact</option>
-											<option>Midsize</option>
-											<option>Standard</option>
-											<option>Full Size</option>
-											<option>Premium</option>
-											<option>Luxury</option>
-											<option>Convertible</option>
-											<option>MiniSUV</option>
-											<option>Sports Car</option>
-										</select>
 									</div>
 								</div>
 							</div>
