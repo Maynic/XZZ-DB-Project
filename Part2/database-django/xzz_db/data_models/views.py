@@ -12,14 +12,17 @@ def visitor_list(request):
         data = xzz_visitor.objects.all()
 
         serializer = VisitorSerializer(data, context={'request': request}, many=True)
-
+        print(serializer.data)
         return Response(serializer.data)
 
     elif request.method == 'POST':
+        if request.content_type == 'application/json':
+            print("JSON data: ", request.body) 
         serializer = VisitorSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
+        print(serializer.errors)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

@@ -37,6 +37,6 @@ export const visitorColumns = [
   },
   {
     Header: "TYPE",
-    accessor: "visitor_type",
+    accessor: "visitor_type_full",
   },
 ];

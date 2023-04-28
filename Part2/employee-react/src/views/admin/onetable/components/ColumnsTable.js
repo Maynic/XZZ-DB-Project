@@ -19,7 +19,10 @@ import {
 
 // Custom components
 import Card from "components/card/Card";
-import Menu from "components/menu/MainMenu";
+import AddVisitor from "views/admin/onetable/components/AddVisitor";
+import VisitorDetail from "views/admin/onetable/components/VisitorDetail";
+// import VisitorDetail from "views/admin/onetable/components/VisitorComp";
+
 export default function ColumnsTable(props) {
   const { columnsData, tableData } = props;
 
@@ -62,7 +65,8 @@ export default function ColumnsTable(props) {
           lineHeight='100%'>
           Visitor Table
         </Text>
-        <Menu />
+        <VisitorDetail />
+        {/* <AddVisitor /> */}
       </Flex>
       <Table {...getTableProps()} variant='simple' color='gray.500' mb='24px'>
         {/* Titles */}
@@ -121,10 +125,10 @@ export default function ColumnsTable(props) {
                         {cell.value}
                       </Text>
                     );
-                  } else if (cell.column.Header === "DATE") {
+                  } else if (cell.column.Header === "BIRTHDAY") {
                     data = (
                       <Text color={textColor} fontSize='sm' fontWeight='700'>
-                        {cell.value}
+                        {cell.value.slice(0,10)}
                       </Text>
                     );
                   }
