@@ -45,10 +45,7 @@
 			
 			<!--search-->
 			<div class="search">
-				<form id="search-form" method="get" action="search-form">
-					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" /> 
-					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
-				</form>
+				
 			</div>
 			<!--//search-->
 			
@@ -178,7 +175,7 @@
 						<h5><span>01</span> What to do?</h5>
 						<div class="row">
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="ticket" value="form1" />
+								<input type="radio" name="radio" id="ticket" value="form1" checked/>
 								<label for="ticket">Ticket</label>
 							</div>
 							<div class="f-item one-half">
@@ -198,14 +195,14 @@
 					<!--//column-->
 					
 					<div class="three-fourth">
-						<!--form attractions-->
+						<!--form ticket-->
 						<div class="form row" id="form1">
 							<div class="column  one-half">
 								<h5><span>02</span> When you'd like to visit our park?</h5>
 								<div class="row">
 									<div class="f-item full-width datepicker">
 										<label for="datepicker1">Date</label>
-										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker1" name="datepicker1" /></div>
+										<div class="datepicker-wrap"><input type="text" placeholder="MM/DD/YY" id="datepicker1" name="ticket_date"/></div>
 									</div>
 								</div>
 							</div>
@@ -217,21 +214,21 @@
 								<div class="row">
 									<div class="f-item one-third spinner">
 										<label for="spinner1">Children</label>
-										<input type="text" placeholder="" id="spinner1" name="spinner1" />
+										<input type="text" placeholder="" id="spinner1" name="ticket_c" />
 									</div>
 									<div class="f-item one-third spinner">
-										<label for="spinner2">Adults</label>
-										<input type="text" placeholder="" id="spinner2" name="spinner1" />
+										<label for="spinner1">Adults</label>
+										<input type="text" placeholder="" id="spinner1" name="ticket_a" />
 									</div>
 									<div class="f-item one-third spinner">
-										<label for="spinner3">Senior</label>
-										<input type="text" placeholder="" id="spinner3" name="spinner1" />
+										<label for="spinner1">Senior</label>
+										<input type="text" placeholder="" id="spinner1" name="ticket_s" />
 									</div>
 								</div>
 							</div>
 							<!--//column-->
 						</div>	
-						<!--//form attractions-->
+						<!--//form ticket-->
 
 						<!--form show -->
 						<div class="form row" id="form2">
@@ -241,7 +238,7 @@
 								<div class="row">
 									<div class="f-item one-half">
 										<label>Shows Selections</label>
-										<select>
+										<select name="show_select">
 											<option>I Don't Mind</option>
 											<option>placeholder</option>
 											<option>placeholder</option>
@@ -254,7 +251,7 @@
 
 									<div class="f-item one-half">
 										<label for="datepicker2">Date</label>
-										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker2" name="datepicker2" /></div>
+										<div class="datepicker-wrap"><input type="text" placeholder="MM/DD/YY" id="datepicker2" name="show_date" /></div>
 									</div>							
 								</div>
 							</div>
@@ -266,16 +263,16 @@
 								<h5><span>03</span> Who will come?</h5>
 								<div class="row">
 									<div class="f-item one-third spinner">
-										<label for="spinner4">Children</label>
-										<input type="text" placeholder="" id="spinner4" name="spinner4" />
+										<label for="spinner2">Children</label>
+										<input type="text" placeholder="" id="spinner2" name="show_c" />
 									</div>
 									<div class="f-item one-third spinner">
-										<label for="spinner5">Adults</label>
-										<input type="text" placeholder="" id="spinner5" name="spinner5" />
+										<label for="spinner2">Adults</label>
+										<input type="text" placeholder="" id="spinner2" name="show_a" />
 									</div>
 									<div class="f-item one-third spinner">
-										<label for="spinner6">Senior</label>
-										<input type="text" placeholder="" id="spinner6" name="spinner6" />
+										<label for="spinner2">Senior</label>
+										<input type="text" placeholder="" id="spinner2" name="show_s" />
 									</div>
 								</div>
 							</div>
@@ -284,6 +281,7 @@
 						<!--//form show-->
 
 						
+						
 						<!--form store-->
 						<div class="form row" id="form3">
 							<!--column-->
@@ -291,8 +289,8 @@
 								<h5><span>02</span> Choose the category </h5>
 								<div class="row">
 									<div class="f-item one-half">
-										<label for="destination1">Category</label>
-										<select>
+										<label>Category</label>
+										<select name="store_category">
 											<option>Select choice</option>
 											<option>Drink</option>
 											<option>Snakes</option>
@@ -314,8 +312,8 @@
 								<h5><span>02</span> Where to park?</h5>
 								<div class="row">
 									<div class="f-item full-width">
-										<label for="destination2">Park at</label>
-										<select>
+										<label>Park at</label>
+										<select name="park_place">
 											<option>Select choice</option>
 											<option>Attractions</option>
 											<option>shows</option>
@@ -332,13 +330,13 @@
 								<div class="row">
 									<div class="f-item full-width">
 										<div class="f-item full-width datepicker">
-											<label for="datepicker3">Time in</label>
+											<label for="park_in_date">Time in</label>
 											<div class="row">
 												<div class="f-item one-half">
-													<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker3" name="datepicker3" /></div>
+													<div class="datepicker-wrap"><input type="text" placeholder="" id="park_in_date" name="park_in_date" /></div>
 												</div>
 												<div class="f-item one-half">
-													<select>
+													<select name="park_in">
 														<option>00:00</option>
 														<option>01:00</option>
 														<option>02:00</option>
@@ -368,13 +366,13 @@
 											</div>
 										</div>
 										<div class="f-item full-width datepicker">
-											<label for="datepicker4">Time out</label>
+											<label for="park_out_date">Time out</label>
 											<div class="row">
 												<div class="f-item one-half">
-													<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker4" name="datepicker4" /></div>
+													<div class="datepicker-wrap"><input type="text" placeholder="" id="park_out_date" name="park_out_date" /></div>
 												</div>
 												<div class="f-item one-half">
-													<select>
+													<select name="park_out">
 														<option>00:00</option>
 														<option>01:00</option>
 														<option>02:00</option>
@@ -945,6 +943,7 @@
 	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
 	<script type="text/javascript" src="js/lightslider.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
+	<script src="js/index.send_search.js"></script>
 	<script type="text/javascript">	
 		(function( $ ) {
 			$(document).ready(function(){
