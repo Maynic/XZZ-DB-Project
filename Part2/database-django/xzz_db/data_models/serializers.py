@@ -11,7 +11,7 @@ class VisitorSerializer(serializers.ModelSerializer):
 
 class AttractionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = xzz_attraction 
+        model = xzz_attraction
         fields = '__all__'
 
 class OrderSerializer(serializers.ModelSerializer):
@@ -21,12 +21,12 @@ class OrderSerializer(serializers.ModelSerializer):
 
 class ParkingSerializer(serializers.ModelSerializer):
     class Meta:
-        model = xzz_parking 
+        model = xzz_parking
         fields = '__all__'
 
 class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = xzz_payment 
+        model = xzz_payment
         fields = '__all__'
 
 class ShowSerializer(serializers.ModelSerializer):

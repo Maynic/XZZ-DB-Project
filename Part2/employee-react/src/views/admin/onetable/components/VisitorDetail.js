@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from "axios";
 
 import { API_URL } from "constants";
@@ -26,6 +26,7 @@ import {
     MdOutlineAdd,
 } from "react-icons/md";
 
+
 export default function VisitorDetail(props) {
     const [visitorData, setVisitorData] = useState({
         pk: 0,
@@ -39,6 +40,7 @@ export default function VisitorDetail(props) {
         zip: '',
         visitor_type: '',
     });
+    const API_Visitor = useRef(API_URL + "visitor/");
 
     useEffect(() => {
         if (props.visitor) {
@@ -53,7 +55,7 @@ export default function VisitorDetail(props) {
 
     const createVisitor = (e) => {
         e.preventDefault();
-        axios.post(API_URL, visitorData).then(() => {
+        axios.post(API_Visitor.current, visitorData).then(() => {
             props.resetState();
             props.toggle();
         });
@@ -61,7 +63,7 @@ export default function VisitorDetail(props) {
 
     const editVisitor = (e) => {
         e.preventDefault();
-        axios.put(API_URL + visitorData.pk, visitorData).then(() => {
+        axios.put(API_Visitor.current + visitorData.pk, visitorData).then(() => {
             props.resetState();
             props.toggle();
         });

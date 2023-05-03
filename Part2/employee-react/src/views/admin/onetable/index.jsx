@@ -30,19 +30,22 @@ import {
 import React, { Component } from "react";
 
 import axios from "axios";
-import { API_URL } from "constants";
+import { API_URL, } from "constants";
+
 
 class Onetable extends Component {
   state = {
     visitor: []
   };
+  API_Visitor = API_URL + "visitor";
 
   componentDidMount() {
     this.resetState();
   }
 
   getVisitors = () => {
-    axios.get(API_URL).then(res => this.setState({ visitor: res.data }));
+    // window.alert(this.API_Visitor);
+    axios.get(this.API_Visitor).then(res => this.setState({ visitor: res.data }));
   };
 
   resetState = () => {
@@ -61,6 +64,11 @@ class Onetable extends Component {
             tableData={this.state.visitor}
             resetState={this.resetState}
           />
+          {/* <ColumnsTable
+            columnsData={visitorColumns}
+            tableData={this.state.visitor}
+            resetState={this.resetState}
+          /> */}
         </SimpleGrid>
       </Box>
     );
