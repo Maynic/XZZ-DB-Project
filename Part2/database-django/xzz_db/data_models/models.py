@@ -2,44 +2,10 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
 from django.utils.translation import gettext_lazy as _
-from django.core.validators import MinValueValidator, MaxValueValidator
+from .validators import *
 
+# from django.core.validators import MinValueValidator, MaxValueValidator
 
-def validate_zip(value):
-    if len(value) != 5:
-        raise ValidationError(
-            _("%(value)s is not an valid zip"),
-            params={"value": value},
-        )
-    for i in value:
-        if i not in "0123456789":
-            raise ValidationError(
-                _("%(value)s is not an valid zip"),
-                params={"value": value},
-            )
-
-
-def validate_cvv(value):
-    if len(value) != 3 and len(value) != 4:
-        raise ValidationError(
-            _("%(value)s is not an valid cvv"),
-            params={"value": value},
-        )
-    for i in value:
-        if i not in "0123456789":
-            raise ValidationError(
-                _("%(value)s is not an valid cvv"),
-                params={"value": value},
-            )
-
-
-def validate_card(value):
-    for i in value:
-        if i not in "0123456789":
-            raise ValidationError(
-                _("%(value)s is not an valid card number"),
-                params={"value": value},
-            )
     # birth_date = models.DateTimeField(auto_now=False, auto_now_add=False, **options)
     # zip = models.DecimalField(..., max_digits=5, decimal_places=2)
     # null=True, blank=True,
@@ -267,7 +233,7 @@ class xzz_store(models.Model):
 
 
 # Ticket
-class XzzTicket(models.Model):
+class xzz_ticket(models.Model):
 
     # ticket_id = models.AutoField(primary_key=True)
 
@@ -293,3 +259,52 @@ class XzzTicket(models.Model):
 
     def __str__(self):
         return f"Ticket {self.ticket_id}"
+
+
+
+class xzz_attr_visi(models.Model):
+    # r_id = models.AutoField(primary_key=True)
+    r_in_time = models.DateTimeField("Time In")
+    visitor = models.ForeignKey('xzz_visitor', on_delete=models.CASCADE, verbose_name="Visitor ID")
+    attraction = models.ForeignKey('xzz_attraction', on_delete=models.CASCADE, verbose_name="Attraction ID")
+
+    class Meta:
+        db_table = 'xzz_attr_visi'
+        verbose_name = 'Xzz Attr Visi'
+        verbose_name_plural = 'Xzz Attr Visis'
+
+    def __str__(self):
+        return f"Attraction Visit {self.r_id}"
+
+
+
+class xzz_orde_show(models.Model):
+    # os_id = models.AutoField(primary_key=True)
+    show = models.ForeignKey('xzz_show', on_delete=models.CASCADE, verbose_name="Show ID")
+    order = models.ForeignKey('xzz_order', on_delete=models.CASCADE, verbose_name="Order ID")
+
+    class Meta:
+        db_table = 'xzz_orde_show'
+        verbose_name = 'Xzz Orde Show'
+        verbose_name_plural = 'Xzz Orde Shows'
+
+    def __str__(self):
+        return f"Order Show {self.os_id}"
+    
+
+
+class xzz_orde_stor(models.Model):
+    # menu_item_id = models.AutoField(primary_key=True)
+    menu_item_name = models.CharField("Menu Item Name", max_length=30)
+    menu_item_description = models.CharField("Menu Item Description", max_length=100)
+    menu_item_unit_price = models.FloatField("Menu Item Unit Price")
+    store = models.ForeignKey('xzz_store', on_delete=models.CASCADE, verbose_name="Store ID")
+    order = models.ForeignKey('xzz_order', on_delete=models.CASCADE, verbose_name="Order ID")
+
+    class Meta:
+        db_table = 'xzz_orde_stor'
+        verbose_name = 'Xzz Orde Stor'
+        verbose_name_plural = 'Xzz Orde Stors'
+
+    def __str__(self):
+        return self.menu_item_name
