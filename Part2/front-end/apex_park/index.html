@@ -970,5 +970,34 @@
 			});
 		})(jQuery);
 	</script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		  // Send AJAX request to check if user is authenticated
+		  $.ajax({
+			url: BURL + 'is_authenticated/',
+			type: 'GET',
+			success: function(response) {
+			  if (response.is_authenticated) {
+				// User is authenticated, search form can be submitted
+				$('#main-search').submit(function() {
+				  // Perform search here
+				});
+			  } else {
+				// User is not authenticated, show login modal
+				// Replace "login-modal" with the ID of your login modal
+				$('#login-modal').show();
+			  }
+			},
+			error: function(xhr) {
+			  // Handle error here
+			}
+		  });
+		});
+	  </script>
+	
+
+	
 </body>
 </html>

@@ -2,6 +2,10 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
+from django.http import JsonResponse
+from django.contrib.auth import authenticate, login
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
 
 from .models import *
 from .serializers import *
@@ -69,3 +73,32 @@ def ticket_search(request):
         serializer = SearchSerializer(data, context={'request': request}, many=True)
 
         return Response(serializer.data)
+
+#enforce login
+@csrf_exempt
+def user_login(request):
+    if request.method == 'POST':
+        print("GGGGG: ", request.POST)
+        username = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            print("Auth Success")
+            login(request, user)
+            return JsonResponse({'Login': True})
+        print("Auth failed")
+    return JsonResponse({'Login': False})
+
+@csrf_exempt
+def user_register(request):
+    if request.method == 'POST':
+        name = request.POST['ns_name']
+        email = request.POST['email']
+        password = request.POST['password']
+
+        user = User.objects.create_user(username=email, password=password, first_name=name)
+        user.save()
+        return JsonResponse({'Register': True})
+
+    return JsonResponse({'Register': False})

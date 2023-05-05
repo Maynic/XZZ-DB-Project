@@ -54,7 +54,10 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True # disable the CORS because run on localhost
+#CORS_ORIGIN_ALLOW_ALL = True # disable the CORS because run on localhost
+CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = ['http://localhost']
+
 ROOT_URLCONF = 'xzz_db.urls'
 
 TEMPLATES = [

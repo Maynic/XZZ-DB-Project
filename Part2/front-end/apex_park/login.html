@@ -987,7 +987,7 @@
 		<div class="lb-wrap">
 			<a href="#" class="close">x</a>
 			<div class="lb-content">
-				<form class="row">
+				<form id="login-form" class="row">
 					<h3>Log in</h3>
 					<div class="f-item full-width">
 						<label for="email">E-mail address</label>
@@ -1042,6 +1042,24 @@
 		});
 	</script>
 
-	<script src="js/loginin.js"></script>
+	<script>
+		const backendURL = 'http://127.0.0.1:8000/api/user_login/'
+		const form = document.querySelector('#login-form');
+		form.addEventListener('submit', async (event) => {
+		  event.preventDefault();
+		  const formData = new FormData(form);
+		  const response = await fetch(backendURL, {
+			method: 'POST',
+			body: formData,
+		  });
+		  const data = await response.json();
+		  if (data['Login'] == true) {
+			alert("Login success!")
+			window.location.href = "/my_account.html";
+		  } else {
+			alert("Login Failed! if you have not signed up please do so")
+		  }
+		});
+	  </script>
 </body>
 </html>
