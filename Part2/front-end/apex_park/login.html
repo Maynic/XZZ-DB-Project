@@ -991,19 +991,14 @@
 					<h3>Log in</h3>
 					<div class="f-item full-width">
 						<label for="email">E-mail address</label>
-						<input type="email" id="email" name="email" />
+						<input type="email" id="email" name="email" required/>
 					</div>
 					<div class="f-item full-width">
 						<label for="password">Password</label>
-						<input type="password" id="password" name="password" />
-					</div>
-					<div class="f-item checkbox full-width">
-						<input type="checkbox" id="remember_me" name="checkbox" />
-						<label for="remember_me">Remember me next time</label>
+						<input type="password" id="password" name="password" required/>
 					</div>
 					<div class="f-item full-width">
-						<p><a href="#" title="Forgot password?">Forgot password?</a><br />
-						Dont have an account yet? <a href="register.html" title="Sign up">Sign up.</a></p>
+						<p>Dont have an account yet? <a href="register.html" title="Sign up">Sign up.</a></p>
 						<input type="submit" id="login" name="login" value="login" class="gradient-button" />
 					</div>
 				</form>
@@ -1057,7 +1052,7 @@
 			alert("Login success!")
 			window.location.href = "/my_account.html";
 		  } else {
-			alert("Login Failed! if you have not signed up please do so")
+			alert("Login Failed! Either check your email and password or please Sign Up!!!")
 		  }
 		});
 	  </script>

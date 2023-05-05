@@ -976,7 +976,7 @@
 		$(document).ready(function() {
 		  // Send AJAX request to check if user is authenticated
 		  $.ajax({
-			url: BURL + 'is_authenticated/',
+			url: backendURL,
 			type: 'GET',
 			success: function(response) {
 			  if (response.is_authenticated) {

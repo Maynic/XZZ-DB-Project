@@ -24,5 +24,7 @@ urlpatterns = [
     re_path(r'^api/data_models/([0-9])$', views.visitor_detail),
     re_path(r'^api/search_bar/$', views.ticket_search),
     re_path(r'^api/user_login/$', views.user_login),
-    re_path(r'^api/user_regis/$', views.user_register)
+    re_path(r'^api/user_regis/$', views.user_register),
+    re_path(r'^api/users/$', views.user_list),
+    re_path(r'^api/user_logout/$', views.user_logout)
 ]

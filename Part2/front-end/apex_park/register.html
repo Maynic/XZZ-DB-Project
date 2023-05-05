@@ -1002,9 +1002,13 @@
 			<div class="lb-content">
 				<form id="regis-form" class="row">
 					<h3>Register</h3>
-					<div class="f-item full-width">
-						<label for="f_name">Name and surname</label>
-						<input type="text" id="ns_name" name="ns_name" />
+					<div class="f-item one-half">
+						<label for="fname">First Name</label>
+						<input type="text" id="fname" name="fname" />
+					</div>
+					<div class="f-item one-half">
+						<label for="lname">Last Name</label>
+						<input type="text" id="lname" name="lname" />
 					</div>
 					<div class="f-item full-width">
 						<label for="email">E-mail address</label>
@@ -1064,17 +1068,22 @@
 	form.addEventListener('submit', async (event) => {
 	  event.preventDefault();
 	  const formData = new FormData(form);
+	  
 	  const response = await fetch(RURL, {
 		method: 'POST',
 		body: formData,
 	  });
 	  const data = await response.json();
-	  console.log(data)
 	  if (data['Register'] == true) {
 		alert("Register success!")
 		window.location.href = "/login.html";
+	  } else if (data['Register'] == "Exists"){
+		alert("The email addres has been used! Try Log In")
+		window.location.href = "/login.html";
+	  } else if (data['Register'] == false) {
+		alert("Please Sign up!!")
 	  } else {
-		alert("Soemthing wrong, please try again")
+		alert("Something wrong")
 	  }
 	});
   </script>

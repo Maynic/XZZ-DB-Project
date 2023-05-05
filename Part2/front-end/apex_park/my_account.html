@@ -35,7 +35,7 @@
 				<nav>
 					<ul class="profile-nav">
 						<li class="active"><a href="#" title="My Account">My Account</a></li>
-						<li><a href="login.html" title="Logout">Log out</a></li>
+						<li><a href="#" id="logout-btn" title="Logout">Log out</a></li>
 						<li><a href="my_account.html" title="AccountDetails">Account Details</a></li>
 					</ul>
 				</nav>
@@ -553,5 +553,26 @@
 	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script scr="js/accinfo.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$("#logout-btn").click(function(event) {
+				event.preventDefault();  // prevent the default action of following the link
+	
+				$.ajax({
+					url: 'http://127.0.0.1:8000/api/user_logout/',  
+					type: "GET",     
+					success: function(response) {
+						if (response['Logout'] === true) {
+							alert("Successfully logged out!")
+							window.location.href = "/index.html";
+						} else {
+							alert("Something wrong")
+						}
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>

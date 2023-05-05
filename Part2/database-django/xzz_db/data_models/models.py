@@ -69,3 +69,8 @@ class xzz_ticket_search(models.Model):
     park_out_date = models.CharField(max_length=100, blank=True)
     park_out = models.CharField(max_length=100, blank=True)
 
+class xzz_user_login(models.Model):
+    fname = models.CharField(max_length=10)
+    lname = models.CharField(max_length=10)
+    email = models.EmailField()
+    password = models.CharField(max_length=20)

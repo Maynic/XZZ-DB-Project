@@ -3,9 +3,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from django.http import JsonResponse
-from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth.models import User
+from .auth import MyAuthBackend
 
 from .models import *
 from .serializers import *
@@ -60,45 +59,82 @@ POST request will be made after checked out by customer
 """
 @api_view(['GET', 'POST'])
 def ticket_search(request):
-    if request.method == 'POST':
-        serializer = SearchSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    if request.session.keys():
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
-    if request.method == 'GET':
-        data = xzz_ticket_search.objects.all()
+    else:
+        if request.method == 'POST':
+            serializer = SearchSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        serializer = SearchSerializer(data, context={'request': request}, many=True)
+        if request.method == 'GET':
+            data = xzz_ticket_search.objects.all()
 
-        return Response(serializer.data)
+            serializer = SearchSerializer(data, context={'request': request}, many=True)
+
+            return Response(serializer.data)
 
 #enforce login
+#Current suport POST only
 @csrf_exempt
 def user_login(request):
     if request.method == 'POST':
-        print("GGGGG: ", request.POST)
-        username = request.POST['email']
+        email = request.POST['email']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        user = MyAuthBackend.authenticate(request, email=email, password=password)
 
         if user is not None:
             print("Auth Success")
-            login(request, user)
+            request.session['user_id'] = user.id
+            print(request.session.keys())
             return JsonResponse({'Login': True})
-        print("Auth failed")
-    return JsonResponse({'Login': False})
+        else:
+            #auth was not success
+            print("Auth failed")
+            return JsonResponse({'Login': False})
+
+    elif request.method == 'GET':
+        #GET used to check if the user has logged in:
+        if request.session.keys():
+            return JsonResponse({'Login': "Loggedin"})
+        else:
+            return JsonResponse({"Login": "Not"})
 
 @csrf_exempt
 def user_register(request):
     if request.method == 'POST':
-        name = request.POST['ns_name']
+        fname = request.POST['fname']
+        lname = request.POST['lname']
         email = request.POST['email']
         password = request.POST['password']
+        user = xzz_user_login(fname=fname, lname=lname, email=email, password=password)
 
-        user = User.objects.create_user(username=email, password=password, first_name=name)
+        if xzz_user_login.objects.filter(email=email).exists():
+            return JsonResponse({'Register': "Exists"})
         user.save()
         return JsonResponse({'Register': True})
 
     return JsonResponse({'Register': False})
+
+@csrf_exempt
+def user_logout(request):
+    try:
+        if 'user_id' in request.session:
+            del request.session['user_id']
+        print(request.session.keys())
+        return JsonResponse({'Logout': True})
+    except:
+        return JsonResponse({'Logout': "Something wrong"})
+
+
+@api_view(['GET'])
+def user_list(request):
+    if request.method == 'GET':
+        data = xzz_user_login.objects.all()
+
+        serializer = UserSerializer(data, context={'request': request}, many=True)
+
+        return Response(serializer.data)
