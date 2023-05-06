@@ -560,7 +560,7 @@
 				event.preventDefault();  // prevent the default action of following the link
 	
 				$.ajax({
-					url: 'http://127.0.0.1:8000/api/user_logout/',  
+					url: 'http://127.0.0.1:8000/api/data_models/user_logout/',  
 					type: "GET",     
 					success: function(response) {
 						if (response['Logout'] === true) {

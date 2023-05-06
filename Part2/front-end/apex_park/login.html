@@ -1038,7 +1038,7 @@
 	</script>
 
 	<script>
-		const backendURL = 'http://127.0.0.1:8000/api/user_login/'
+		const backendURL = 'http://127.0.0.1:8000/api/data_models/user_login/'
 		const form = document.querySelector('#login-form');
 		form.addEventListener('submit', async (event) => {
 		  event.preventDefault();
@@ -1048,7 +1048,7 @@
 			body: formData,
 		  });
 		  const data = await response.json();
-		  if (data['Login'] == true) {
+		  if (data['Login'] === true) {
 			alert("Login success!")
 			window.location.href = "/my_account.html";
 		  } else {

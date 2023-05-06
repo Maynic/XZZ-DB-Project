@@ -97,14 +97,8 @@ class xzz_order(models.Model):
     def __str__(self):
         return f"Order {self.order_id}"
 
-    visitor_type = models.CharField("Visitor Type",
-                                    max_length=2,
-                                    choices=visitor_type_choices.choices,
-                                    default=visitor_type_choices.INDIVIDUAL,
-                                    )
 
-
-class xzz_ticket_search(models.Model):
+class xzz_search(models.Model):
     radio = models.CharField(max_length=100)
     ticket_date = models.CharField(max_length=100, blank=True)
     ticket_c = models.CharField(max_length=100, blank=True)

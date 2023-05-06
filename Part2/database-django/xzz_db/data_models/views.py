@@ -62,24 +62,46 @@ POST request will be made after checked out by customer
 
 """
 @api_view(['GET', 'POST'])
-def ticket_search(request):
+def SearchBar(request):
     if request.session.keys():
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
     else:
         if request.method == 'POST':
+            if request.content_type == 'application/json':
+                print("JSON data: ", request.body)
+
             serializer = SearchSerializer(data=request.data)
-            if serializer.is_valid():
+            if serializer.is_valid() and serializer.valid():
                 serializer.save()
                 return Response(status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         if request.method == 'GET':
-            data = xzz_ticket_search.objects.all()
+            data = xzz_search.objects.all()
 
             serializer = SearchSerializer(data, context={'request': request}, many=True)
 
             return Response(serializer.data)
+
+@api_view(['PUT', 'DELETE'])
+def SearchBarDetail(request, pk):
+    try:
+        object = xzz_search.objects.get(pk=pk)
+    except xzz_search.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'PUT':
+        serializer = SearchSerializer(object, data=request.data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        object.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 #enforce login
 #Current suport POST only
@@ -144,7 +166,7 @@ def user_list(request):
         return Response(serializer.data)
         object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-    
+
 @api_view(['GET', 'POST'])
 def attraction_list(request):
     if request.method == 'GET':

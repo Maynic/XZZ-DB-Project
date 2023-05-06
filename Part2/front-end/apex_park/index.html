@@ -943,7 +943,6 @@
 	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
 	<script type="text/javascript" src="js/lightslider.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
-	<script src="js/index.send_search.js"></script>
 	<script type="text/javascript">	
 		(function( $ ) {
 			$(document).ready(function(){
@@ -970,34 +969,32 @@
 			});
 		})(jQuery);
 	</script>
-
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
-		$(document).ready(function() {
-		  // Send AJAX request to check if user is authenticated
-		  $.ajax({
-			url: backendURL,
-			type: 'GET',
-			success: function(response) {
-			  if (response.is_authenticated) {
-				// User is authenticated, search form can be submitted
-				$('#main-search').submit(function() {
-				  // Perform search here
-				});
-			  } else {
-				// User is not authenticated, show login modal
-				// Replace "login-modal" with the ID of your login modal
-				$('#login-modal').show();
-			  }
-			},
-			error: function(xhr) {
-			  // Handle error here
-			}
-		  });
-		});
-	  </script>
-	
+		const form = document.querySelector('#main-search');
+		const searchbarURL = 'http://127.0.0.1:8000/api/data_models/search/'
 
-	
+		console.log("load test")
+		form.addEventListener('submit', (event) =>{
+			event.preventDefault();
+
+    		const formData = new FormData(form);
+    		fetch(searchbarURL, {
+				method: 'POST',
+				body: formData
+			})
+			.then(response => {
+				if (!response.ok) {
+					console.log('Data form is not right. Not accepted by backend');
+				}
+				else {
+					console.log("success");
+					form.submit();
+				}
+			})
+			.catch(error => {
+				console.log(error)
+			});
+		});
+	</script>
 </body>
 </html>
