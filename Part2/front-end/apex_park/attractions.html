@@ -35,8 +35,9 @@
 			<div class="ribbon">
 				<nav>
 					<ul class="profile-nav">
-						<li class="active"><a href="#" title="My Account">My Account</a></li>
-						<li><a href="login.html" title="Login">Login</a></li>
+						<li class="active" id="my-account-link"><a href="#" title="My Account">My Account</a></li>
+						<li class="login-button"><a href="login.html" title="Login">Login</a></li>
+						<li class="logout-button"><a title="Logout">Logout</a></li>
 						<li><a href="my_account.html" title="Settings">Settings</a></li>
 					</ul>
 				</nav>
@@ -45,16 +46,18 @@
 			
 			<!--search-->
 			<div class="search">
-				
+				<form id="search-form" method="get" action="search-form">
+					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" /> 
+					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
+				</form>
 			</div>
 			<!--//search-->
-			
+
 			<!-- contact-->
 			<div class="contact">
-				<span>24/7 Support number</span>
-				<span class="number">1- 555 - 555 - 555</span>
 			</div>
 			<!--//contact -->
+			
 		</div>
 		
 		<!--main navigation-->
@@ -377,6 +380,20 @@
 				});			
 			});
 		})(jQuery);
+	</script>
+
+	<script src="js/startcheck.js"></script>
+	<script>
+		$(document).ready(function() {
+			getCurrentUser();
+
+			$('.logout-button').click(function() {
+				console.log("Logged out")
+            	sessionStorage.removeItem('userId');
+				location.reload();
+        	});
+
+		});
 	</script>
 </body>
 </html>

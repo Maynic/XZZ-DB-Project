@@ -1062,30 +1062,35 @@
 		});
 	</script>
 
-<script>
-	const RURL = 'http://127.0.0.1:8000/api/data_models/user_regis/'
-	const form = document.querySelector('#regis-form');
-	form.addEventListener('submit', async (event) => {
-	  event.preventDefault();
-	  const formData = new FormData(form);
-	  
-	  const response = await fetch(RURL, {
-		method: 'POST',
-		body: formData,
-	  });
-	  const data = await response.json();
-	  if (data['Register'] == true) {
-		alert("Register success!")
-		window.location.href = "/login.html";
-	  } else if (data['Register'] == "Exists"){
-		alert("The email addres has been used! Try Log In")
-		window.location.href = "/login.html";
-	  } else if (data['Register'] == false) {
-		alert("Please Sign up!!")
-	  } else {
-		alert("Something wrong")
-	  }
+	<script>
+		//This scrtipts used to register user into backend 
+	$(document).ready(function() {
+		$('#regis-form').submit(function(event) {
+			event.preventDefault();
+			const formData = $(this).serialize();
+
+			$.ajax({
+				url: 'http://127.0.0.1:8000/api/data_models/user_regis/',
+				type: 'POST',
+				data: formData,
+				success: function(response, textStatus, jqXHR) {
+					if (jqXHR.status === 200) {
+						alert("Register success!");
+						window.location.href = "/login.html";
+					} else if (jqXHR.status === 409) {
+						alert("This email address has been used! Try another one");
+					} else if (jqXHR.status === 400) {
+						alert("Please Sign up!!");
+					} else {
+						alert("Something wrong");
+					}
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					alert("Error: " + errorThrown);
+				}
+			});
+		});
 	});
-  </script>
+	</script>
 </body>
 </html>

@@ -84,22 +84,22 @@
 			//HEADER RIBBON NAVIGATION
 			$('.ribbon li').hide();
 			$('.ribbon li.active').show();
-			$('.ribbon li a').click(function() {
-				$('.ribbon li').hide();
-				if ($(this).parent().parent().hasClass('open'))
-					$(this).parent().parent().removeClass('open');
-				else {
-					$('.ribbon ul').removeClass('open');
-					$(this).parent().parent().addClass('open');
-				}
-				$(this).parent().siblings().each(function() {
-					$(this).removeClass('active');
-				});
-				$(this).parent().attr('class', 'active'); 
-				$('.ribbon li.active').show();
-				$('.ribbon ul.open li').show();
-				return true;
-			});
+			// $('.ribbon li a').click(function() {
+			// 	$('.ribbon li').hide();
+			// 	if ($(this).parent().parent().hasClass('open'))
+			// 		$(this).parent().parent().removeClass('open');
+			// 	else {
+			// 		$('.ribbon ul').removeClass('open');
+			// 		$(this).parent().parent().addClass('open');
+			// 	}
+			// 	$(this).parent().siblings().each(function() {
+			// 		$(this).removeClass('active');
+			// 	});
+			// 	$(this).parent().attr('class', 'active'); 
+			// 	$('.ribbon li.active').show();
+			// 	$('.ribbon ul.open li').show();
+			// 	return true;
+			// });
 			
 			//TABS
 			$('.tab-content').hide().first().show();
@@ -129,9 +129,9 @@
 					
 			
 			//LOGIN & REGISTER LIGHTBOX
-			$('.close').click(function() {
-				$('.lightbox').hide();
-			});
+			// $('.close').click(function() {
+			// 	$('.lightbox').hide();
+			// });
 			
 			//MY ACCOUNT EDIT FIELDS
 			$('.edit_field').hide();

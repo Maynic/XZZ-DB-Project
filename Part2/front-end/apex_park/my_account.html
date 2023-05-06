@@ -555,6 +555,7 @@
 	<script scr="js/accinfo.js"></script>
 
 	<script>
+		// This scripts used to log out the user
 		$(document).ready(function() {
 			$("#logout-btn").click(function(event) {
 				event.preventDefault();  // prevent the default action of following the link
@@ -562,13 +563,17 @@
 				$.ajax({
 					url: 'http://127.0.0.1:8000/api/data_models/user_logout/',  
 					type: "GET",     
-					success: function(response) {
-						if (response['Logout'] === true) {
+					success: function(response, textStatus, jqXHR) {
+						if (jqXHR.status === 200) {
+							sessionStorage.removeItem('userId');
 							alert("Successfully logged out!")
 							window.location.href = "/index.html";
-						} else {
+						} else if (jqXHR.status === 400){
 							alert("Something wrong")
 						}
+					},
+					error: function(response) {
+						alert(textStatus)
 					}
 				});
 			});

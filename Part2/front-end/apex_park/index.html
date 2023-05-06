@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
 	<link rel="shortcut icon" href="images/favicon.ico" />
+
 	
 </head>
 <body>
@@ -35,8 +36,9 @@
 			<div class="ribbon">
 				<nav>
 					<ul class="profile-nav">
-						<li class="active"><a href="#" title="My Account">My Account</a></li>
-						<li><a href="login.html" title="Login">Login</a></li>
+						<li class="active" id="my-account-link"><a href="#" title="My Account">My Account</a></li>
+						<li class="login-button"><a href="login.html" title="Login">Login</a></li>
+						<li class="logout-button"><a title="Logout">Logout</a></li>
 						<li><a href="my_account.html" title="Settings">Settings</a></li>
 					</ul>
 				</nav>
@@ -45,14 +47,16 @@
 			
 			<!--search-->
 			<div class="search">
-				
+				<form id="search-form" method="get" action="search-form">
+					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" /> 
+					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
+				</form>
 			</div>
 			<!--//search-->
 			
 			<!-- contact-->
 			<div class="contact">
-				<span>24/7 Support number</span>
-				<span class="number">1- 555 - 555 - 555</span>
+				
 			</div>
 			<!--//contact -->
 		</div>
@@ -970,15 +974,13 @@
 		})(jQuery);
 	</script>
 	<script>
-		const form = document.querySelector('#main-search');
-		const searchbarURL = 'http://127.0.0.1:8000/api/data_models/search/'
-
-		console.log("load test")
-		form.addEventListener('submit', (event) =>{
+		// This scripts used to submit the form data to the backend
+		const form_search = document.querySelector('#main-search');
+		form_search.addEventListener('submit', (event) =>{
 			event.preventDefault();
 
-    		const formData = new FormData(form);
-    		fetch(searchbarURL, {
+    		const formData = new FormData(form_search);
+    		fetch('http://127.0.0.1:8000/api/data_models/search/', {
 				method: 'POST',
 				body: formData
 			})
@@ -988,7 +990,7 @@
 				}
 				else {
 					console.log("success");
-					form.submit();
+					form_search.submit();
 				}
 			})
 			.catch(error => {
@@ -996,5 +998,32 @@
 			});
 		});
 	</script>
+	
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.logout-button').click(function() {
+				console.log("Logged out")
+            	sessionStorage.removeItem('userId');
+				location.reload();
+        	});
+
+
+			checked = getCurrentUser();
+			$('#my-account-link').click(function(e) {
+				e.preventDefault();
+				//console.log("Load 4")
+				if (checked) {
+					alert("Redirecting you to the home page")
+					window.location.href = 'my_account.html';
+				} else {
+					alert("You have not yet Logged in. Please Log in first")
+					window.location.href = 'login.html';
+				}
+			});
+		});
+	</script>
+	<script src="js/startcheck.js"></script>
+
 </body>
 </html>
