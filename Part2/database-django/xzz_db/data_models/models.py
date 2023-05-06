@@ -35,8 +35,9 @@ class xzz_visitor(models.Model):
                                     default=visitor_type_choices.INDIVIDUAL,
                                     )
 
-    # class Meta:
-    #     db_table = 'xzz_visitor'
+    class Meta:
+        managed = True
+        db_table = 'xzz_visitor'
 
     def __str__(self):
         return self.visitor_name
@@ -77,12 +78,13 @@ class xzz_attraction(models.Model):
     capacity = models.DecimalField("Capacity", max_digits=5, decimal_places=0)
     # Assume in cm
     min_height = models.DecimalField(
-        "Min Height", max_digits=3, decimal_places=2)
+        "Min Height", max_digits=5, decimal_places=2)
     # Assume in minutes
-    duration = models.DecimalField("Duration", max_digits=4, decimal_places=2)
+    duration = models.DecimalField("Duration", max_digits=6, decimal_places=2)
     location = models.CharField("Location", max_length=10)
 
     class Meta:
+        managed = True
         db_table = 'xzz_attraction'
 
     def __str__(self):
@@ -108,7 +110,7 @@ class xzz_order(models.Model):
 class xzz_parking(models.Model):
     # parking_id = models.AutoField(primary_key=True)
     lot = models.CharField("Lot", max_length=10)
-    spot = models.FloatField("Spot")
+    spot = models.DecimalField("Spot", max_digits=3, decimal_places=0)
     time_in = models.DateTimeField("Time In")
     time_out = models.DateTimeField("Time Out", null=True, blank=True)
     fee = models.DecimalField("Fee", max_digits=4, decimal_places=2)
