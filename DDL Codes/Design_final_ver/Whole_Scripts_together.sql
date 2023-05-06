@@ -13,6 +13,8 @@ DROP PROCEDURE IF EXISTS populate_summary_table;
 DROP TABLE IF EXISTS summary;
 
 
+
+
 CREATE TABLE xzz_attr_visi (
     r_id          DOUBLE NOT NULL,
     r_in_time     DATETIME NOT NULL,

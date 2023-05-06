@@ -5,12 +5,22 @@ from django.utils.translation import gettext_lazy as _
 from .validators import *
 
 
+class xzz_user_login(models.Model):
+    fname = models.CharField(max_length=10)
+    lname = models.CharField(max_length=10)
+    email = models.EmailField(unique=True)
+    password = models.CharField(max_length=20)
+
+    class Meta:
+        db_table = 'xzz_user_login'
+
 # Visitor
 class xzz_visitor(models.Model):
 
     # visitor_id = models.AutoField(primary_key=True)
+    user_login = models.ForeignKey(xzz_user_login, on_delete=models.CASCADE, default=None)
     visitor_name = models.CharField("Visitor Name", max_length=60)
-    email = models.EmailField("Email")
+    email = models.EmailField("Email", unique=True)
     birth_date = models.DateTimeField("Birthday")
     phone = models.CharField("Phone", max_length=10)
     address = models.CharField("Street", max_length=60)
@@ -119,14 +129,6 @@ class xzz_search(models.Model):
     class Meta:
         db_table = 'xzz_search'
 
-class xzz_user_login(models.Model):
-    fname = models.CharField(max_length=10)
-    lname = models.CharField(max_length=10)
-    email = models.EmailField()
-    password = models.CharField(max_length=20)
-
-    class Meta:
-        db_table = 'xzz_user_login'
 # Parking
 class xzz_parking(models.Model):
     # parking_id = models.AutoField(primary_key=True)
