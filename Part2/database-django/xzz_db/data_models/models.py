@@ -29,8 +29,8 @@ class xzz_visitor(models.Model):
                                     default=visitor_type_choices.INDIVIDUAL,
                                     )
 
-    # class Meta:
-    #     db_table = 'xzz_visitor'
+    class Meta:
+        db_table = 'xzz_visitor'
 
     def __str__(self):
         return self.visitor_name
@@ -116,11 +116,17 @@ class xzz_search(models.Model):
     park_out_date = models.CharField(max_length=100, blank=True)
     park_out = models.CharField(max_length=100, blank=True)
 
+    class Meta:
+        db_table = 'xzz_search'
+
 class xzz_user_login(models.Model):
     fname = models.CharField(max_length=10)
     lname = models.CharField(max_length=10)
     email = models.EmailField()
     password = models.CharField(max_length=20)
+
+    class Meta:
+        db_table = 'xzz_user_login'
 # Parking
 class xzz_parking(models.Model):
     # parking_id = models.AutoField(primary_key=True)
