@@ -58,6 +58,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = ['http://localhost']
 AUTHENTICATION_BACKENDS = ['data_models.auth.MyAuthBackend']
 
+# enable session
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
 
 ROOT_URLCONF = 'xzz_db.urls'
 
@@ -85,9 +88,17 @@ WSGI_APPLICATION = 'xzz_db.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'djangodatabase',
+        'USER': 'root',
+        'PASSWORD': 'admin',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
+
 }
 
 

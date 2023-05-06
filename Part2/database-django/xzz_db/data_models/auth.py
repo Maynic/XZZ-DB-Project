@@ -8,8 +8,9 @@ class MyAuthBackend(BaseBackend):
 
             if password == getattr(user, 'password'):
                 #auth success
-                user.is_active = True
                 return user
+            else:
+                return False
         except xzz_user_login.DoesNotExist:
             return None
 

@@ -106,30 +106,28 @@ def SearchBarDetail(request, pk):
 #enforce login
 #Current suport POST only
 @csrf_exempt
+@api_view(['POST', 'GET'])
 def user_login(request):
+    # POST used to log in
+
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
         user = MyAuthBackend.authenticate(request, email=email, password=password)
 
         if user is not None:
-            print("Auth Success")
-            request.session['user_id'] = user.id
-            print(request.session.keys())
-            return JsonResponse({'Login': True})
-        else:
-            #auth was not success
-            print("Auth failed")
-            return JsonResponse({'Login': False})
+            if user:
+                print("Auth Success")
+                # request.session['user_id'] = user.id
+                # request.session.modified = True
 
-    elif request.method == 'GET':
-        #GET used to check if the user has logged in:
-        if request.session.keys():
-            return JsonResponse({'Login': "Loggedin"})
-        else:
-            return JsonResponse({"Login": "Not"})
+                return Response({"user_id": user.id}, status=status.HTTP_200_OK)
+            else:
+                #password not right
+                return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
+        return Response(status=status.HTTP_401_UNAUTHORIZED)
 
-@csrf_exempt
+@api_view(['POST'])
 def user_register(request):
     if request.method == 'POST':
         fname = request.POST['fname']
@@ -139,23 +137,22 @@ def user_register(request):
         user = xzz_user_login(fname=fname, lname=lname, email=email, password=password)
 
         if xzz_user_login.objects.filter(email=email).exists():
-            return JsonResponse({'Register': "Exists"})
-        user.save()
-        return JsonResponse({'Register': True})
+            return Response(status=status.HTTP_409_CONFLICT)
+        else:
+            user.save()
+            return Response(status=status.HTTP_200_OK)
 
-    return JsonResponse({'Register': False})
+    return Response(status=status.HTTP_400_BAD_REQUEST)
 
-@csrf_exempt
+@api_view(['GET'])
 def user_logout(request):
     try:
-        if 'user_id' in request.session:
-            del request.session['user_id']
-        print(request.session.keys())
-        return JsonResponse({'Logout': True})
+        return Response(status=status.HTTP_200_OK)
     except:
-        return JsonResponse({'Logout': "Something wrong"})
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['GET'])
 @api_view(['GET'])
 def user_list(request):
     if request.method == 'GET':
