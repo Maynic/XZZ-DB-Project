@@ -5,6 +5,7 @@ from rest_framework import status
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .auth import MyAuthBackend
+from .QueryOrders import FindBookingDeails
 
 from .models import *
 from .serializers import *
@@ -45,7 +46,7 @@ def visitor_detail(request, pk):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
-        visitor.delete()
+        object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
@@ -63,49 +64,42 @@ POST request will be made after checked out by customer
 """
 @api_view(['GET', 'POST'])
 def SearchBar(request):
-    if request.session.keys():
+    if request.method == 'POST':
+        print("JSON data: ", request.data)
+        # deal with data
+        # form1 is attraction
+        if request.data['radio'] == 'form1':
+            pass
+        # form1 is show
+        if request.data['radio'] == 'form2':
+            pass
+        # form3 is store
+        if request.data['radio'] == 'form3':
+            pass
+        # form4 is parking
+        if request.data['radio'] == 'form4':
+            pass
+        # placeholder
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
-    else:
-        if request.method == 'POST':
-            if request.content_type == 'application/json':
-                print("JSON data: ", request.body)
+#API for obtain user orders information
+# Or update user orders information
 
-            serializer = SearchSerializer(data=request.data)
-            if serializer.is_valid() and serializer.valid():
-                serializer.save()
-                return Response(status=status.HTTP_201_CREATED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-        if request.method == 'GET':
-            data = xzz_search.objects.all()
-
-            serializer = SearchSerializer(data, context={'request': request}, many=True)
-
-            return Response(serializer.data)
-
-@api_view(['PUT', 'DELETE'])
-def SearchBarDetail(request, pk):
-    try:
-        object = xzz_search.objects.get(pk=pk)
-    except xzz_search.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
-
-    if request.method == 'PUT':
-        serializer = SearchSerializer(object, data=request.data, context={'request': request})
-        if serializer.is_valid():
-            serializer.save()
-            return Response(status=status.HTTP_204_NO_CONTENT)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    elif request.method == 'DELETE':
-        object.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+@api_view(['GET', 'POST'])
+def BookingDetails(request):
+    #current_user = request.data['user']
+    show, park, store = FindBookingDeails('2')
+    data = {
+        'show': show,
+        'park': park,
+        'store': store
+    }
+    print(data)
+    return JsonResponse(data, status=status.HTTP_200_OK)
 
 
 #enforce login
 #Current suport POST only
-@csrf_exempt
 @api_view(['POST', 'GET'])
 def user_login(request):
     # POST used to log in
@@ -152,7 +146,6 @@ def user_logout(request):
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET'])
 @api_view(['GET'])
 def user_list(request):
     if request.method == 'GET':

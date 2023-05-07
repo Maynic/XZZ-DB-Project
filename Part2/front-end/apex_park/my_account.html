@@ -162,157 +162,26 @@
 					<!--inner navigation-->
 					<nav class="inner-nav">
 						<ul>
-							<li><a href="#MyBookings" title="My Bookings">My Bookings</a></li>
+							<li><a href="#Shows" title="Show orders">Show orders</a></li>
+							<li><a href="#Parking" title="Parking orders">Parking orders</a></li>
+							<li><a href="#Stores" title="Store orders">Store orders</a></li>
 							<li><a id="settings" href="#MySettings" title="Settings">Settings</a></li>
 						</ul>
 					</nav>
 					<!--//inner navigation-->
 					
-					<!--My Bookings-->
-					<section id="MyBookings" class="tab-content">
-						<!--booking-->
-						<article class="bookings">
-							<h2><a href="#">Best ipsum hotel</a></h2>
-							<div class="b-info">
-								<table>
-									<tr>
-										<th>Booking number</th>
-										<td>123378673755</td>
-									</tr>
-									<tr>
-										<th>Room</th>
-										<td>Twin room with balcony</td>
-									</tr>
-									<tr>
-										<th>Check-in Date</th>
-										<td>23-05-14</td>
-									</tr>
-									<tr>
-										<th>Check-out Date</th>
-										<td>30-05-14</td>
-									</tr>
-									<tr>
-										<th>Total Price:</th>
-										<td><strong>$ 55,00</strong></td>
-									</tr>
-								</table>
-							</div>
-							
-							<div class="actions">
-								<a href="#" class="gradient-button">Change booking</a>
-								<a href="#" class="gradient-button">Cancel booking</a>
-								<a href="#" class="gradient-button">View confirmation</a>
-								<a href="#" class="gradient-button">Print confirmation</a>
-							</div>
-						</article>
-						<!--//booking-->
-						
-						<!--booking-->
-						<article class="bookings">
-							<h2><a href="#">Lorem ipsum hotel and spa</a></h2>
-							<div class="b-info">
-								<table>
-									<tr>
-										<th>Booking number</th>
-										<td>3378673755</td>
-									</tr>
-									<tr>
-										<th>Room</th>
-										<td>Twin room with balcony</td>
-									</tr>
-									<tr>
-										<th>Check-in Date</th>
-										<td>23-01-12</td>
-									</tr>
-									<tr>
-										<th>Check-out Date</th>
-										<td>25-01-12</td>
-									</tr>
-									<tr>
-										<th>Total Price:</th>
-										<td><strong>$ 35,00</strong></td>
-									</tr>
-								</table>
-							</div>
-							
-							<div class="actions">
-								<a href="#" class="gradient-button">Book again</a>
-								<a href="#" class="gradient-button">Remove from list</a>
-							</div>
-						</article>
-						<!--//booking-->
-						
-						<!--booking-->
-						<article class="bookings">
-							<h2><a href="#">Lorem ipsum hotel and spa</a></h2>
-							<div class="b-info">
-								<table>
-									<tr>
-										<th>Booking number</th>
-										<td>3378673755</td>
-									</tr>
-									<tr>
-										<th>Room</th>
-										<td>Twin room with balcony</td>
-									</tr>
-									<tr>
-										<th>Check-in Date</th>
-										<td>23-01-12</td>
-									</tr>
-									<tr>
-										<th>Check-out Date</th>
-										<td>25-01-12</td>
-									</tr>
-									<tr>
-										<th>Total Price:</th>
-										<td><strong>$ 35,00</strong></td>
-									</tr>
-								</table>
-							</div>
-							
-							<div class="actions">
-								<a href="#" class="gradient-button">Book again</a>
-								<a href="#" class="gradient-button">Remove from list</a>
-							</div>
-						</article>
-						<!--//booking-->
-						
-						<!--booking-->
-						<article class="bookings">
-							<h2><a href="#">Lorem ipsum hotel and spa</a></h2>
-							<div class="b-info">
-								<table>
-									<tr>
-										<th>Booking number</th>
-										<td>3378673755</td>
-									</tr>
-									<tr>
-										<th>Room</th>
-										<td>Twin room with balcony</td>
-									</tr>
-									<tr>
-										<th>Check-in Date</th>
-										<td>23-01-12</td>
-									</tr>
-									<tr>
-										<th>Check-out Date</th>
-										<td>25-01-12</td>
-									</tr>
-									<tr>
-										<th>Total Price:</th>
-										<td><strong>$ 35,00</strong></td>
-									</tr>
-								</table>
-							</div>
-							
-							<div class="actions">
-								<a href="#" class="gradient-button">Book again</a>
-								<a href="#" class="gradient-button">Remove from list</a>
-							</div>
-						</article>
-						<!--//booking-->
+					
+					<section id="Shows" class="tab-content">
+						<div id="shows-container"></div>
 					</section>
-					<!--//My Bookings-->
+					  
+					<section id="Parking" class="tab-content">
+						<div id="parking-container"></div>
+					</section>
+					  
+					<section id="Stores" class="tab-content">
+						<div id="stores-container"></div>
+					</section>
 					
 					
 					<!--MySettings-->
@@ -552,7 +421,7 @@
 	<script type="text/javascript" src="js/jquery.uniform.min.js"></script>
 	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
-	<script scr="js/accinfo.js"></script>
+	<script src="js/displaybooking.js"></script>
 
 	<script>
 		// This scripts used to log out the user

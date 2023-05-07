@@ -973,32 +973,9 @@
 			});
 		})(jQuery);
 	</script>
-	<script>
-		// This scripts used to submit the form data to the backend
-		const form_search = document.querySelector('#main-search');
-		form_search.addEventListener('submit', (event) =>{
-			event.preventDefault();
 
-    		const formData = new FormData(form_search);
-    		fetch('http://127.0.0.1:8000/api/data_models/search/', {
-				method: 'POST',
-				body: formData
-			})
-			.then(response => {
-				if (!response.ok) {
-					console.log('Data form is not right. Not accepted by backend');
-				}
-				else {
-					console.log("success");
-					form_search.submit();
-				}
-			})
-			.catch(error => {
-				console.log(error)
-			});
-		});
-	</script>
-	
+	<script src="js/startcheck.js"></script>
+	<script src="js/searchvalid.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -1012,18 +989,53 @@
 			checked = getCurrentUser();
 			$('#my-account-link').click(function(e) {
 				e.preventDefault();
-				//console.log("Load 4")
 				if (checked) {
-					alert("Redirecting you to the home page")
 					window.location.href = 'my_account.html';
 				} else {
-					alert("You have not yet Logged in. Please Log in first")
 					window.location.href = 'login.html';
 				}
 			});
 		});
 	</script>
-	<script src="js/startcheck.js"></script>
+
+	<script>
+		// This scripts used to submit the form data to the backend
+		const form_search = document.querySelector('#main-search');
+		form_search.addEventListener('submit', (event) =>{
+			event.preventDefault();
+    		const formData = new FormData(form_search);
+
+			const isFormValid = valid(formData);
+			if(!isFormValid){
+				console.log("Invalid search form, do not send to backend")
+				return;
+			}
+
+			isLog = sessionStorage.getItem('userId');
+			
+			if(isLog === null){
+				alert("To use Search Bar you have to log in first!")
+				return;
+			}
+
+    		fetch('http://127.0.0.1:8000/api/data_models/search/', {
+				method: 'POST',
+				body: formData
+			})
+			.then(response => {
+				if (!response.ok) {
+					console.log('Form is not valid. Not accepted by backend');
+				}
+				else {
+					console.log("success");
+					form_search.submit();
+				}
+			})
+			.catch(error => {
+				console.log(error)
+			});
+		});
+	</script>
 
 </body>
 </html>

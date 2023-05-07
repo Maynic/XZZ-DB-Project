@@ -4,7 +4,6 @@ from django.core.validators import RegexValidator
 from django.utils.translation import gettext_lazy as _
 from .validators import *
 
-
 class xzz_user_login(models.Model):
     fname = models.CharField(max_length=10)
     lname = models.CharField(max_length=10)
@@ -12,13 +11,13 @@ class xzz_user_login(models.Model):
     password = models.CharField(max_length=20)
 
     class Meta:
+        managed = True
         db_table = 'xzz_user_login'
 
 # Visitor
 class xzz_visitor(models.Model):
 
     # visitor_id = models.AutoField(primary_key=True)
-    user_login = models.ForeignKey(xzz_user_login, on_delete=models.CASCADE, default=None)
     visitor_name = models.CharField("Visitor Name", max_length=60)
     email = models.EmailField("Email", unique=True)
     birth_date = models.DateTimeField("Birthday")
@@ -110,26 +109,26 @@ class xzz_order(models.Model):
         return f"Order {self.order_id}"
 
 
-class xzz_search(models.Model):
-    radio = models.CharField(max_length=100)
-    ticket_date = models.CharField(max_length=100, blank=True)
-    ticket_c = models.CharField(max_length=100, blank=True)
-    ticket_a = models.CharField(max_length=100, blank=True)
-    ticket_s = models.CharField(max_length=100, blank=True)
-    show_select = models.CharField(max_length=100, blank=True)
-    show_date = models.CharField(max_length=100, blank=True)
-    show_c = models.CharField(max_length=100, blank=True)
-    show_a = models.CharField(max_length=100, blank=True)
-    show_s = models.CharField(max_length=100, blank=True)
-    store_category = models.CharField(max_length=100, blank=True)
-    park_place = models.CharField(max_length=100, blank=True)
-    park_in_date = models.CharField(max_length=100, blank=True)
-    park_in = models.CharField(max_length=100, blank=True)
-    park_out_date = models.CharField(max_length=100, blank=True)
-    park_out = models.CharField(max_length=100, blank=True)
-
-    class Meta:
-        db_table = 'xzz_search'
+# class xzz_search(models.Model):
+#     radio = models.CharField(max_length=100)
+#     ticket_date = models.CharField(max_length=100, blank=True)
+#     ticket_c = models.CharField(max_length=100, blank=True)
+#     ticket_a = models.CharField(max_length=100, blank=True)
+#     ticket_s = models.CharField(max_length=100, blank=True)
+#     show_select = models.CharField(max_length=100, blank=True)
+#     show_date = models.CharField(max_length=100, blank=True)
+#     show_c = models.CharField(max_length=100, blank=True)
+#     show_a = models.CharField(max_length=100, blank=True)
+#     show_s = models.CharField(max_length=100, blank=True)
+#     store_category = models.CharField(max_length=100, blank=True)
+#     park_place = models.CharField(max_length=100, blank=True)
+#     park_in_date = models.CharField(max_length=100, blank=True)
+#     park_in = models.CharField(max_length=100, blank=True)
+#     park_out_date = models.CharField(max_length=100, blank=True)
+#     park_out = models.CharField(max_length=100, blank=True)
+#
+#     class Meta:
+#         db_table = 'xzz_search'
 
 # Parking
 class xzz_parking(models.Model):
@@ -148,7 +147,7 @@ class xzz_parking(models.Model):
         verbose_name_plural = 'Xzz Parkings'
 
     def __str__(self):
-        return f"Parking {self.parking_id}"
+        return f"Parking {self.id}"
 
 
 # Payment
@@ -316,8 +315,7 @@ class xzz_orde_show(models.Model):
         verbose_name_plural = 'Xzz Orde Shows'
 
     def __str__(self):
-        return f"Order Show {self.os_id}"
-    
+        return f"Order Show {self.id}"
 
 
 class xzz_orde_stor(models.Model):

@@ -8,32 +8,32 @@ class VisitorSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class SearchSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = xzz_search
-        fields = '__all__'
-
-    def valid(self):
-        if self.validated_data['radio'] == "form1" and (self.validated_data['ticket_date'] == "") or \
-                (self.validated_data['ticket_date'] != "" and
-                                                        (self.validated_data['ticket_c'] == "" and
-                                                        self.validated_data['ticket_a'] == "" and
-                                                        self.validated_data['ticket_s'] == "")
-        ):
-            return False
-        elif self.validated_data['radio'] == "form2" and (self.validated_data['show_date'] == "") or \
-                (self.validated_data['show_date'] != "" and
-                                                        (self.validated_data['show_c'] == "" and
-                                                        self.validated_data['show_a'] == "" and
-                                                        self.validated_data['show_s'] == "")
-        ):
-            return False
-        elif self.validated_data['radio'] == "form3" and (self.validated_data['store_category'] == "Select choice"):
-            return False
-        elif self.validated_data['radio'] == "form4" and (self.validated_data['park_place'] == "Select choice"):
-            return False
-        return True
+# class SearchSerializer(serializers.ModelSerializer):
+#
+#     class Meta:
+#         model = xzz_search
+#         fields = '__all__'
+#
+    # def valid(self):
+    #     if self.validated_data['radio'] == "form1" and (self.validated_data['ticket_date'] == "") or \
+    #             (self.validated_data['ticket_date'] != "" and
+    #                                                     (self.validated_data['ticket_c'] == "" and
+    #                                                     self.validated_data['ticket_a'] == "" and
+    #                                                     self.validated_data['ticket_s'] == "")
+    #     ):
+    #         return False
+    #     elif self.validated_data['radio'] == "form2" and (self.validated_data['show_date'] == "") or \
+    #             (self.validated_data['show_date'] != "" and
+    #                                                     (self.validated_data['show_c'] == "" and
+    #                                                     self.validated_data['show_a'] == "" and
+    #                                                     self.validated_data['show_s'] == "")
+    #     ):
+    #         return False
+    #     elif self.validated_data['radio'] == "form3" and (self.validated_data['store_category'] == "Select choice"):
+    #         return False
+    #     elif self.validated_data['radio'] == "form4" and (self.validated_data['park_place'] == "Select choice"):
+    #         return False
+    #     return True
 
 class UserSerializer(serializers.ModelSerializer):
 

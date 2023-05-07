@@ -1,12 +1,12 @@
 from django.utils import timezone
-from faker import Faker
+# from faker import Faker
 from data_models.models import *
 from decimal import Decimal
 from random import randint, uniform
 # UPDATE sqlite_sequence SET seq = 0 WHERE sqlite_sequence.name = "xzz_visitor";
 # exec(open('/Users/maynic/Developer/XZZ-DB-Project/XZZ-DB-Project/Part2/database-django/xzz_db/data_models/datamocker.py').read())
 
-fake = Faker()
+# fake = Faker()
 
 # for _ in range(25):
 #     fake_name = fake.name()
@@ -57,26 +57,26 @@ visitor_data = [
     (24, 'Samantha Turner', '1945-01-10', 'Individual', '369 Maple Ave', 'Somestate', 'NJ', 67890, 'samantha.turner@example.com', 5554567890),
     (25, 'Alexander Phillips', '1960-04-15', 'Individual', '963 Pine St', 'Anycity', 'MD', 78901, 'alexander.phillips@example.com', 5555678901)
 ]
-# for data in visitor_data:
-#     if data[3] == 'Individual':
-#         type = 'IN'
-#     if data[3] == 'Group':
-#         type = 'GR'
-#     if data[3] == 'Member':
-#         type = 'ME'
-#     if data[3] == 'Student':
-#         type = 'ST'
-#     xzz_visitor.objects.create(
-#         visitor_name=data[1],
-#         email=data[8],
-#         birth_date=data[2],
-#         phone=data[9],
-#         address=data[4],
-#         city=data[5],
-#         state=data[6],
-#         zip=data[7],
-#         visitor_type=type,
-#     )
+for data in visitor_data:
+    if data[3] == 'Individual':
+        type = 'IN'
+    if data[3] == 'Group':
+        type = 'GR'
+    if data[3] == 'Member':
+        type = 'ME'
+    if data[3] == 'Student':
+        type = 'ST'
+    xzz_visitor.objects.create(
+        visitor_name=data[1],
+        email=data[8],
+        birth_date=data[2],
+        phone=data[9],
+        address=data[4],
+        city=data[5],
+        state=data[6],
+        zip=data[7],
+        visitor_type=type,
+    )
 
 attraction_data = [ 
     (1, 'The Beast', 'The longest wooden roller coaster in the world', 'RC', 'OP', 36, 137, 4, 'Lot A'),
@@ -109,18 +109,18 @@ attraction_data = [
 
 
 
-# for data in attraction_data:
-#     # print(data)
-#     xzz_attraction.objects.create(
-#         attraction_name=data[1],
-#         attraction_description=data[2],
-#         attraction_type=data[3],
-#         attraction_status=data[4],
-#         capacity=data[5],
-#         min_height=data[6],
-#         duration=data[7],
-#         location=data[8],
-#     )
+for data in attraction_data:
+    # print(data)
+    xzz_attraction.objects.create(
+        attraction_name=data[1],
+        attraction_description=data[2],
+        attraction_type=data[3],
+        attraction_status=data[4],
+        capacity=data[5],
+        min_height=data[6],
+        duration=data[7],
+        location=data[8],
+    )
 
 
 show_data = [
@@ -151,17 +151,17 @@ show_data = [
   (25, 'The Glass Menagerie', 'A poignant drama about a family struggling to come to terms with their past and their present', 'drama', '2023-04-29 20:00:00', '2023-04-29 22:30:00', 'Yes', 85.00)
 ]
 
-# for data in show_data:
-#     show = xzz_show(
-#         show_name=data[1],
-#         show_description=data[2],
-#         show_type=xzz_show.ShowTypeChoices[data[3].upper()],
-#         start_time=data[4],
-#         end_time=data[5],
-#         show_accessible=xzz_show.ShowAccessibleChoices[data[6].upper()],
-#         show_price=data[7]
-#     )
-#     show.save()
+for data in show_data:
+    show = xzz_show(
+        show_name=data[1],
+        show_description=data[2],
+        show_type=xzz_show.ShowTypeChoices[data[3].upper()],
+        start_time=data[4],
+        end_time=data[5],
+        show_accessible=xzz_show.ShowAccessibleChoices[data[6].upper()],
+        show_price=data[7]
+    )
+    show.save()
 
 
 store_data = [
@@ -192,12 +192,12 @@ store_data = [
   (25, 'Adidas', 'Apparels')
 ]
 
-# for data in store_data:
-#     store = xzz_store(
-#         store_name=data[1],
-#         category=data[2],
-#     )
-#     store.save()
+for data in store_data:
+    store = xzz_store(
+        store_name=data[1],
+        category=data[2],
+    )
+    store.save()
 
 order_data = [
   (1, '2023-04-01 12:00:00', 1),
@@ -227,12 +227,12 @@ order_data = [
   (25, '2023-04-09 11:00:00', 5)
 ]
 
-# for data in order_data:
-#     order = xzz_order(
-#         order_date=data[1],
-#         xzz_visitor=xzz_visitor.objects.get(id=data[2]),
-#     )
-#     order.save()
+for data in order_data:
+    order = xzz_order(
+        order_date=data[1],
+        xzz_visitor=xzz_visitor.objects.get(id=data[2]),
+    )
+    order.save()
 
 
 
@@ -264,17 +264,17 @@ payment_data = [
   (25, 'Cash', 100.00, None, None, None, None, 5)
 ]
 
-# for data in payment_data:
-#     payment = xzz_payment(
-#         payment_method=data[1],
-#         payment_amount=data[2],
-#         name_on_card=data[3],
-#         card_number=data[4],
-#         expiration_date=data[5],
-#         cvv=data[6],
-#         order=xzz_order.objects.get(order_id=data[7]),
-#     )
-#     payment.save()
+for data in payment_data:
+    payment = xzz_payment(
+        payment_method=data[1],
+        payment_amount=data[2],
+        name_on_card=data[3],
+        card_number=data[4],
+        expiration_date=data[5],
+        cvv=data[6],
+        order=xzz_order.objects.get(order_id=data[7]),
+    )
+    payment.save()
 
 
 ticket_data = [
@@ -305,15 +305,15 @@ ticket_data = [
   (25, 'Online', '2023-04-09 11:00:00', 50.00, 25, 5)
 ]
 
-# for data in ticket_data:
-#     ticket = xzz_ticket(
-#         ticket_method=data[1],
-#         visit_date=data[2],
-#         ticket_price=data[3],
-#         order=xzz_order.objects.get(order_id=data[4]),
-#         visitor=xzz_visitor.objects.get(id=data[5]),
-#     )
-#     ticket.save()
+for data in ticket_data:
+    ticket = xzz_ticket(
+        ticket_method=data[1],
+        visit_date=data[2],
+        ticket_price=data[3],
+        order=xzz_order.objects.get(order_id=data[4]),
+        visitor=xzz_visitor.objects.get(id=data[5]),
+    )
+    ticket.save()
 
 parking_data = [
   (1, 'Lot A', 1, '2023-04-01 10:00:00', '2023-04-01 15:30:00', 10.00, 6),
@@ -343,16 +343,16 @@ parking_data = [
   (25, 'Lot A', 25, '2023-04-09 10:00:00', '2023-04-09 15:00:00', 10.00, 7)
 ]
 
-# for data in parking_data:
-#     parking = xzz_parking(
-#         lot=data[1],
-#         spot=data[2],
-#         time_in=data[3],
-#         time_out=data[4], 
-#         fee=data[5],
-#         order=xzz_order.objects.get(order_id=data[6]),
-#     )
-#     parking.save()
+for data in parking_data:
+    parking = xzz_parking(
+        lot=data[1],
+        spot=data[2],
+        time_in=data[3],
+        time_out=data[4],
+        fee=data[5],
+        order=xzz_order.objects.get(order_id=data[6]),
+    )
+    parking.save()
 
 Attraction_Visit = [
   (1, '2023-04-01 10:00:00', 3, 6),
@@ -392,13 +392,13 @@ Attraction_Visit = [
   (35, '2023-04-01 15:30:00', 10, 16)
 ]
 
-# for data in Attraction_Visit:
-#     attr_visi = xzz_attr_visi(
-#         r_in_time=data[1],
-#         visitor=xzz_visitor.objects.get(id=data[2]),
-#         attraction=xzz_attraction.objects.get(id=data[3]),
-#     )
-#     attr_visi.save()
+for data in Attraction_Visit:
+    attr_visi = xzz_attr_visi(
+        r_in_time=data[1],
+        visitor=xzz_visitor.objects.get(id=data[2]),
+        attraction=xzz_attraction.objects.get(id=data[3]),
+    )
+    attr_visi.save()
 
 
 show_order = [
@@ -439,12 +439,12 @@ show_order = [
   (35, 1, 13)
 ]
 
-# for data in show_order:
-#     orde_show = xzz_orde_show(
-#         show=xzz_show.objects.get(id=data[1]),
-#         order=xzz_order.objects.get(order_id=data[2]),
-#     )
-#     orde_show.save()
+for data in show_order:
+    orde_show = xzz_orde_show(
+        show=xzz_show.objects.get(id=data[1]),
+        order=xzz_order.objects.get(order_id=data[2]),
+    )
+    orde_show.save()
 
 store_order_data = [
 (1, 'Cheeseburger', 'Juicy beef patty topped with melted cheese and served on a toasted bun with lettuce and tomato', 9.99, 3, 14),
@@ -484,12 +484,12 @@ store_order_data = [
 (35, 'Margarita', 'Classic tequila-based cocktail made with lime juice and triple sec, served with salt on the rim', 7.99, 3, 9)
 ]
 
-# for data in store_order_data:
-#     store_order = xzz_orde_stor(
-#         menu_item_name=data[1],
-#         menu_item_description=data[2],
-#         menu_item_unit_price=data[3],
-#         store=xzz_store.objects.get(id=data[4]),
-#         order=xzz_order.objects.get(order_id=data[5]),
-#     )
-#     store_order.save()
+for data in store_order_data:
+    store_order = xzz_orde_stor(
+        menu_item_name=data[1],
+        menu_item_description=data[2],
+        menu_item_unit_price=data[3],
+        store=xzz_store.objects.get(id=data[4]),
+        order=xzz_order.objects.get(order_id=data[5]),
+    )
+    store_order.save()
