@@ -34,9 +34,10 @@
 			<div class="ribbon">
 				<nav>
 					<ul class="profile-nav">
-						<li class="active"><a href="#" title="My Account">My Account</a></li>
-						<li><a href="#" id="logout-btn" title="Logout">Log out</a></li>
-						<li><a href="my_account.html" title="AccountDetails">Account Details</a></li>
+						<li class="active" id="my-account-link"><a href="#" title="My Account">My Account</a></li>
+						<li class="login-button"><a href="login.html" title="Login">Login</a></li>
+						<li class="logout-button"><a title="Logout">Logout</a></li>
+						<li><a href="my_account.html" title="Settings">Settings</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -68,8 +69,8 @@
 					<!-- <li><a href="flights.html" title="Flights">Flights</a></li> -->
 
 					<!-- hotel-->
-					<li><a href="show.html" title="Show">Show</a>
-						<ul>
+					<li><a href="shows.html" title="Show">Shows</a>
+						<!-- <ul>
 							<li><a href="#">Book for new show</a></li>
 							<li><a href="#">Check my ticket status</a>
 								<ul>
@@ -77,66 +78,12 @@
 									<li><a href="#">By show name</a></li>
 								</ul>
 							</li>
-						</ul>
+						</ul> -->
 					</li>
 
 
 					<li><a href="store.html" title="store">Store</a></li>
 					<li><a href="Parking.html" title="Parking">Parking</a></li>
-
-					<li class="has-mega"><a href="#" title="Pages">Pages</a>
-						<ul class="mega">
-							<li>
-								<div class="row">
-									<div class="one-fifth">
-										<p>COMMON PAGES</p>
-										<ul>
-											<li><a href="page_left_sidebar.html" title="Page with left sidebar">Page with left sidebar</a></li>
-											<li><a href="page_right_sidebar.html" title="Page with right sidebar">Page with right sidebar</a></li>
-											<li><a href="page_both_sidebars.html" title="Page with both sidebars">Page with both sidebars</a></li>
-											<li><a href="page_no_sidebars.html" title="Page with no sidebars">Page with no sidebars</a></li>
-										</ul>
-									</div>
-									<div class="one-fifth">
-										<p>LISTING LAYOUTS</p>
-										<ul>
-											<li><a href="hotels_2col.html" title="Listing 2 columns">Listing 2 columns</a></li>
-											<li><a href="hotels_3col.html" title="Listing 3 columns">Listing 3 columns</a></li>
-											<li><a href="hotels.html" title="Listing 4 columns">Listing 4 columns</a></li>
-											<li><a href="hotel.html" title="Single listing">Single listing</a></li>
-										</ul>
-									</div>
-									<div class="one-fifth">
-										<p>USER PAGES</p>
-										<ul>
-											<li><a href="login.html" title="Login">Login</a></li>
-											<li><a href="register.html" title="Register">Register</a></li>
-											<li><a href="my_account.html" title="My Account">My account</a></li>
-											<li><a href="error.html" title="Error 404">Error 404</a></li>
-										</ul>
-									</div>
-									<div class="one-fifth">
-										<p>SPECIALTY PAGES</p>
-										<ul>
-											<li><a href="search_results.html" title="Search results hotels">Search results hotels</a></li>
-											<li><a href="search_results_flights.html" title="Search results flights">Search results flights</a></li>
-											<li><a href="get_inspired.html" title="Get inspired">Get inspired</a></li>
-											<li><a href="get_inspired_results.html" title="Get inspired results">Get inspired results</a></li>
-										</ul>
-									</div>
-									<div class="one-fifth">
-										<p>&nbsp;</p>
-										<ul>
-											<li><a href="booking-step1.html" title="Booking step 1">Booking step 1</a></li>
-											<li><a href="booking-step2.html" title="Booking step 2">Booking step 2</a></li>
-											<li><a href="booking-step3.html" title="Booking step 3">Booking step 3</a></li>
-											<li><a href="loading.html" title="Loading">Loading</a></li>
-										</ul>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</li>
 					<li><a href="contact.html" title="Contact">Contact</a></li>
 				</ul>
 			</div>
@@ -190,8 +137,9 @@
 							<h2>Personal details</h2>
 							<table>
 								<tr>
-									<th>First name:</th>
-									<td>John
+									<th>Name:</th>
+									<td>
+										<span id="nameFieldText"></span>
 										<!--edit fields-->
 										<div class="edit_field" id="field1">
 											<label for="new_name">Your new name:</label>
@@ -204,12 +152,13 @@
 									<td><a href="#field1" class="gradient-button edit">Edit</a></td>
 								</tr>
 								<tr>
-									<th>Last name:</th>
-									<td>Livingston
+									<th>E-mail address: </th>
+									<td>
+										<span id="emailFieldText"></span>
 										<!--edit fields-->
 										<div class="edit_field" id="field2">
-											<label for="new_last_name">Your new name:</label>
-											<input type="text" id="new_last_name"/>
+											<label for="new_email">Your new email:</label>
+											<input type="text" id="new_email"/>
 											<input type="submit" value="save" class="gradient-button" id="submit2"/>
 											<a href="#">Cancel</a>
 										</div>
@@ -218,12 +167,13 @@
 									<td><a href="#field2" class="gradient-button edit">Edit</a></td>
 								</tr>
 								<tr>
-									<th>E-mail address: </th>
-									<td>mail@google.com
+									<th>Password: </th>
+									<td>
+										<span id="passwordFieldText">********</span>
 										<!--edit fields-->
 										<div class="edit_field" id="field3">
-											<label for="new_email">Your new email:</label>
-											<input type="text" id="new_email"/>
+											<label for="new_password">Your new password:</label>
+											<input type="password" id="new_password"/>
 											<input type="submit" value="save" class="gradient-button" id="submit3"/>
 											<a href="#">Cancel</a>
 										</div>
@@ -232,12 +182,13 @@
 									<td><a href="#field3" class="gradient-button edit">Edit</a></td>
 								</tr>
 								<tr>
-									<th>Password: </th>
-									<td>*********
+									<th>Street Address and number:</th>
+									<td>
+										<span id="addressFieldText"></span>
 										<!--edit fields-->
 										<div class="edit_field" id="field4">
-											<label for="new_password">Your new password:</label>
-											<input type="password" id="new_password"/>
+											<label for="new_address">Your new address:</label>
+											<input type="text" id="new_address"/>
 											<input type="submit" value="save" class="gradient-button" id="submit4"/>
 											<a href="#">Cancel</a>
 										</div>
@@ -245,13 +196,15 @@
 									</td>
 									<td><a href="#field4" class="gradient-button edit">Edit</a></td>
 								</tr>
+								
 								<tr>
-									<th>Street Address and number:</th>
-									<td>Some street name 55
+									<th>City: </th>
+									<td>
+										<span id="cityFieldText"></span>
 										<!--edit fields-->
 										<div class="edit_field" id="field5">
-											<label for="new_address">Your new address:</label>
-											<input type="text" id="new_address"/>
+											<label for="new_city">Your new city:</label>
+											<input type="text" id="new_city"/>
 											<input type="submit" value="save" class="gradient-button" id="submit5"/>
 											<a href="#">Cancel</a>
 										</div>
@@ -260,13 +213,15 @@
 									<td><a href="#field5" class="gradient-button edit">Edit</a></td>
 								</tr>
 								
+
 								<tr>
-									<th>Town / City: </th>
-									<td>Sunnytown
+									<th>State:</th>
+									<td>
+										<span id="stateFieldText"></span>
 										<!--edit fields-->
 										<div class="edit_field" id="field6">
-											<label for="new_city">Your new city:</label>
-											<input type="text" id="new_city"/>
+											<label for="new_state">Your new state:</label>
+											<input type="text" id="new_state"/>
 											<input type="submit" value="save" class="gradient-button" id="submit6"/>
 											<a href="#">Cancel</a>
 										</div>
@@ -274,10 +229,11 @@
 									</td>
 									<td><a href="#field6" class="gradient-button edit">Edit</a></td>
 								</tr>
-								
+
 								<tr>
 									<th>ZIP code:</th>
-									<td>9500 - 100
+									<td>
+										<span id="zipFieldText">********</span>
 										<!--edit fields-->
 										<div class="edit_field" id="field7">
 											<label for="new_zip">Your new ZIP code:</label>
@@ -290,20 +246,6 @@
 									<td><a href="#field7" class="gradient-button edit">Edit</a></td>
 								</tr>
 								
-								<tr>
-									<th>Country:</th>
-									<td>Neverland
-										<!--edit fields-->
-										<div class="edit_field" id="field8">
-											<label for="new_country">Your new country:</label>
-											<input type="text" id="new_country"/>
-											<input type="submit" value="save" class="gradient-button" id="submit8"/>
-											<a href="#">Cancel</a>
-										</div>
-										<!--//edit fields-->
-									</td>
-									<td><a href="#field8" class="gradient-button edit">Edit</a></td>
-								</tr>
 							</table>
 
 						</article>
@@ -415,13 +357,28 @@
 		</div>
 	</footer>
 	<!---footer-->
-	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/jquery.uniform.min.js"></script>
 	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script src="js/displaybooking.js"></script>
+	
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('.login-button').hide();
+			$('.logout-button').show();
+
+			$('.logout-button').click(function() {
+				console.log("Logged out")
+            	sessionStorage.removeItem('userId');
+				window.location.href = "/index.html";
+        	});
+
+		});
+	</script>
 
 	<script>
 		// This scripts used to log out the user

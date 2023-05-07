@@ -84,22 +84,22 @@
 			//HEADER RIBBON NAVIGATION
 			$('.ribbon li').hide();
 			$('.ribbon li.active').show();
-			$('.ribbon li a').click(function() {
-				$('.ribbon li').hide();
-				if ($(this).parent().parent().hasClass('open'))
-					$(this).parent().parent().removeClass('open');
-				else {
-					$('.ribbon ul').removeClass('open');
-					$(this).parent().parent().addClass('open');
-				}
-				$(this).parent().siblings().each(function() {
-					$(this).removeClass('active');
-				});
-				$(this).parent().attr('class', 'active'); 
-				$('.ribbon li.active').show();
+			// $('.ribbon li a').click(function() {
+			// 	$('.ribbon li').hide();
+			// 	if ($(this).parent().parent().hasClass('open'))
+			// 		$(this).parent().parent().removeClass('open');
+			// 	else {
+			// 		$('.ribbon ul').removeClass('open');
+			// 		$(this).parent().parent().addClass('open');
+			// 	}
+			// 	$(this).parent().siblings().each(function() {
+			// 		$(this).removeClass('active');
+			// 	});
+			// 	$(this).parent().attr('class', 'active'); 
+			// 	$('.ribbon li.active').show();
 				
-				return true;
-			});
+			// 	return true;
+			// });
 			
 			//TABS
 			$('.tab-content').hide().first().show();
@@ -129,9 +129,9 @@
 					
 			
 			//LOGIN & REGISTER LIGHTBOX
-			// $('.close').click(function() {
-			// 	$('.lightbox').hide();
-			// });
+			$('.close').click(function() {
+				$('.lightbox').hide();
+			});
 			
 			//MY ACCOUNT EDIT FIELDS
 			$('.edit_field').hide();
@@ -141,6 +141,36 @@
 			});
 			$('.edit_field a,.edit_field input[type=submit]').click(function() {
 				$('.edit_field').hide(400);
+			});
+
+			$.ajax({
+				url: 'http://127.0.0.1:8000/api/data_models/setting_details/' + sessionStorage.getItem('userId'),
+				type: 'GET',
+				dataType: 'json',
+				success: function (data) {
+					var personalInfo = data;
+					console.log(personalInfo)
+					var nameField = document.querySelector('#MySettings #nameFieldText');
+				  	var emailField = document.querySelector('#MySettings #emailFieldText');
+				  	var passwordField = document.querySelector('#MySettings #passwordFieldText');
+				  	var addressField = document.querySelector('#MySettings #addressFieldText');
+				  	var cityField = document.querySelector('#MySettings #cityFieldText');
+				  	var stateField = document.querySelector('#MySettings #stateFieldText');
+				  	var zipField = document.querySelector('#MySettings #zipFieldText');
+					console.log("nameField", nameField)
+					console.log("nameField conext", nameField.textContent)
+		  
+				  	nameField.textContent = personalInfo['name'];
+				  	emailField.textContent = personalInfo['email'];
+				  	//passwordField.textContent = "************"//personalInfo['password'];
+				  	addressField.textContent = personalInfo['address'];
+				  	cityField.textContent = personalInfo['city'];
+				  	stateField.textContent = personalInfo['state'];
+				  	zipField.textContent = personalInfo['zip'];
+				},
+				error: function (xhr, status, error) {
+					console.log(xhr.responseText);
+				}
 			});
 			
 			//CONTACT FORM
