@@ -86,9 +86,9 @@ def SearchBar(request):
 # Or update user orders information
 
 @api_view(['GET', 'POST'])
-def BookingDetails(request):
+def BookingDetails(request, userid):
     #current_user = request.data['user']
-    show, park, store = FindBookingDeails('2')
+    show, park, store = FindBookingDeails(userid)
     data = {
         'show': show,
         'park': park,

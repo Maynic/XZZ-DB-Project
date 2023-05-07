@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/data_models/search/', views.SearchBar),
     # path('api/data_models/search/<int:pk>', views.SearchBarDetail),
-    path('api/data_models/booking_details/', views.BookingDetails),
+    path('api/data_models/booking_details/<int:userid>', views.BookingDetails),
 
     path('api/data_models/user_login/', views.user_login),
 
