@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .auth import MyAuthBackend
 import json
-from .Query import *
+from .Helper import *
 
 from .models import *
 from .serializers import *
@@ -135,12 +135,25 @@ def user_register(request):
         lname = request.POST['lname']
         email = request.POST['email']
         password = request.POST['password']
-        user = xzz_user_login(fname=fname, lname=lname, email=email, password=password)
 
         if xzz_user_login.objects.filter(email=email).exists():
             return Response(status=status.HTTP_409_CONFLICT)
         else:
+            visitor = xzz_visitor()
+            visitor.visitor_name = fname + lname
+            visitor.email = email
+            visitor.birth_date = datetime(year=1970, month=1, day=1)
+            visitor.phone = '0000000000'
+            visitor.address = 'NA'
+            visitor.city = 'NA'
+            visitor.state = 'NA'
+            visitor.zip = 'NA'
+            visitor.visitor_type = 'NA'
+            visitor.save()
+
+            user = xzz_user_login(fname=fname, lname=lname, email=email, password=password, visitor=visitor)
             user.save()
+
             return Response(status=status.HTTP_200_OK)
 
     return Response(status=status.HTTP_400_BAD_REQUEST)

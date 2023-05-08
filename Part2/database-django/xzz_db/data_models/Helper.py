@@ -109,15 +109,15 @@ def FindBookingDeails(id):
     return ticket_returned, show_returned, park_returned, store_returned
 
 def PersonalInfo(id):
-    user_login = get_object_or_404(xzz_user_login, id=id)
-    email = user_login.email
+    user_visit = get_object_or_404(xzz_user_login, id=id)
+    visitor_id = user_visit.visitor_id
 
-    visitor = get_object_or_404(xzz_visitor, email=email)
+    visitor = get_object_or_404(xzz_visitor, pk=visitor_id)
 
     personalInfo = {}
     personalInfo['name'] = visitor.visitor_name
     personalInfo['email'] = visitor.email
-    personalInfo['password'] = make_password(user_login.password)
+    personalInfo['password'] = make_password(user_visit.password)
     personalInfo['address'] = visitor.address
     personalInfo['city'] = visitor.city
     personalInfo['state'] = visitor.state
@@ -178,6 +178,20 @@ def ComputedPrice(type, data):
     # This function mainly calculate the price
     # data depends on type of
 
+####
+####
+#### helper functions to save (insert) record to database:
+def SaveNewVisitor(user):
+    visitor = xzz_visitor()
+    visitor.visitor_name = user.fname + user.lname
+    visitor.email = user.email
+    visitor.birth_date = datetime(year=1970, month=1, day=1)
+    visitor.phone = '0000000000'
+    visitor.address = 'NA'
+    visitor.city = 'NA'
+    visitor.state = 'NA'
+    visitor.zip = 'NA'
+    visitor.visitor_type = 'NA'
+    visitor.save()
 
-def SaveNewVisitor():
 
