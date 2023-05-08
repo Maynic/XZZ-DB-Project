@@ -142,36 +142,36 @@
 			$('.edit_field a,.edit_field input[type=submit]').click(function() {
 				$('.edit_field').hide(400);
 			});
-
-			$.ajax({
-				url: 'http://127.0.0.1:8000/api/data_models/setting_details/' + sessionStorage.getItem('userId'),
-				type: 'GET',
-				dataType: 'json',
-				success: function (data) {
-					var personalInfo = data;
-					console.log(personalInfo)
-					var nameField = document.querySelector('#MySettings #nameFieldText');
-				  	var emailField = document.querySelector('#MySettings #emailFieldText');
-				  	var passwordField = document.querySelector('#MySettings #passwordFieldText');
-				  	var addressField = document.querySelector('#MySettings #addressFieldText');
-				  	var cityField = document.querySelector('#MySettings #cityFieldText');
-				  	var stateField = document.querySelector('#MySettings #stateFieldText');
-				  	var zipField = document.querySelector('#MySettings #zipFieldText');
-					console.log("nameField", nameField)
-					console.log("nameField conext", nameField.textContent)
+			
+			if (sessionStorage.getItem('userId') !== null && window.location.href.includes('my_account.html')){
+				$.ajax({
+					url: 'http://127.0.0.1:8000/api/data_models/setting_details/' + sessionStorage.getItem('userId'),
+					type: 'GET',
+					dataType: 'json',
+					success: function (data) {
+						var personalInfo = data;
+						var nameField = document.querySelector('#MySettings #nameFieldText');
+				  		var emailField = document.querySelector('#MySettings #emailFieldText');
+				  		var passwordField = document.querySelector('#MySettings #passwordFieldText');
+				  		var addressField = document.querySelector('#MySettings #addressFieldText');
+				  		var cityField = document.querySelector('#MySettings #cityFieldText');
+				  		var stateField = document.querySelector('#MySettings #stateFieldText');
+				  		var zipField = document.querySelector('#MySettings #zipFieldText');
+						
 		  
-				  	nameField.textContent = personalInfo['name'];
-				  	emailField.textContent = personalInfo['email'];
-				  	//passwordField.textContent = "************"//personalInfo['password'];
-				  	addressField.textContent = personalInfo['address'];
-				  	cityField.textContent = personalInfo['city'];
-				  	stateField.textContent = personalInfo['state'];
-				  	zipField.textContent = personalInfo['zip'];
-				},
-				error: function (xhr, status, error) {
-					console.log(xhr.responseText);
-				}
-			});
+				  		nameField.textContent = personalInfo['name'];
+				  		emailField.textContent = personalInfo['email'];
+				  		//passwordField.textContent = "************"//personalInfo['password'];
+				  		addressField.textContent = personalInfo['address'];
+				  		cityField.textContent = personalInfo['city'];
+				  		stateField.textContent = personalInfo['state'];
+				  		zipField.textContent = personalInfo['zip'];
+					},
+					error: function (xhr, status, error) {
+						console.log(xhr.responseText);
+					}
+				});
+			}
 			
 			//CONTACT FORM
 			$('#contactform').submit(function(){
