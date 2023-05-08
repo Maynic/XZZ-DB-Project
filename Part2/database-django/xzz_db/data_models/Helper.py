@@ -178,3 +178,6 @@ def ComputedPrice(type, data):
     # This function mainly calculate the price
     # data depends on type of
 
+
+def SaveNewVisitor():
+
