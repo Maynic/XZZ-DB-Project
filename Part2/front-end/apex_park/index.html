@@ -412,7 +412,10 @@
 						</div>	
 						
 					</div>
-					<input type="submit" value="Proceed to results" class="gradient-button search-submit" id="search-submit" />
+					<div class>
+						<button type="button" onclick="submitForm()" style="display: block; margin: auto;">Proceed to results</button>
+					</div>	
+					<!-- <button type="button" onclick="submitForm()" class="gradient-button search-submit">Proceed to results</button> -->
 				</div>
 			</form>
 		</div>
@@ -947,6 +950,7 @@
 	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
 	<script type="text/javascript" src="js/lightslider.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
+	<script src="js/index.js"></script>
 	<script type="text/javascript">	
 		(function( $ ) {
 			$(document).ready(function(){
@@ -974,9 +978,6 @@
 		})(jQuery);
 	</script>
 
-	<script src="js/startcheck.js"></script>
-	<script src="js/searchvalid.js"></script>
-
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('.logout-button').click(function() {
@@ -994,45 +995,6 @@
 				} else {
 					window.location.href = 'login.html';
 				}
-			});
-		});
-	</script>
-
-	<script>
-		// This scripts used to submit the form data to the backend
-		const form_search = document.querySelector('#main-search');
-		form_search.addEventListener('submit', (event) =>{
-			event.preventDefault();
-    		const formData = new FormData(form_search);
-
-			const isFormValid = valid(formData);
-			if(!isFormValid){
-				console.log("Invalid search form, do not send to backend")
-				return;
-			}
-
-			isLog = sessionStorage.getItem('userId');
-			
-			if(isLog === null){
-				alert("To use Search Bar you have to log in first!")
-				return;
-			}
-
-    		fetch('http://127.0.0.1:8000/api/data_models/search/', {
-				method: 'POST',
-				body: formData
-			})
-			.then(response => {
-				if (!response.ok) {
-					console.log('Form is not valid. Not accepted by backend');
-				}
-				else {
-					console.log("success");
-					form_search.submit();
-				}
-			})
-			.catch(error => {
-				console.log(error)
 			});
 		});
 	</script>
