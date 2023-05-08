@@ -138,7 +138,7 @@ function submitForm(){
   }
 
   if(getCurrentUser() === false) {
-    alert('Please Login to use search function')
+    alert('Please Login before using search function')
     return;
   }
 
