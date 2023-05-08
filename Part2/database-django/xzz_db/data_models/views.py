@@ -84,13 +84,14 @@ def SearchBar(request):
 # Or update user orders information
 @api_view(['GET', 'POST'])
 def BookingDetails(request, userid):
-    show, park, store = FindBookingDeails(userid)
+    ticket, show, park, store = FindBookingDeails(userid)
     data = {
+        'ticket': ticket,
         'show': show,
         'park': park,
         'store': store
     }
-    print(data)
+    #print(data)
     return JsonResponse(data, status=status.HTTP_200_OK)
 
 

@@ -284,7 +284,7 @@ class xzz_ticket(models.Model):
         verbose_name_plural = 'Xzz Tickets'
 
     def __str__(self):
-        return f"Ticket {self.ticket_id}"
+        return f"Ticket {self.id}"
 
 
 
