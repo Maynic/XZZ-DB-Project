@@ -5,10 +5,12 @@ from rest_framework import status
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .auth import MyAuthBackend
-from .QueryOrders import FindBookingDeails
+import json
+from .Query import *
 
 from .models import *
 from .serializers import *
+
 
 @api_view(['GET', 'POST'])
 def visitor_list(request):
@@ -22,7 +24,7 @@ def visitor_list(request):
 
     elif request.method == 'POST':
         if request.content_type == 'application/json':
-            print("JSON data: ", request.body) 
+            print("JSON data: ", request.body)
         serializer = VisitorSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -30,6 +32,7 @@ def visitor_list(request):
         print(serializer.errors)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def visitor_detail(request, pk):
@@ -39,7 +42,7 @@ def visitor_detail(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'PUT':
-        serializer = VisitorSerializer(object, data=request.data,context={'request': request})
+        serializer = VisitorSerializer(object, data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
@@ -62,32 +65,25 @@ While shows and store will switch to a display information page.
 POST request will be made after checked out by customer
 
 """
+
+
 @api_view(['GET', 'POST'])
 def SearchBar(request):
     if request.method == 'POST':
-        print("JSON data: ", request.data)
+        print("JSON form: ", request.data)
         # deal with data
         # form1 is attraction
-        if request.data['radio'] == 'form1':
-            pass
-        # form1 is show
-        if request.data['radio'] == 'form2':
-            pass
-        # form3 is store
-        if request.data['radio'] == 'form3':
-            pass
-        # form4 is parking
-        if request.data['radio'] == 'form4':
-            pass
-        # placeholder
-        return Response(status=status.HTTP_400_BAD_REQUEST)
+        price = ComputedPrice(request.data['form'], request.data)
+        #print(price)
+        return JsonResponse(price, status=status.HTTP_200_OK)
 
-#API for obtain user orders information
+    return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+# API for obtain user orders information
 # Or update user orders information
-
 @api_view(['GET', 'POST'])
 def BookingDetails(request, userid):
-    #current_user = request.data['user']
     show, park, store = FindBookingDeails(userid)
     data = {
         'show': show,
@@ -98,8 +94,17 @@ def BookingDetails(request, userid):
     return JsonResponse(data, status=status.HTTP_200_OK)
 
 
-#enforce login
-#Current suport POST only
+@api_view(['GET', 'POST'])
+def SettingDetails(request, userid):
+    if request.method == 'GET':  # get user information
+        personalinfo = PersonalInfo(userid)
+        return JsonResponse(personalinfo, status=status.HTTP_200_OK)
+    elif request.method == 'POST':  # update user information
+        return Response(status=status.HTTP_200_OK)
+
+
+# enforce login
+# Current suport POST only
 @api_view(['POST', 'GET'])
 def user_login(request):
     # POST used to log in
@@ -117,9 +122,10 @@ def user_login(request):
 
                 return Response({"user_id": user.id}, status=status.HTTP_200_OK)
             else:
-                #password not right
+                # password not right
                 return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
+
 
 @api_view(['POST'])
 def user_register(request):
@@ -138,6 +144,7 @@ def user_register(request):
 
     return Response(status=status.HTTP_400_BAD_REQUEST)
 
+
 @api_view(['GET'])
 def user_logout(request):
     try:
@@ -155,6 +162,7 @@ def user_list(request):
 
         return Response(serializer.data)
 
+
 @api_view(['GET', 'POST'])
 def attraction_list(request):
     if request.method == 'GET':
@@ -167,7 +175,7 @@ def attraction_list(request):
 
     elif request.method == 'POST':
         if request.content_type == 'application/json':
-            print("JSON data: ", request.body) 
+            print("JSON data: ", request.body)
         serializer = AttractionSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -175,6 +183,7 @@ def attraction_list(request):
         print(serializer.errors)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def attraction_detail(request, pk):
@@ -184,7 +193,7 @@ def attraction_detail(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'PUT':
-        serializer = AttractionSerializer(object, data=request.data,context={'request': request})
+        serializer = AttractionSerializer(object, data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
@@ -193,7 +202,8 @@ def attraction_detail(request, pk):
     elif request.method == 'DELETE':
         object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-    
+
+
 @api_view(['GET', 'POST'])
 def order_list(request):
     if request.method == 'GET':
@@ -206,7 +216,7 @@ def order_list(request):
 
     elif request.method == 'POST':
         if request.content_type == 'application/json':
-            print("JSON data: ", request.body) 
+            print("JSON data: ", request.body)
         serializer = OrderSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -214,6 +224,7 @@ def order_list(request):
         print(serializer.errors)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def order_detail(request, pk):
@@ -223,7 +234,7 @@ def order_detail(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'PUT':
-        serializer = OrderSerializer(object, data=request.data,context={'request': request})
+        serializer = OrderSerializer(object, data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
@@ -232,7 +243,7 @@ def order_detail(request, pk):
     elif request.method == 'DELETE':
         object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-    
+
 
 @api_view(['GET', 'POST'])
 def parking_list(request):
@@ -246,7 +257,7 @@ def parking_list(request):
 
     elif request.method == 'POST':
         if request.content_type == 'application/json':
-            print("JSON data: ", request.body) 
+            print("JSON data: ", request.body)
         serializer = ParkingSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -254,6 +265,7 @@ def parking_list(request):
         print(serializer.errors)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def parking_detail(request, pk):
@@ -263,7 +275,7 @@ def parking_detail(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'PUT':
-        serializer = ParkingSerializer(object, data=request.data,context={'request': request})
+        serializer = ParkingSerializer(object, data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
@@ -272,7 +284,8 @@ def parking_detail(request, pk):
     elif request.method == 'DELETE':
         object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-    
+
+
 @api_view(['GET', 'POST'])
 def payment_list(request):
     if request.method == 'GET':
@@ -285,7 +298,7 @@ def payment_list(request):
 
     elif request.method == 'POST':
         if request.content_type == 'application/json':
-            print("JSON data: ", request.body) 
+            print("JSON data: ", request.body)
         serializer = PaymentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -293,6 +306,7 @@ def payment_list(request):
         print(serializer.errors)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def payment_detail(request, pk):
@@ -302,7 +316,7 @@ def payment_detail(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'PUT':
-        serializer = PaymentSerializer(object, data=request.data,context={'request': request})
+        serializer = PaymentSerializer(object, data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
@@ -311,7 +325,7 @@ def payment_detail(request, pk):
     elif request.method == 'DELETE':
         object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-    
+
 
 # For ShowSerializer
 @api_view(['GET', 'POST'])
@@ -327,6 +341,7 @@ def show_list(request):
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def show_detail(request, pk):
@@ -346,6 +361,7 @@ def show_detail(request, pk):
         object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
 # For StoreSerializer
 @api_view(['GET', 'POST'])
 def store_list(request):
@@ -360,6 +376,7 @@ def store_list(request):
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def store_detail(request, pk):
@@ -379,6 +396,7 @@ def store_detail(request, pk):
         object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
 # For TicketSerializer
 @api_view(['GET', 'POST'])
 def ticket_list(request):
@@ -393,6 +411,7 @@ def ticket_list(request):
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def ticket_detail(request, pk):
@@ -413,7 +432,6 @@ def ticket_detail(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-
 # For AttractionVisitSerializer
 @api_view(['GET', 'POST'])
 def attraction_visit_list(request):
@@ -428,6 +446,7 @@ def attraction_visit_list(request):
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def attraction_visit_detail(request, pk):
@@ -447,6 +466,7 @@ def attraction_visit_detail(request, pk):
         object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
 # For ShowOrderSerializer
 @api_view(['GET', 'POST'])
 def show_order_list(request):
@@ -461,6 +481,7 @@ def show_order_list(request):
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def show_order_detail(request, pk):
@@ -480,6 +501,7 @@ def show_order_detail(request, pk):
         object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
 # For StoreOrderSerializer
 @api_view(['GET', 'POST'])
 def store_order_list(request):
@@ -494,6 +516,7 @@ def store_order_list(request):
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['PUT', 'DELETE'])
 def store_order_detail(request, pk):
