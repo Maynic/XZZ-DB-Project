@@ -79,6 +79,9 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
       html += '<div class="b-info">';
       html += '<table>';
       html += '<tr><th>Category</th><td>' + store.category + '</td></tr>';
+      html += '<tr><th>Item name</th><td>' + store.menu_item_name + '</td></tr>';
+      html += '<tr><th>Description</th><td>' + store.menu_item_description + '</td></tr>';
+      html += '<tr><th>Prices</th><td><strong>$</strong>' + store.menu_item_unit_price + '</td></tr>';
       html += '</table></div>';
       html += '<div class="actions">';
       html += '<a href="#" class="gradient-button">Visit Store</a>';
