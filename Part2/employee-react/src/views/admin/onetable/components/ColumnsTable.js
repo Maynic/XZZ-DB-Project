@@ -8,6 +8,7 @@ import {
   Thead,
   Tr,
   useColorModeValue,
+  Button,
 } from "@chakra-ui/react";
 import React, { useMemo } from "react";
 import {
@@ -19,12 +20,13 @@ import {
 
 // Custom components
 import Card from "components/card/Card";
-import AddVisitor from "views/admin/onetable/components/AddVisitor";
 import VisitorDetail from "views/admin/onetable/components/VisitorDetail";
+import EditVisitor from "views/admin/onetable/components/EditVisitor";
+import AddVisitor from "views/admin/onetable/components/AddVisitor";
 // import VisitorDetail from "views/admin/onetable/components/VisitorComp";
 
 export default function ColumnsTable(props) {
-  const { columnsData, tableData } = props;
+  const { columnsData, tableData, resetState } = props;
 
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
@@ -47,7 +49,7 @@ export default function ColumnsTable(props) {
     prepareRow,
     initialState,
   } = tableInstance;
-  initialState.pageSize = 30;
+  initialState.pageSize = 100;
 
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const borderColor = useColorModeValue("gray.200", "whiteAlpha.100");
@@ -65,7 +67,9 @@ export default function ColumnsTable(props) {
           lineHeight='100%'>
           Visitor Table
         </Text>
-        <VisitorDetail />
+        <VisitorDetail
+          isEdit={false}
+          resetState={resetState} />
         {/* <AddVisitor /> */}
       </Flex>
       <Table {...getTableProps()} variant='simple' color='gray.500' mb='24px'>
@@ -107,37 +111,19 @@ export default function ColumnsTable(props) {
                         </Text>
                       </Flex>
                     );
-                  } else if (cell.column.Header === "PROGRESS") {
-                    data = (
-                      <Flex align='center'>
-                        <Text
-                          me='10px'
-                          color={textColor}
-                          fontSize='sm'
-                          fontWeight='700'>
-                          {cell.value}%
-                        </Text>
-                      </Flex>
-                    );
-                  } else if (cell.column.Header === "QUANTITY") {
-                    data = (
-                      <Text color={textColor} fontSize='sm' fontWeight='700'>
-                        {cell.value}
-                      </Text>
-                    );
                   } else if (cell.column.Header === "BIRTHDAY") {
                     data = (
                       <Text color={textColor} fontSize='sm' fontWeight='700'>
-                        {cell.value.slice(0,10)}
+                        {cell.value.slice(0, 10)}
                       </Text>
                     );
                   }
-                  else{
+                  else {
                     data = (
                       <Text color={textColor} fontSize='sm' fontWeight='700'>
                         {cell.value}
                       </Text>
-                    );                    
+                    );
                   }
 
                   return (
@@ -148,10 +134,23 @@ export default function ColumnsTable(props) {
                       minW={{ sm: "150px", md: "200px", lg: "auto" }}
                       borderColor='transparent'>
                       {data}
+
                     </Td>
                   );
                 })}
+
+                <Td borderColor='transparent'>
+                  <VisitorDetail
+                    // columnsData={visitorColumns}
+                    // tableData={this.state.visitor}
+                    row={row}
+                    pk={index}
+                    isEdit={true}
+                    resetState={resetState} />
+
+                </Td>
               </Tr>
+
             );
           })}
         </Tbody>

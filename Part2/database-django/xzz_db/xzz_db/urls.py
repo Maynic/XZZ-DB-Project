@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('api/data_models/visitor/', views.visitor_list, name='visitor_list'),
-    path('api/data_models/visitor/<int:pk>)', views.visitor_detail, name='visitor_detail'),
+    path('api/data_models/visitor/<int:pk>', views.visitor_detail, name='visitor_detail'),
 
     path('api/data_models/attraction/', views.attraction_list, name='attraction_list'),
     path('api/data_models/attraction/<int:pk>', views.attraction_detail, name='attraction_detail'),

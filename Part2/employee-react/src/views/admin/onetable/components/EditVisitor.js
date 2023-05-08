@@ -24,11 +24,11 @@ import {
 } from '@chakra-ui/react'
 
 import {
-    MdOutlineAdd,
+    MdOutlineEdit,
 } from "react-icons/md";
 
 
-export default function AddVisitor(props) {
+export default function EditVisitor(props) {
     const [visitorData, setVisitorData] = useState({
         pk: 0,
         visitor_name: '',
@@ -107,7 +107,7 @@ export default function AddVisitor(props) {
                 lineHeight='100%'
                 borderRadius='10px'
                 {...rest}>
-                <Icon as={MdOutlineAdd} color={iconColor} w='24px' h='24px' />
+                <Icon as={MdOutlineEdit} color={iconColor} w='24px' h='24px' />
 
             </Button>
             <VisitorDetail
