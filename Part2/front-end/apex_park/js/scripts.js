@@ -134,20 +134,53 @@
 			});
 			
 			//MY ACCOUNT EDIT FIELDS
+			const visitor_type = {
+				'IN': 'Individual',
+				'GR': 'Group',
+				'ME': 'Member',
+				'ST': 'Student',
+				'Student': 'ST',
+				'Member': 'ME',
+				'Group' : 'GR',
+				'Individual': 'IN'
+			}
 			$('.edit_field').hide();
 			$('.edit').on('click', function (e) {
 				e.preventDefault(); 
 				$($(this).attr('href')).toggle('slow', function(){});
 			});
 			$('.edit_field a,.edit_field input[type=submit]').click(function() {
+
+				// first update information locally:
+				// $('#nameFieldText').text() = 
+				$('#emailFieldText').text($('#new_email').val() || $('#emailFieldText').text());
+				$('#passwordFieldText').text($('#new_password').val() || $('#passwordFieldText').text());
+				$('#birthdayFieldText').text($('#new_birthday').val() || $('#birthdayFieldText').text());
+				$('#phoneFieldText').text($('#new_phone').val() || $('#phoneFieldText').text());
+				$('#addressFieldText').text($('#new_address').val() || $('#addressFieldText').text());
+				$('#cityFieldText').text($('#new_city').val() || $('#cityFieldText').text());
+				$('#stateFieldText').text($('#new_state').val() || $('#stateFieldText').text());
+				$('#zipFieldText').text($('#new_zip').val() || $('#zipFieldText').text());
+				// $('visitorTFieldText').text() = ;
+
+				var birthDateText = $('#birthdayFieldText').text();
+				console.log(birthDateText)
+				const birthDate = new Date(birthDateText);
+				const utcBirthDate = new Date(Date.UTC(birthDate.getFullYear(), birthDate.getMonth(), birthDate.getDate()));
+				const formattedBirthDate = utcBirthDate.toISOString().split('T')[0];
+				console.log(formattedBirthDate)
+
 				var data = {
-					name: $('#nameFieldText').text(),
+					visitor_name: $('#nameFieldText').text(),
 					email: $('#emailFieldText').text(),
 					password: $('#passwordFieldText').text(),
+					birth_date: formattedBirthDate,
+					phone: $('#phoneFieldText').text(),
 					address: $('#addressFieldText').text(),
 					city: $('#cityFieldText').text(),
 					state: $('#stateFieldText').text(),
-					zip: $('#zipFieldText').text()
+					zip: $('#zipFieldText').text(),
+					visitor_type: visitor_type[$('visitorTFieldText').text()]
 				  };
 				console.log(data)
 
@@ -177,19 +210,31 @@
 						var nameField = document.querySelector('#MySettings #nameFieldText');
 				  		var emailField = document.querySelector('#MySettings #emailFieldText');
 				  		var passwordField = document.querySelector('#MySettings #passwordFieldText');
+
+						var birthdayField = document.querySelector('#MySettings #birthdayFieldText');
+						var phoneField = document.querySelector('#MySettings #phoneFieldText');
+
 				  		var addressField = document.querySelector('#MySettings #addressFieldText');
 				  		var cityField = document.querySelector('#MySettings #cityFieldText');
 				  		var stateField = document.querySelector('#MySettings #stateFieldText');
 				  		var zipField = document.querySelector('#MySettings #zipFieldText');
+
+						var visitorTField = document.querySelector('#MySettings #visitorTFieldText')
 						
-		  
 				  		nameField.textContent = personalInfo['name'];
 				  		emailField.textContent = personalInfo['email'];
 				  		//passwordField.textContent = "************"//personalInfo['password'];
+
+						const birthDate = new Date(personalInfo['birth_date']);
+						const formattedDate = birthDate.toISOString().split('T')[0];
+
+						birthdayField.textContent = formattedDate;
+						phoneField.textContent = personalInfo['phone'];
 				  		addressField.textContent = personalInfo['address'];
 				  		cityField.textContent = personalInfo['city'];
 				  		stateField.textContent = personalInfo['state'];
 				  		zipField.textContent = personalInfo['zip'];
+						visitorTField.textContent = visitor_type[personalInfo['visitor_type']];
 					},
 					error: function (xhr, status, error) {
 						console.log(xhr.responseText);
