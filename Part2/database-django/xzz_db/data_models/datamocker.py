@@ -80,23 +80,18 @@ for data in visitor_data:
         visitor_type=type,
     )
 
-visitor_ids = [visitor[0] for visitor in visitor_data]
-unique_ids = random.sample(visitor_ids, len(visitor_ids))
+
 for i, visitor in enumerate(visitor_data):
-    fname, lname = visitor[1].split(' ')
+    visitor_name = visitor[1]
     email = visitor[8]
     password = ''.join(random.choices('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890', k=10))
-    visitor_id = visitor[0]
 
 
 
     xzz_user_login.objects.create(
-        id=unique_ids[i],
-        fname=fname,
-        lname=lname,
+        visitor_name=visitor_name,
         email=email,
         password=password,
-        visitor_id=visitor_id
     )
 
 attraction_data = [ 

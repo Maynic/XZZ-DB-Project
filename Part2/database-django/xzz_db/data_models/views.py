@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from django.http import JsonResponse
+from django.http import QueryDict
 from django.views.decorators.csrf import csrf_exempt
 from .auth import MyAuthBackend
 import json
@@ -15,10 +16,10 @@ from .serializers import *
 
 @api_view(['GET', 'POST'])
 def visitor_list(request):
+    print(request.method)
     if request.method == 'GET':
         print(request.method)
         data = xzz_visitor.objects.all()
-
         serializer = VisitorSerializer(data, context={'request': request}, many=True)
         print(serializer.data)
         return Response(serializer.data)
@@ -130,35 +131,12 @@ def user_login(request):
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
 
-@api_view(['POST'])
-def user_register(request):
-    if request.method == 'POST':
-        fname = request.POST['fname']
-        lname = request.POST['lname']
-        email = request.POST['email']
-        password = request.POST['password']
-
-        if xzz_user_login.objects.filter(email=email).exists():
-            return Response(status=status.HTTP_409_CONFLICT)
-        else:
-            visitor = xzz_visitor()
-            visitor.visitor_name = fname + lname
-            visitor.email = email
-            visitor.birth_date = datetime(year=1970, month=1, day=1)
-            visitor.phone = '0000000000'
-            visitor.address = 'NA'
-            visitor.city = 'NA'
-            visitor.state = 'NA'
-            visitor.zip = '00000'
-            visitor.visitor_type = 'NA'
-            visitor.save()
-
-            user = xzz_user_login(fname=fname, lname=lname, email=email, password=password, visitor=visitor)
-            user.save()
-
-            return Response(status=status.HTTP_200_OK)
-
-    return Response(status=status.HTTP_400_BAD_REQUEST)
+# @api_view(['POST'])
+# def user_register(request):
+#     if request.method == 'POST':
+#         return redirect('visitor_list', permanent=False)
+#
+#     return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
@@ -169,14 +147,25 @@ def user_logout(request):
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def user_list(request):
     if request.method == 'GET':
         data = xzz_user_login.objects.all()
 
         serializer = UserSerializer(data, context={'request': request}, many=True)
-
+        print(serializer.data)
         return Response(serializer.data)
+
+    elif request.method == 'POST':
+        if request.content_type == 'application/json':
+            print("JSON data: ", request.body)
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_201_CREATED)
+        print(serializer.errors)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # safely retrieve visitor id from user_id
 # This function return the corresponding visitor id based on userid

@@ -324,13 +324,10 @@ class xzz_orde_stor(models.Model):
     def __str__(self):
         return self.menu_item_name
 
-
 class xzz_user_login(models.Model):
-    fname = models.CharField(max_length=10)
-    lname = models.CharField(max_length=10)
+    visitor_name = models.CharField(max_length=60)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=20)
-    visitor = models.ForeignKey('xzz_visitor', on_delete=models.CASCADE, verbose_name="Visitor ID")
 
     class Meta:
         db_table = 'xzz_user_login'

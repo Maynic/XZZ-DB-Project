@@ -110,9 +110,9 @@ def FindBookingDeails(id):
 
 def PersonalInfo(id):
     user_visit = get_object_or_404(xzz_user_login, id=id)
-    visitor_id = user_visit.visitor_id
+    visitor_email = user_visit.email
 
-    visitor = get_object_or_404(xzz_visitor, pk=visitor_id)
+    visitor = get_object_or_404(xzz_visitor, email=visitor_email)
 
     personalInfo = {}
     personalInfo['name'] = visitor.visitor_name
@@ -183,8 +183,11 @@ def ComputedPrice(type, data):
 
 ####
 ####
-#### helper functions to locate visitor id from user to database:
+#### helper functions to locate visitor email from user to database:
 def get_visitor_id(userid):
     user = get_object_or_404(xzz_user_login, id=userid)
-    return user.visitor.id
+    visitor_email = user.email
+
+    visitor = get_object_or_404(xzz_visitor, email=visitor_email)
+    return visitor.id
 
