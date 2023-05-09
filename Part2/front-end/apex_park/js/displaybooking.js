@@ -14,11 +14,6 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
     var storesHtml = "";
     var placeholderHtml = '<article class="bookings">No record found on our backend</article>';
 
-    if(data.ticket.length == 0) {
-      document.getElementById("tickets-container").innerHTML = placeholderHtml;
-      return;
-    }
-
     for (var i = 0; i < data.ticket.length; i++) {
       var tickets = data.ticket[i];
       console.log(tickets)
@@ -55,7 +50,7 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
       html += '<tr><th>Show Price:</th><td><strong>$</strong>' + show.show_price + '</td></tr>';
       html += '</table></div>';
       html += '<div class="actions">';
-      html += '<a href="#" class="gradient-button">Book Tickets</a>';
+      // html += '<a href="#" class="gradient-button">Book Tickets</a>';
       html += '</div></article>';
 
       showsHtml += html;
@@ -74,7 +69,7 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
       html += '<tr><th>Fee</th><td><strong>$</strong>' + parking.fee + '</td></tr>';
       html += '</table></div>';
       html += '<div class="actions">';
-      html += '<a href="#" class="gradient-button">Reserve Spot</a>';
+      // html += '<a href="#" class="gradient-button">Reserve Spot</a>';
       html += '</div></article>';
 
       parkingHtml += html;
@@ -91,16 +86,16 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
       html += '<tr><th>Prices</th><td><strong>$</strong>' + store.menu_item_unit_price + '</td></tr>';
       html += '</table></div>';
       html += '<div class="actions">';
-      html += '<a href="#" class="gradient-button">Visit Store</a>';
+      // html += '<a href="#" class="gradient-button">Visit Store</a>';
       html += '</div></article>';
 
       storesHtml += html;
     }
 
     // Add the generated HTML to the correct section
-    document.getElementById("tickets-container").innerHTML = data.store.length == 0 ? placeholderHtml : ticketsHTML;
-    document.getElementById("shows-container").innerHTML  = data.store.length == 0 ? placeholderHtml :showsHtml;
-    document.getElementById("parking-container").innerHTML = data.store.length == 0 ? placeholderHtml : parkingHtml;
-    document.getElementById("stores-container").innerHTML = data.store.length == 0 ? placehonderHTML : storesHtml;
+    document.getElementById("tickets-container").innerHTML = data.ticket.length == 0 ? placeholderHtml : ticketsHTML;
+    document.getElementById("shows-container").innerHTML  = data.show.length == 0 ? placeholderHtml :showsHtml;
+    document.getElementById("parking-container").innerHTML = data.park.length == 0 ? placeholderHtml : parkingHtml;
+    document.getElementById("stores-container").innerHTML = data.store.length == 0 ? placeholderHtml : storesHtml;
   })
   .catch(error => console.error(error));

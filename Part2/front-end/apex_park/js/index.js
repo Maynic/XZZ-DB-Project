@@ -148,9 +148,11 @@ function submitForm(){
     method: 'POST',
     data: data,
     success: function(response) {
+      console.log("submit success")
       // handle success response from server
     },
     error: function(error) {
+      console.log("submit failed")
       // handle error response from server
     }
   });

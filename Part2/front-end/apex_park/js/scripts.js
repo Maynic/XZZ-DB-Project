@@ -242,35 +242,35 @@
 				});
 			}
 			
-			//CONTACT FORM
-			$('#contactform').submit(function(){
-				var action = $(this).attr('action');
-				$("#message").show(400,function() {
-					$('#message').hide();
+			// //CONTACT FORM
+			// $('#contactform').submit(function(){
+			// 	var action = $(this).attr('action');
+			// 	$("#message").show(400,function() {
+			// 		$('#message').hide();
 					
-					$('#submit')
-						.after('<img src="images/ajax-loader.gif" class="loader" />')
-						.attr('disabled','disabled');
+			// 		$('#submit')
+			// 			.after('<img src="images/ajax-loader.gif" class="loader" />')
+			// 			.attr('disabled','disabled');
 					
-					$.post(action, { 
-						name: $('#name').val(),
-						email: $('#email').val(),
-						phone: $('#phone').val(),
-						//subject: $('#subject').val(),
-						comments: $('#comments').val()
-						//verify: $('#verify').val()
-					},
-					function(data){
-						document.getElementById('message').innerHTML = data;
-						$('#message').slideDown('slow');
-						$('#contactform img.loader').fadeOut('slow',function(){$(this).remove()});
-						$('#submit').removeAttr('disabled'); 
-						//if(data.match('success') != null) $('#contactform').slideUp(3000);
+			// 		$.post(action, { 
+			// 			name: $('#name').val(),
+			// 			email: $('#email').val(),
+			// 			phone: $('#phone').val(),
+			// 			//subject: $('#subject').val(),
+			// 			comments: $('#comments').val()
+			// 			//verify: $('#verify').val()
+			// 		},
+			// 		function(data){
+			// 			document.getElementById('message').innerHTML = data;
+			// 			$('#message').slideDown('slow');
+			// 			$('#contactform img.loader').fadeOut('slow',function(){$(this).remove()});
+			// 			$('#submit').removeAttr('disabled'); 
+			// 			//if(data.match('success') != null) $('#contactform').slideUp(3000);
 						
-					});
-				});
-				return false; 
-			});
+			// 		});
+			// 	});
+			// 	return false; 
+			// });
 			
 			// PRELOADER
 			$('.loading').fadeOut();
