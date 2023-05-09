@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -40,12 +41,13 @@ def visitor_detail(request, pk):
         object = xzz_visitor.objects.get(pk=pk)
     except xzz_visitor.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
-
     if request.method == 'PUT':
         serializer = VisitorSerializer(object, data=request.data, context={'request': request})
+        print(serializer)
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
+        print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
@@ -147,7 +149,7 @@ def user_register(request):
             visitor.address = 'NA'
             visitor.city = 'NA'
             visitor.state = 'NA'
-            visitor.zip = 'NA'
+            visitor.zip = '00000'
             visitor.visitor_type = 'NA'
             visitor.save()
 
@@ -175,6 +177,19 @@ def user_list(request):
         serializer = UserSerializer(data, context={'request': request}, many=True)
 
         return Response(serializer.data)
+
+# safely retrieve visitor id from user_id
+# This function return the corresponding visitor id based on userid
+@api_view(['PUT'])
+def user_visitor_update(request, userid):
+    if request.method == 'PUT':
+        visitor_id = get_visitor_id(userid)
+
+        try:
+            return redirect('visitor_detail', pk=visitor_id)
+        except:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+    return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET', 'POST'])

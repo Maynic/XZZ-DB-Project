@@ -1,6 +1,8 @@
 from django.utils import timezone
 # from faker import Faker
 from data_models.models import *
+import random
+import uuid
 from decimal import Decimal
 from random import randint, uniform
 # UPDATE sqlite_sequence SET seq = 0 WHERE sqlite_sequence.name = "xzz_visitor";
@@ -76,6 +78,25 @@ for data in visitor_data:
         state=data[6],
         zip=data[7],
         visitor_type=type,
+    )
+
+visitor_ids = [visitor[0] for visitor in visitor_data]
+unique_ids = random.sample(visitor_ids, len(visitor_ids))
+for i, visitor in enumerate(visitor_data):
+    fname, lname = visitor[1].split(' ')
+    email = visitor[8]
+    password = ''.join(random.choices('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890', k=10))
+    visitor_id = visitor[0]
+
+
+
+    xzz_user_login.objects.create(
+        id=unique_ids[i],
+        fname=fname,
+        lname=lname,
+        email=email,
+        password=password,
+        visitor_id=visitor_id
     )
 
 attraction_data = [ 

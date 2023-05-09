@@ -29,6 +29,7 @@ urlpatterns = [
 
     path('api/data_models/user_regis/', views.user_register),
     path('api/data_models/users/', views.user_list),
+    path('api/data_models/update/<int:userid>', views.user_visitor_update),
     path('api/data_models/user_logout/', views.user_logout),
 
     path('api/data_models/visitor/', views.visitor_list, name='visitor_list'),

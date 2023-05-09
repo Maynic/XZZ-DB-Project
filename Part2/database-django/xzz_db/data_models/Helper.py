@@ -117,11 +117,14 @@ def PersonalInfo(id):
     personalInfo = {}
     personalInfo['name'] = visitor.visitor_name
     personalInfo['email'] = visitor.email
-    personalInfo['password'] = make_password(user_visit.password)
+    personalInfo['birth_date'] = visitor.birth_date
+    personalInfo['phone'] = visitor.phone
     personalInfo['address'] = visitor.address
     personalInfo['city'] = visitor.city
     personalInfo['state'] = visitor.state
     personalInfo['zip'] = visitor.zip
+    personalInfo['visitor_type'] = visitor.visitor_type
+    personalInfo['password'] = make_password(user_visit.password)
     print(personalInfo)
     return personalInfo
 
@@ -180,18 +183,8 @@ def ComputedPrice(type, data):
 
 ####
 ####
-#### helper functions to save (insert) record to database:
-def SaveNewVisitor(user):
-    visitor = xzz_visitor()
-    visitor.visitor_name = user.fname + user.lname
-    visitor.email = user.email
-    visitor.birth_date = datetime(year=1970, month=1, day=1)
-    visitor.phone = '0000000000'
-    visitor.address = 'NA'
-    visitor.city = 'NA'
-    visitor.state = 'NA'
-    visitor.zip = 'NA'
-    visitor.visitor_type = 'NA'
-    visitor.save()
-
+#### helper functions to locate visitor id from user to database:
+def get_visitor_id(userid):
+    user = get_object_or_404(xzz_user_login, id=userid)
+    return user.visitor.id
 
