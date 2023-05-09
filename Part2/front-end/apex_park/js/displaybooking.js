@@ -8,7 +8,16 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
     data = json;
     //console.log(data)
     // Loop through the data and generate HTML for each booking
+    var ticketsHTML = "";
+    var showsHtml = "";
+    var parkingHtml = "";
+    var storesHtml = "";
     var placeholderHtml = '<article class="bookings">No record found on our backend</article>';
+
+    if(data.ticket.length == 0) {
+      document.getElementById("tickets-container").innerHTML = placeholderHtml;
+      return;
+    }
 
     for (var i = 0; i < data.ticket.length; i++) {
       var tickets = data.ticket[i];
@@ -26,10 +35,8 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
       html += '<tr><th>Purchase price</th><td><strong>$</strong>' + tickets.ticket_price + '</td></tr>';
       html += '</table></div></article>';
 
-      placeholderHtml = html;
+      ticketsHTML += html;
     }
-    document.getElementById("tickets-container").innerHTML = placeholderHtml;
-
     for (var i = 0; i < data.show.length; i++) {
       var show = data.show[i];
       var html = '<article class="bookings">';
@@ -51,10 +58,8 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
       html += '<a href="#" class="gradient-button">Book Tickets</a>';
       html += '</div></article>';
 
-      placeholderHtml = html;
+      showsHtml += html;
     }
-    document.getElementById("shows-container").innerHTML = placeholderHtml;
-    
     for (var i = 0; i < data.park.length; i++) {
       var parking = data.park[i];
       var timeIn = new Date(parking.time_in).toLocaleString().replace(',','');
@@ -72,10 +77,8 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
       html += '<a href="#" class="gradient-button">Reserve Spot</a>';
       html += '</div></article>';
 
-      placeholderHtml = html;
+      parkingHtml += html;
     }
-    document.getElementById("parking-container").innerHTML = placeholderHtml;
-
     for (var i = 0; i < data.store.length; i++) {
       var store = data.store[i];
       var html = '<article class="bookings">';
@@ -91,8 +94,13 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
       html += '<a href="#" class="gradient-button">Visit Store</a>';
       html += '</div></article>';
 
-      placeholderHtml = html;
+      storesHtml += html;
     }
-    document.getElementById("stores-container").innerHTML = placeholderHtml;
+
+    // Add the generated HTML to the correct section
+    document.getElementById("tickets-container").innerHTML = data.store.length == 0 ? placeholderHtml : ticketsHTML;
+    document.getElementById("shows-container").innerHTML  = data.store.length == 0 ? placeholderHtml :showsHtml;
+    document.getElementById("parking-container").innerHTML = data.store.length == 0 ? placeholderHtml : parkingHtml;
+    document.getElementById("stores-container").innerHTML = data.store.length == 0 ? placehonderHTML : storesHtml;
   })
   .catch(error => console.error(error));

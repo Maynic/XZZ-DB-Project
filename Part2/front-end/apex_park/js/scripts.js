@@ -140,6 +140,30 @@
 				$($(this).attr('href')).toggle('slow', function(){});
 			});
 			$('.edit_field a,.edit_field input[type=submit]').click(function() {
+				var data = {
+					name: $('#nameFieldText').text(),
+					email: $('#emailFieldText').text(),
+					password: $('#passwordFieldText').text(),
+					address: $('#addressFieldText').text(),
+					city: $('#cityFieldText').text(),
+					state: $('#stateFieldText').text(),
+					zip: $('#zipFieldText').text()
+				  };
+				console.log(data)
+
+				$.ajax({
+				  url: "http://127.0.0.1:8000/api/data_models/update/" + sessionStorage.getItem('userId'),
+				  type: "PUT",
+				  data: JSON.stringify(data),
+				  contentType: "application/json",
+				  success: function(response) {
+					console.log("Data saved successfully");
+				  },
+				  error: function(xhr, status, error) {
+					console.log("Error saving data: " + error);
+				  }
+				});
+				
 				$('.edit_field').hide(400);
 			});
 			
