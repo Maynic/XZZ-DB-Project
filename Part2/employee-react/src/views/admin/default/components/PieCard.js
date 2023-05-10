@@ -54,11 +54,11 @@ export default function Conversion(props) {
               color='secondaryGray.600'
               fontWeight='700'
               mb='5px'>
-              Your files
+              Ticket
             </Text>
           </Flex>
           <Text fontSize='lg' color={textColor} fontWeight='700'>
-            63%
+            30%
           </Text>
         </Flex>
         <VSeparator mx={{ base: "30px", xl: "30px", "2xl": "30px" }} />
@@ -70,11 +70,11 @@ export default function Conversion(props) {
               color='secondaryGray.600'
               fontWeight='700'
               mb='5px'>
-              System
+              Show Order
             </Text>
           </Flex>
           <Text fontSize='lg' color={textColor} fontWeight='700'>
-            25%
+            20%
           </Text>
         </Flex>
         <VSeparator mx={{ base: "30px", xl: "30px", "2xl": "30px" }} />
@@ -86,11 +86,11 @@ export default function Conversion(props) {
               color='secondaryGray.600'
               fontWeight='700'
               mb='5px'>
-              System
+              Store Order
             </Text>
           </Flex>
           <Text fontSize='lg' color={textColor} fontWeight='700'>
-            25%
+            10%
           </Text>
         </Flex>
         <VSeparator mx={{ base: "30px", xl: "30px", "2xl": "30px" }} />
@@ -102,11 +102,11 @@ export default function Conversion(props) {
               color='secondaryGray.600'
               fontWeight='700'
               mb='5px'>
-              System
+              Parking
             </Text>
           </Flex>
           <Text fontSize='lg' color={textColor} fontWeight='700'>
-            25%
+            40%
           </Text>
         </Flex>
       </Card>
