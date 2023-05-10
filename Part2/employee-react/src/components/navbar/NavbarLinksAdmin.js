@@ -25,6 +25,8 @@ import { MdNotificationsNone, MdInfoOutline } from 'react-icons/md';
 import { FaEthereum } from 'react-icons/fa';
 import routes from 'routes.js';
 import { ThemeEditor } from './ThemeEditor';
+import FixedPlugin from "components/fixedPlugin/FixedPlugin";
+
 export default function HeaderLinks(props) {
 	const { secondary } = props;
 	// Chakra Color Mode
@@ -42,6 +44,7 @@ export default function HeaderLinks(props) {
 	);
 	const borderButton = useColorModeValue('secondaryGray.500', 'whiteAlpha.200');
 	return (
+		<>
 		<Flex
 			w={{ sm: '100%', md: 'auto' }}
 			alignItems="center"
@@ -50,8 +53,9 @@ export default function HeaderLinks(props) {
 			flexWrap={secondary ? { base: 'wrap', md: 'nowrap' } : 'unset'}
 			p="10px"
 			borderRadius="30px"
-			boxShadow={shadow}>
-			<SearchBar mb={secondary ? { base: '10px', md: 'unset' } : 'unset'} me="10px" borderRadius="30px" />
+			boxShadow={shadow}
+			>
+			{/* <SearchBar mb={secondary ? { base: '10px', md: 'unset' } : 'unset'} me="10px" borderRadius="30px" /> */}
 
 			{/* <Menu>
 				<MenuButton p="0px">
@@ -130,8 +134,8 @@ export default function HeaderLinks(props) {
 			{/* <ThemeEditor navbarIcon={navbarIcon} /> */}
 
 			<Menu>
-				<MenuButton p="0px">
-					<Avatar
+				{/* <MenuButton p="0px"> */}
+					{/* <Avatar
 						_hover={{ cursor: 'pointer' }}
 						color="white"
 						name="Walt Disney"
@@ -139,8 +143,10 @@ export default function HeaderLinks(props) {
 						size="sm"
 						w="40px"
 						h="40px"
-					/>
-				</MenuButton>
+					/> */}
+								<FixedPlugin />
+
+				{/* </MenuButton> */}
 				<MenuList boxShadow={shadow} p="0px" mt="10px" borderRadius="20px" bg={menuBg} border="none">
 					<Flex w="100%" mb="0px">
 						<Text
@@ -175,6 +181,7 @@ export default function HeaderLinks(props) {
 				</MenuList>
 			</Menu>
 		</Flex>
+		</>
 	);
 }
 
