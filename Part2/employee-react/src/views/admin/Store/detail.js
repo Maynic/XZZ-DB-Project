@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from "axios";
-
 import { API_URL } from "constants";
-
 import {
     AlertDialog,
     AlertDialogBody,
@@ -20,13 +18,17 @@ import {
     Input,
     FormControl,
     FormLabel,
+    FormHelperText,
     useDisclosure,
     useColorModeValue,
     Icon,
     Select,
     Flex,
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
 } from '@chakra-ui/react'
-
 import {
     MdOutlineAdd, MdOutlineEdit
 } from "react-icons/md";
@@ -35,7 +37,6 @@ function AlertDelete(props) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const cancelRef = React.useRef()
     const { deleteData } = props
-    // console.log('deleteFunc:', deleteData);
 
     return (
         <>
@@ -78,23 +79,38 @@ function AlertDelete(props) {
     )
 }
 
-export default function VisitorDetail(props) {
-    const [visitorData, setVisitorData] = useState({
+function AlertError() {
+    return (
+        <>
+            <Alert status='error'>
+                <AlertIcon />
+                <AlertTitle>Failed!</AlertTitle>
+                <AlertDescription>
+                    Please check data format!
+                </AlertDescription>
+
+            </Alert>
+
+        </>
+    )
+}
+
+export default function Detail(props) {
+    const [data, setData] = useState({
         pk: 0,
-        visitor_name: '',
-        email: '',
-        birth_date: '',
-        phone: '',
-        address: '',
-        city: '',
-        state: '',
-        zip: '',
-        visitor_type: 'IN',
+        store_name: '',
+        category: '',
     });
 
 
+    const [Error, setError] = useState(
+        {
+            hasError: false,
+            errorInfo: ''
+        }
+    )
 
-    const API_Visitor = useRef(API_URL + "visitor/");
+    const API_Full = useRef(API_URL + "show/");
     const { resetState, isEdit, row, } = props;
     const { isOpen, onOpen, onClose } = useDisclosure()
     const initialRef = React.useRef(null)
@@ -102,38 +118,41 @@ export default function VisitorDetail(props) {
 
     useEffect(() => {
         if (row?.values) {
-            const { address, birth_date, city, email, id, phone, state, visitor_name, visitor_type, zip, } = row?.original;
-            const bd = birth_date.slice(0, 10)
-            setVisitorData({ pk: id, visitor_name, email, birth_date: bd, phone, address, city, state, zip, visitor_type });
+            const { store_name, category, id, } = row?.original;
+            setData({ pk: id, store_name, category,});
         }
     }, []);
 
 
     const onChange = (e) => {
-        setVisitorData({ ...visitorData, [e.target.name]: e.target.value });
+        setData({ ...data, [e.target.name]: e.target.value });
     };
 
     const createVisitor = (e) => {
         e.preventDefault();
-        axios.post(API_Visitor.current, visitorData).then(() => {
+        axios.post(API_Full.current, data).then(() => {
             resetState();
+            setError({ hasError: false, errorInfo: '' });
             onClose();
         }).catch(error => {
-            // setError(error);
+            setError({ hasError: true, errorInfo: error.response.data });
         });
     };
 
     const editVisitor = (e) => {
         e.preventDefault();
-        axios.put(API_Visitor.current + visitorData.pk, visitorData).then(() => {
+        axios.put(API_Full.current + data.pk, data).then(() => {
             resetState();
+            setError({ hasError: false, errorInfo: '' });
             onClose();
+        }).catch(error => {
+            setError({ hasError: true, errorInfo: error.response.data });
         });
     };
 
     const deleteData = (e) => {
         e.preventDefault();
-        axios.delete(API_Visitor.current + visitorData.pk).then(() => {
+        axios.delete(API_Full.current + data.pk).then(() => {
             resetState();
             onClose();
         });
@@ -142,7 +161,6 @@ export default function VisitorDetail(props) {
     const defaultIfEmpty = (value) => {
         return value === '' ? '' : value;
     };
-
 
     // Styling
     const bgButton = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
@@ -211,113 +229,47 @@ export default function VisitorDetail(props) {
                 />
 
                 <ModalContent>
+                    {Error.hasError ? (
+                        <AlertError />
+                    ) : (<></>)}
+
                     <ModalHeader >
                         <Flex justifyContent="space-between" alignItems="center" w="100%">
-                            <div>Add/Modify Visitor</div>
-                            <AlertDelete deleteData={deleteData} />
+
+                            {isEdit ? (<>
+                                <div>Modify Store</div>
+                                <AlertDelete deleteData={deleteData} />
+                            </>
+                            ) : (<><div>Add Store</div></>)}
                         </Flex>
                     </ModalHeader>
 
                     <ModalBody pb={6}>
 
                         <FormControl>
-                            <FormLabel>Name</FormLabel>
+                            <FormLabel>Store Name</FormLabel>
                             <Input
-                                name='visitor_name'
+                                name='store_name'
                                 type='text'
-                                placeholder='Name'
+                                placeholder='Store'
                                 onChange={onChange}
-                                defaultValue={defaultIfEmpty(visitorData.visitor_name)}
+                                defaultValue={defaultIfEmpty(data.store_name)}
                             />
                         </FormControl>
 
                         <FormControl mt={4}>
-                            <FormLabel>Email</FormLabel>
-                            <Input
-                                name='email'
-                                type='email'
-                                placeholder='Email'
-                                onChange={onChange}
-                                defaultValue={defaultIfEmpty(visitorData.email)}
-                            />
-                        </FormControl>
-
-                        <FormControl mt={4}>
-                            <FormLabel>Birthday</FormLabel>
-                            <Input
-                                name='birth_date'
-                                type='date'
-                                onChange={onChange}
-                                defaultValue={defaultIfEmpty(visitorData.birth_date)}
-                            />
-                        </FormControl>
-
-                        <FormControl mt={4}>
-                            <FormLabel>Phone</FormLabel>
-                            <Input
-                                name='phone'
-                                type='number'
-                                placeholder='Phone'
-                                onChange={onChange}
-                                defaultValue={defaultIfEmpty(visitorData.phone)}
-                            />
-                        </FormControl>
-
-                        <FormControl mt={4}>
-                            <FormLabel>Street</FormLabel>
-                            <Input
-                                name='address'
-                                type='text'
-                                placeholder='Street'
-                                onChange={onChange}
-                                defaultValue={defaultIfEmpty(visitorData.address)}
-                            />
-                        </FormControl>
-
-                        <FormControl mt={4}>
-                            <FormLabel>City</FormLabel>
-                            <Input
-                                name='city'
-                                type='text'
-                                placeholder='City'
-                                onChange={onChange}
-                                defaultValue={defaultIfEmpty(visitorData.city)}
-                            />
-                        </FormControl>
-
-                        <FormControl mt={4}>
-                            <FormLabel>State</FormLabel>
-                            <Input
-                                name='state'
-                                type='text'
-                                placeholder='State'
-                                onChange={onChange}
-                                defaultValue={defaultIfEmpty(visitorData.state)}
-                            />
-                        </FormControl>
-
-                        <FormControl mt={4}>
-                            <FormLabel>ZIP Code</FormLabel>
-                            <Input
-                                name='zip'
-                                type='number'
-                                placeholder='ZIP Code'
-                                onChange={onChange}
-                                defaultValue={defaultIfEmpty(visitorData.zip)}
-                            />
-                        </FormControl>
-
-                        <FormControl mt={4}>
-                            <FormLabel>Visitor Type</FormLabel>
+                            <FormLabel>Category</FormLabel>
                             <Select
-                                name='visitor_type'
+                                name='category'
                                 type='text'
+                                // placeholder='Full Name'
                                 onChange={onChange}
-                                defaultValue={defaultIfEmpty(visitorData.visitor_type)}>
-                                <option value='IN'>Individual</option>
-                                <option value='GR'>Group</option>
-                                <option value='ME'>Member</option>
-                                <option value='ST'>Student</option>
+                                defaultValue={defaultIfEmpty(data.category)}>
+                                <option value='Food stall'>Food stall</option>
+                                <option value='Ice cream parlor'>Ice cream parlor</option>
+                                <option value='Restaurant'>Restaurant</option>
+                                <option value='Gift Shop'>Gift Shop</option>
+                                <option value='Apparels'>Apparels</option>
                             </Select>
                         </FormControl>
 
@@ -332,7 +284,7 @@ export default function VisitorDetail(props) {
                                 Add
                             </Button>
                         )}
-                        <Button onClick={onClose} ref={initialRef}>Cancel</Button>
+                        <Button onClick={function () { onClose(); setError({ hasError: false, errorInfo: '' }) }} ref={initialRef}>Cancel</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal >

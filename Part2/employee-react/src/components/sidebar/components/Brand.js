@@ -24,14 +24,9 @@ export function SidebarBrand() {
 
   return (
     <Flex align='center' direction='column'>
-      {/* <Text  /> */}
-      {/* <Text style={styles.titleText} > */}
-      <span style={{ fontWeight: 'bold' }}>Voyage of Amusements</span>
-      <span>"\n"</span>
 
-{/* {"Voyage of Amusements"} */}
-      {/* </Text> */}
-      {/* <HorizonLogo h='26px' w='175px' my='32px' color={logoColor} /> */}
+      <span style={{ fontWeight: 'bold' }}>Voyage of Amusements</span>
+      <br/>
       <HSeparator mb='20px' />
     </Flex>
   );

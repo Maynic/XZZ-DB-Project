@@ -8,7 +8,6 @@ import {
   Thead,
   Tr,
   useColorModeValue,
-  Button,
 } from "@chakra-ui/react";
 import React, { useMemo } from "react";
 import {
@@ -20,12 +19,10 @@ import {
 
 // Custom components
 import Card from "components/card/Card";
-import VisitorDetail from "views/admin/onetable/components/VisitorDetail";
-import EditVisitor from "views/admin/onetable/components/EditVisitor";
-import AddVisitor from "views/admin/onetable/components/AddVisitor";
-// import VisitorDetail from "views/admin/onetable/components/VisitorComp";
+import Detail from "views/admin/Show/detail";
 
-export default function ColumnsTable(props) {
+
+export default function Show(props) {
   const { columnsData, tableData, resetState } = props;
 
   const columns = useMemo(() => columnsData, [columnsData]);
@@ -65,9 +62,9 @@ export default function ColumnsTable(props) {
           fontSize='22px'
           fontWeight='700'
           lineHeight='100%'>
-          Visitor Table
+          All Shows
         </Text>
-        <VisitorDetail
+        <Detail
           isEdit={false}
           resetState={resetState} />
         {/* <AddVisitor /> */}
@@ -103,20 +100,26 @@ export default function ColumnsTable(props) {
               <Tr {...row.getRowProps()} key={index}>
                 {row.cells.map((cell, index) => {
                   let data = "";
-                  if (cell.column.Header === "NAME") {
-                    data = (
-                      <Flex align='center'>
-                        <Text color={textColor} fontSize='sm' fontWeight='700'>
-                          {cell.value}
-                        </Text>
-                      </Flex>
-                    );
-                  } else if (cell.column.Header === "BIRTHDAY") {
-                    data = (
-                      <Text color={textColor} fontSize='sm' fontWeight='700'>
-                        {cell.value.slice(0, 10)}
-                      </Text>
-                    );
+                  if (cell.column.Header === "START TIME") {
+                    if (cell.value) {
+                      data = (
+                        <Flex align='center'>
+                          <Text color={textColor} fontSize='sm' fontWeight='700'>
+                            {cell.value.slice(0, 10) + ' [' + cell.value.slice(11, 19) + ']'}
+                          </Text>
+                        </Flex>
+                      );
+                    }
+                  } else if (cell.column.Header === "END TIME") {
+                    if (cell.value) {
+                      data = (
+                        <Flex align='center'>
+                          <Text color={textColor} fontSize='sm' fontWeight='700'>
+                            {cell.value.slice(0, 10) + ' [' + cell.value.slice(11, 19) + ']'}
+                          </Text>
+                        </Flex>
+                      );
+                    }
                   }
                   else {
                     data = (
@@ -140,9 +143,7 @@ export default function ColumnsTable(props) {
                 })}
 
                 <Td borderColor='transparent'>
-                  <VisitorDetail
-                    // columnsData={visitorColumns}
-                    // tableData={this.state.visitor}
+                  <Detail
                     row={row}
                     pk={index}
                     isEdit={true}
