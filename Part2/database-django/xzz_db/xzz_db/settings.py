@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ko0+6536_jdv(^5ouj@96l)a6lo_h0((1%=zu(w=$mi@xat%#)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.155', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -54,7 +54,14 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True # disable the CORS because run on localhost
+CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = ['http://localhost']
+AUTHENTICATION_BACKENDS = ['data_models.auth.MyAuthBackend']
+
+# enable session
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+
 ROOT_URLCONF = 'xzz_db.urls'
 
 TEMPLATES = [
@@ -81,9 +88,17 @@ WSGI_APPLICATION = 'xzz_db.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'djangodatabase',
+        'USER': 'root',
+        'PASSWORD': 'admin',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
+
 }
 
 
@@ -127,3 +142,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

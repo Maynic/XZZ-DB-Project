@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	
+	<title>Apex Park - Booking step 2</title>
+	
+
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/theme-turqoise.css" id="template-color" />
+	<link rel="stylesheet" href="css/lightslider.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto+Slab:400,700&subset=latin,latin-ext,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
+	<link rel="shortcut icon" href="images/favicon.ico" />
+
+</head>
+<body>
+	<!--- loading animation -->
+	<div class="loading">
+		<div class="ball"></div>
+		<div class="ball1"></div>
+	</div>
+	<!--- //loading animation -->
+	
+	<!--header-->
+	<header class="header">
+		<div class="wrap">
+			<!--logo-->
+			<div class="logo"><a href="index.html" title="Apex Park"><img src="images/txt/apex_park.png" alt="Apex Park" /></a></div>
+			<!--//logo-->
+			
+			<!--ribbon-->
+			<div class="ribbon">
+				<nav>
+					<ul class="profile-nav">
+						<li class="active" id="my-account-link"><a href="#" title="My Account">My Account</a></li>
+						<li class="login-button"><a href="login.html" title="Login">Login</a></li>
+						<li class="logout-button"><a title="Logout">Logout</a></li>
+						<li><a href="my_account.html" title="Settings">Settings</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!--//ribbon-->
+		</div>
+		
+		<!--main navigation-->
+		<nav class="main-nav">
+			<div class="wrap">
+				<ul class="slimmenu" id="nav">
+
+					<li><a href="attractions.html" title="Attractions">Attractions</a></li>
+					<li><a href="shows.html" title="Show">Show</a></li>
+					<li><a href="store.html" title="store">Store</a></li>
+					<li><a href="Parking.html" title="Parking">Parking</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!--//main navigation-->
+	</header>
+	<!--//header-->
+	
+	<!--main-->
+	<main class="main">		
+		<div class="wrap">
+			<!--breadcrumbs-->
+			<nav class="breadcrumbs">
+			</nav>
+			<!--//breadcrumbs-->
+			
+			<div class="row">
+				<!--three-fourth content-->
+				<div class="three-fourth">
+					<form name="payment" id="payment" method="post" action="booking-step3.html" class="static-content booking">
+						<h2><span>&nbsp;</span>Make Online Payment</h2>
+						<div class="row">
+							<div class="f-item one-half">
+								<label>Card type</label>
+								<select name="card_type">
+									<option value="CA" selected>Select card type</option>
+									<option value="CR">Credit</option>
+									<option value="DE">Debit</option>
+								</select>
+							</div>
+							<div class="f-item one-half">
+								<label for="card_number">Card number</label>
+								<input type="number" id="card_number" name="card_number" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="f-item one-third">
+								<label for="card_holder">Name on card</label>
+								<input type="text" id="card_holder" name="card_holder" />
+							</div>
+							<div class="f-item one-third datepicker">
+								<label for="expiration_date">Expiration Date </label>
+								<div class="datepicker-wrap"><input type="text" id="expiration_date" name="expiration_date" /></div>
+							</div>
+							<div class="f-item one-third">
+								<label for="cv2_number">CV2 Number</label>
+								<input type="number" id="cv2_number" name="cv2_number" />
+							</div>
+						</div>
+						<h2><span>OR&nbsp;</span>Pay by Cash</h2>
+						<div class="f-item full-width checkbox">
+							<input type="checkbox" name="cash" id="cash" value="yes" />
+							<label>I'd love to pay by cash <a href="#"> in person</a>.</label>
+						</div>
+						<div class="row">
+							<div class="full-width">
+								<button id="next-step" type="button" style="display: block; margin: auto;">Submit booking</button>
+							</div>
+						</div>
+			
+					</form>
+				</div>
+				<!--//three-fourth content-->
+				
+				<!--right sidebar-->
+				<aside class="one-fourth right-sidebar">
+					<!--Booking details-->
+					<article class="hotel-details booking-details">
+						<h1>Order Details
+						</h1>
+						<span class="address">Apex park</span>
+						<dl class="booking-info" id="booking-info">
+							<!-- booking details will be displayed here -->
+						</dl>
+						<div class="price">
+							<p class="total" id="total-price"></p>
+							<p>VAT (20%) included</p>
+						</div>
+						</article>
+						<!--//Booking details-->
+					<!--Need Help Booking?-->
+					<article class="widget">
+						<h4>Need Help Booking?</h4>
+						<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
+						<p class="number">I-am-fake-number</p>
+					</article>
+					<!--//Need Help Booking?-->
+				</aside>
+				<!--//right sidebar-->
+			</div>
+			<!--//main content-->
+		</div>
+	</main>
+	<!--//main-->
+	
+	<!--footer-->
+	<footer class="footer">
+		<div class="wrap">
+			<div class="row">
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Book</h6>
+					<p>1400 PennsylSUVia Ave. Washington, DC</p>
+					<p><em>P:</em> 24/7 customer support: 1-555-555-5555</p>
+					<p><em>E:</em> <a href="#" title="booking@mail.com">booking@mail.com</a></p>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Customer support</h6>
+					<ul>
+						<li><a href="#" title="Faq">Faq</a></li>
+						<li><a href="#" title="How do I make a reservation?">How do I make a reservation?</a></li>
+						<li><a href="#" title="Payment options">Payment options</a></li>
+						<li><a href="#" title="Booking tips">Booking tips</a></li>
+					</ul>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Follow us</h6>
+					<ul class="social">
+							<li><a href="#" title="facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
+							<li><a href="#" title="youtube"><i class="fa  fa-fw fa-youtube"></i></a></li>
+							<li><a href="#" title="rss"><i class="fa  fa-fw fa-rss"></i></a></li>
+							<li><a href="#" title="gplus"><i class="fa fa-fw fa-google-plus"></i></a></li>
+							<li><a href="#" title="linkedin"><i class="fa fa-fw fa-linkedin"></i></a></li>
+							<li><a href="#" title="twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+							<li><a href="#" title="pinterest"><i class="fa fa-fw fa-pinterest-p"></i></a></li>
+							<li><a href="#" title="vimeo"><i class="fa fa-fw fa-vimeo"></i></a></li>
+						</ul>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Don’t miss our exclusive offers</h6>
+					<form id="newsletter" action="newsletter.php" method="post">
+						<fieldset>
+							<input type="email" id="newsletter_signup" name="newsletter_signup" placeholder="Enter your email here" />
+							<input type="submit" id="newsletter_submit" name="newsletter_submit" value="Signup" class="gradient-button" />
+						</fieldset>
+					</form>
+				</article>
+				<!--//column-->
+				
+				<div class="bottom full-width">
+					<p class="copy">Copyright 2016 Book your travel ltd. All rights reserved</p>
+					<nav>
+						<ul>
+							<li><a href="#" title="About us">About us</a></li>
+							<li><a href="contact.html" title="Contact">Contact</a></li>
+							<li><a href="#" title="Partners">Partners</a></li>
+							<li><a href="#" title="Customer service">Customer service</a></li>
+							<li><a href="#" title="FAQ">FAQ</a></li>
+							<li><a href="#" title="Careers">Careers</a></li>
+							<li><a href="#" title="Terms & Conditions">Terms &amp; Conditions</a></li>
+							<li><a href="#" title="Privacy statement">Privacy statement</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!---footer-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.uniform.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script src="js/displaysearch.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.logout-button').click(function() {
+				console.log("Logged out")
+            	sessionStorage.removeItem('userId');
+				location.reload();
+        	});
+
+
+			checked = getCurrentUser();
+			$('#my-account-link').click(function(e) {
+				e.preventDefault();
+				if (checked) {
+					window.location.href = 'my_account.html';
+				} else {
+					window.location.href = 'login.html';
+				}
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,927 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	
+	<title>Apex Park - Home</title>
+	
+
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/theme-turqoise.css" id="template-color" />
+	<link rel="stylesheet" href="css/lightslider.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto+Slab:400,700&subset=latin,latin-ext,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
+	<link rel="shortcut icon" href="images/favicon.ico" />
+
+	
+</head>
+<body>
+	<!--- loading animation -->
+	<div class="loading">
+		<div class="ball"></div>
+		<div class="ball1"></div>
+	</div>
+	<!--- //loading animation -->
+	
+	<!--header-->
+	<header class="header">
+		<div class="wrap">
+			<!--logo-->
+			<div class="logo"><a href="index.html" title="Apex Park"><img src="images/txt/apex_park.png" alt="Apex Park" /></a></div>
+			<!--//logo-->
+			
+			<!--ribbon-->
+			<div class="ribbon">
+				<nav>
+					<ul class="profile-nav">
+						<li class="active" id="my-account-link"><a href="#" title="My Account">My Account</a></li>
+						<li class="login-button"><a href="login.html" title="Login">Login</a></li>
+						<li class="logout-button"><a title="Logout">Logout</a></li>
+						<li><a href="my_account.html" title="Settings">Settings</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		
+		<!--main navigation-->
+		<nav class="main-nav">
+			<div class="wrap">
+				<ul class="slimmenu" id="nav">
+
+					<li><a href="attractions.html" title="Attractions">Attractions</a></li>
+					<li><a href="shows.html" title="Show">Show</a></li>
+					<li><a href="store.html" title="store">Store</a></li>
+					<li><a href="parking.html" title="Parking">Parking</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!--//main navigation-->
+	</header>
+	<!--//header-->
+	
+	<!--slider-->
+	<div class="slider">
+		<ul id="hero-gallery" class="cS-hidden">
+			<li data-thumb="images/slider_img/slide_1.jpg"> 
+				<img src="images/slider_img/slide_1.jpg" alt="" />
+			</li>
+			<li data-thumb="images/slider_img/slide_2.jpg"> 
+				<img src="images/slider_img/slide_2.jpg" alt="" />
+			</li>
+			<li data-thumb="images/slider_img/slide_3.jpg"> 
+				<img src="images/slider_img/slide_3.jpg" alt="" />
+			</li>	
+			<li data-thumb="images/slider_img/slide_4.jpg"> 
+				<img src="images/slider_img/slide_4.jpg" alt="" />
+			</li>	
+			<li data-thumb="images/slider_img/slide_5.jpg"> 
+				<img src="images/slider_img/slide_5.jpg" alt="" />
+			</li>	
+		</ul>
+	</div>
+	<!--//slider-->
+	
+	<!--search-->
+	<div class="main-search">
+		<div class="wrap">
+			<form id="main-search" method="post" action="booking-step1.html">
+				<div class="row">
+					<!--column-->
+					<div class="column radios one-fourth">
+						<h5><span>01</span> What to do?</h5>
+						<div class="row">
+							<div class="f-item one-half">
+								<input type="radio" name="radio" id="ticket" value="form1" checked/>
+								<label for="ticket">Ticket</label>
+							</div>
+							<div class="f-item one-half">
+								<input type="radio" name="radio" id="show" value="form2" />
+								<label for="show">Shows</label>
+							</div>
+							<div class="f-item one-half">
+								<input type="radio" name="radio" id="stores" value="form3" />
+								<label for="stores">Stores</label>
+							</div>
+							<div class="f-item one-half">
+								<input type="radio" name="radio" id="parking" value="form4" />
+								<label for="parking">Parking</label>	
+							</div>
+						</div>
+					</div>
+					<!--//column-->
+					
+					<div class="three-fourth">
+						<!--form ticket-->
+						<div class="form row" id="form1">
+							<div class="column  one-half">
+								<h5><span>02</span> When you'd like to visit our park?</h5>
+								<div class="row">
+									<div class="f-item full-width datepicker">
+										<label for="datepicker1">Date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder="MM/DD/YY" id="datepicker1" name="ticket_date"/></div>
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+						
+							<!--column-->
+							<div class="column one-half">
+								<h5><span>03</span> How many tickets?</h5>
+								<div class="row">
+									<div class="f-item one-third spinner">
+										<label for="spinner1">Children</label>
+										<input type="text" placeholder="" id="spinner1" name="ticket_c" />
+									</div>
+									<div class="f-item one-third spinner">
+										<label for="spinner1">Adults</label>
+										<input type="text" placeholder="" id="spinner1" name="ticket_a" />
+									</div>
+									<div class="f-item one-third spinner">
+										<label for="spinner1">Senior</label>
+										<input type="text" placeholder="" id="spinner1" name="ticket_s" />
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+						</div>	
+						<!--//form ticket-->
+
+						<!--form show -->
+						<div class="form row" id="form2">
+							<!--column-->
+							<div class="column one-half">
+								<h5><span>02</span> Which show you like?</h5>
+								<div class="row">
+									<div class="f-item one-half">
+										<label>Shows Selections</label>
+										<select name="show_select">
+											<option>I Don't Mind</option>
+											<option>The Phantom of the Opera</option>
+											<option>Hamlet</option>
+											<option>The Lion King</option>
+											<option>The Addams Family</option>
+											<option>Sweeney Todd: The Demon Barber of Fleet Street</option>
+											<option>The Crucible</option>
+											<option>Wicked</option>
+											<option>The Book of Mormon</option>
+											<option>Death of a Salesman</option>
+											<option>The Rocky Horror Picture Show</option>
+											<option>The Exorcist</option>
+											<option>The Importance of Being Earnest</option>
+											<option>Cats</option>
+											<option>Dracula</option>
+											<option>The Sound of Music</option>
+											<option>A Midsummer Nights Dream</option>
+											<option>Jekyll and Hyde</option>
+											<option>The Great Gatsby</option>
+											<option>Little Shop of Horrors</option>
+											<option>A Streetcar Named Desire</option>
+											<option>The Rocky Horror Show</option>
+											<option>Carrie</option>
+											<option>Les Misérables</option>
+											<option>The Glass Menagerie</option>
+										</select>
+									</div>
+
+									<div class="f-item one-half">
+										<label for="datepicker2">Date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder="MM/DD/YY" id="datepicker2" name="show_date" /></div>
+									</div>							
+								</div>
+							</div>
+							<!--//column-->
+
+
+							<!--column-->
+							<div class="column  one-half">
+								<h5><span>03</span> Who will come?</h5>
+								<div class="row">
+									<div class="f-item full-width spinner">
+										<label for="spinner2">People</label>
+										<input type="text" placeholder="" id="spinner2" name="show_count" />
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+						</div>	
+						<!--//form show-->
+
+						
+						
+						<!--form store-->
+						<div class="form row" id="form3">
+							<!--column-->
+							<div class="column full-width">
+								<h5><span>02</span> Choose the category </h5>
+								<div class="row">
+									<div class="f-item one-half">
+										<label>Category</label>
+										<select name="store_category">
+											<option>Select choice</option>
+											<option>Drink</option>
+											<option>Snakes</option>
+											<option>Souvenir</option>
+											<option>Meal</option>
+											<option>Kids' fav</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+						</div>
+							
+						
+						<!--form parking-->
+						<div class="form row" id="form4">
+							<!--column-->
+							<div class="column one-third">
+								<h5><span>02</span> Where to park?</h5>
+								<div class="row">
+									<div class="f-item full-width">
+										<label>Park at</label>
+										<select name="park_place">
+											<option>Select choice</option>
+											<option>Attractions</option>
+											<option>shows</option>
+											<option>stores</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+						
+							<!--column-->
+							<div class="column two-third">
+								<h5><span>03</span> Parking duration</h5>
+								<div class="row">
+									<div class="f-item full-width">
+										<div class="f-item full-width datepicker">
+											<label for="park_in_date">Time in</label>
+											<div class="row">
+												<div class="f-item one-half">
+													<div class="datepicker-wrap"><input type="text" placeholder="" id="park_in_date" name="park_in_date" /></div>
+												</div>
+												<div class="f-item one-half">
+													<select name="park_in">
+														<option>00:00</option>
+														<option>01:00</option>
+														<option>02:00</option>
+														<option>03:00</option>
+														<option>04:00</option>
+														<option>05:00</option>
+														<option>06:00</option>
+														<option>07:00</option>
+														<option>08:00</option>
+														<option>09:00</option>
+														<option selected>10:00</option>
+														<option>11:00</option>
+														<option>12:00</option>
+														<option>13:00</option>
+														<option>14:00</option>
+														<option>15:00</option>
+														<option>16:00</option>
+														<option>17:00</option>
+														<option>18:00</option>
+														<option>19:00</option>
+														<option>20:00</option>
+														<option>21:00</option>
+														<option>22:00</option>
+														<option>23:00</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="f-item full-width datepicker">
+											<label for="park_out_date">Time out</label>
+											<div class="row">
+												<div class="f-item one-half">
+													<div class="datepicker-wrap"><input type="text" placeholder="" id="park_out_date" name="park_out_date" /></div>
+												</div>
+												<div class="f-item one-half">
+													<select name="park_out">
+														<option>00:00</option>
+														<option>01:00</option>
+														<option>02:00</option>
+														<option>03:00</option>
+														<option>04:00</option>
+														<option>05:00</option>
+														<option>06:00</option>
+														<option>07:00</option>
+														<option>08:00</option>
+														<option>09:00</option>
+														<option selected>10:00</option>
+														<option>11:00</option>
+														<option>12:00</option>
+														<option>13:00</option>
+														<option>14:00</option>
+														<option>15:00</option>
+														<option>16:00</option>
+														<option>17:00</option>
+														<option>18:00</option>
+														<option>19:00</option>
+														<option>20:00</option>
+														<option>21:00</option>
+														<option>22:00</option>
+														<option>23:00</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+						</div>	
+						
+					</div>
+					<div class>
+						<button type="button" onclick="submitForm()" style="display: block; margin: auto;">Proceed to results</button>
+					</div>	
+					<!-- <button type="button" onclick="submitForm()" class="gradient-button search-submit">Proceed to results</button> -->
+				</div>
+			</form>
+		</div>
+	</div>
+	<!--//search-->
+	
+	<!--main-->
+	<main class="main">
+		<div class="wrap">
+			<div class="row">
+				<div class="full-width">
+				
+					<!--latest offers-->
+					<header class="s-title">
+						<h2>Explore our latest offers</h2>
+					</header>
+					
+					<div class="offers">
+						<div class="row">
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="#" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<h3>Winter beach escapes 30% off</h3>
+									<a href="#" title="Explore our deals" class="gradient-button">Explore our deals</a>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="#" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<h3>Spend New Year‘s Eve in Paris</h3>
+									<a href="#" title="More info" class="gradient-button">More info</a>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="#" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<h3>Skiing weekends in the Alpes</h3>
+									<a href="#" title="Explore our deals" class="gradient-button">Explore our deals</a>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="#" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<h3>Our weekly top offer: Thailand</h3>
+									<a href="#" title="More info" class="gradient-button">More info</a>
+								</div>
+							</article>
+							<!--//column-->
+						</div>
+					</div>
+					<!--//latest offers-->
+					
+					<header class="s-title">
+						<h2>Top destinations around the world</h2>
+					</header>
+					
+					<!--top destinations-->
+					<div class="destinations">
+						<div class="row">
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>Paris</h4>
+									<span class="count">1529 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>Amsterdam</h4>
+									<span class="count">929 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>St Petersburg</h4>
+									<span class="count">658 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>Prague</h4>
+									<span class="count">829 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>Prague</h4>
+									<span class="count">829 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth promo">
+								<div class="ribbon-small">- 20%</div>
+								<figure><a href="hot_deals.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="hot_deals.html" title="View all" class="gradient-button">View all</a>
+									<h4>Paris</h4>
+									<span class="count">1529 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>Amsterdam</h4>
+									<span class="count">929 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>St Petersburg</h4>
+									<span class="count">658 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>St Petersburg</h4>
+									<span class="count">658 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>Prague</h4>
+									<span class="count">829 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>Paris</h4>
+									<span class="count">1529 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+							
+							<!--column-->
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="images/uploads/img.jpg" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="View all" class="gradient-button">View all</a>
+									<h4>Amsterdam</h4>
+									<span class="count">929 Hotels</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 70</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">from</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--//column-->
+						</div>
+					</div>
+					<!--//top destinations-->
+			
+			
+					<!--info boxes-->
+					<div class="boxes">
+						<div class="row">
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Handpicked Hotels</h4>
+								<p>All Book Your Travel Hotels fulfil strict selection criteria. Each hotel is chosen individually and inclusion cannot be bought. </p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Detailed Descriptions</h4>
+								<p>To give you an accurate impression of the hotel, we endeavor to publish transparent, balanced and precise hotel descriptions. </p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Exclusive Knowledge</h4>
+								<p>We’ve done our research. Our scouts are always busy finding out more about our hotels, the surroundings and activities on offer nearby.</p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Passionate Service</h4>
+								<p>Book Your Travels’s team will cater to your special requests. We offer expert and passionate advice for finding the right hotel. </p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Best Price Guarantee</h4>
+								<p>We offer the best hotels at the best prices. If you find the same room category on the same dates cheaper elsewhere, we will refund the difference. Guaranteed, and quickly. </p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Secure Booking</h4>
+								<p>Book Your Travel reservation system is secure and your credit card and personal information is encrypted.We work to high standards and guarantee your privacy. </p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Benefits for Hoteliers</h4>
+								<p>We provide a cost-effective model, a network of over 5000 partners and a personalised account management service to help you optimise your revenue.</p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Any Questions?</h4>
+								<p>Call us on <em>1-555-555-555</em> for individual, tailored advice for your perfect stay or <a href="contact.html" title="Contact">send us a message</a> with your hotel booking query.</p>
+							</div>
+						</article>
+						<!--//column-->
+					</div>
+				</div>
+					<!--//info boxes-->
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--//main-->
+	
+	<!--footer-->
+	<footer class="footer">
+		<div class="wrap">
+			<div class="row">
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Book Your Travel</h6>
+					<p>1400 PennsylSUVia Ave. Washington, DC</p>
+					<p><em>P:</em> 24/7 customer support: 1-555-555-5555</p>
+					<p><em>E:</em> <a href="#" title="booking@mail.com">booking@mail.com</a></p>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Customer support</h6>
+					<ul>
+						<li><a href="#" title="Faq">Faq</a></li>
+						<li><a href="#" title="How do I make a reservation?">How do I make a reservation?</a></li>
+						<li><a href="#" title="Payment options">Payment options</a></li>
+						<li><a href="#" title="Booking tips">Booking tips</a></li>
+					</ul>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Follow us</h6>
+					<ul class="social">
+							<li><a href="#" title="facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
+							<li><a href="#" title="youtube"><i class="fa  fa-fw fa-youtube"></i></a></li>
+							<li><a href="#" title="rss"><i class="fa  fa-fw fa-rss"></i></a></li>
+							<li><a href="#" title="gplus"><i class="fa fa-fw fa-google-plus"></i></a></li>
+							<li><a href="#" title="linkedin"><i class="fa fa-fw fa-linkedin"></i></a></li>
+							<li><a href="#" title="twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+							<li><a href="#" title="pinterest"><i class="fa fa-fw fa-pinterest-p"></i></a></li>
+							<li><a href="#" title="vimeo"><i class="fa fa-fw fa-vimeo"></i></a></li>
+						</ul>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Don’t miss our exclusive offers</h6>
+					<form id="newsletter" action="newsletter.php" method="post">
+						<fieldset>
+							<input type="email" id="newsletter_signup" name="newsletter_signup" placeholder="Enter your email here" />
+							<input type="submit" id="newsletter_submit" name="newsletter_submit" value="Signup" class="gradient-button" />
+						</fieldset>
+					</form>
+				</article>
+				<!--//column-->
+				
+				<div class="bottom full-width">
+					<p class="copy">Copyright 2016 Book your travel ltd. All rights reserved</p>
+					<nav>
+						<ul>
+							<li><a href="#" title="About us">About us</a></li>
+							<li><a href="contact.html" title="Contact">Contact</a></li>
+							<li><a href="#" title="Partners">Partners</a></li>
+							<li><a href="#" title="Customer service">Customer service</a></li>
+							<li><a href="#" title="FAQ">FAQ</a></li>
+							<li><a href="#" title="Careers">Careers</a></li>
+							<li><a href="#" title="Terms & Conditions">Terms &amp; Conditions</a></li>
+							<li><a href="#" title="Privacy statement">Privacy statement</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!---footer-->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.uniform.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
+	<script type="text/javascript" src="js/lightslider.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script src="js/index.js"></script>
+	<script type="text/javascript">	
+		(function( $ ) {
+			$(document).ready(function(){
+				$('.form').hide();
+				$('#form1').show();
+				$('.f-item:nth-child(1)').addClass('active');
+				$('.f-item:nth-child(1) span').addClass('checked');		
+
+				$('#hero-gallery').lightSlider({
+					gallery:true,
+					item:1,
+					pager:false,
+					gallery:false,
+					slideMargin: 0,
+					speed:2000,
+					pause:6000,
+					mode: 'fade',
+					auto:true,
+					loop:true,
+					onSliderLoad: function() {
+						$('#hero-gallery').removeClass('cS-hidden');
+					}  
+				});			
+			});
+		})(jQuery);
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.logout-button').click(function() {
+				console.log("Logged out")
+            	sessionStorage.removeItem('userId');
+				location.reload();
+        	});
+
+
+			checked = getCurrentUser();
+			$('#my-account-link').click(function(e) {
+				e.preventDefault();
+				if (checked) {
+					window.location.href = 'my_account.html';
+				} else {
+					window.location.href = 'login.html';
+				}
+			});
+		});
+	</script>
+
+</body>
+</html>

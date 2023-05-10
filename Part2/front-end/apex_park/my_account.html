@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	
+	<title>Apex Park - My Account</title>
+	
+
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/theme-turqoise.css" id="template-color" />
+	<link rel="stylesheet" href="css/lightslider.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto+Slab:400,700&subset=latin,latin-ext,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
+	<link rel="shortcut icon" href="images/favicon.ico" />
+</head>
+<body>
+	<!--- loading animation -->
+	<div class="loading">
+		<div class="ball"></div>
+		<div class="ball1"></div>
+	</div>
+	<!--- //loading animation -->
+	
+	<!--header-->
+	<header class="header">
+		<div class="wrap">
+			<!--logo-->
+			<div class="logo"><a href="index.html" title="Apex Park"><img src="images/txt/apex_park.png" alt="Apex Park" /></a></div>
+			<!--//logo-->
+			
+			<!--ribbon-->
+			<div class="ribbon">
+				<nav>
+					<ul class="profile-nav">
+						<li class="active" id="my-account-link"><a href="#" title="My Account">My Account</a></li>
+						<li class="login-button"><a href="login.html" title="Login">Login</a></li>
+						<li class="logout-button"><a title="Logout">Logout</a></li>
+						<li><a href="my_account.html" title="Settings">Settings</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		
+		<!--main navigation-->
+		<nav class="main-nav">
+			<div class="wrap">
+				<ul class="slimmenu" id="nav">
+
+					<li><a href="attractions.html" title="Attractions">Attractions</a></li>
+					<li><a href="shows.html" title="Show">Shows</a></li>
+					<li><a href="store.html" title="store">Store</a></li>
+					<li><a href="Parking.html" title="Parking">Parking</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!--//header-->
+	
+	<!--main-->
+	<main class="main">		
+		<div class="wrap">
+			<div class="row">
+				<!--three-fourth content-->
+				<section class="three-fourth">
+				
+					<h1>My account</h1>
+					
+					<!--inner navigation-->
+					<nav class="inner-nav">
+						<ul>
+							<li><a href="#Tickets" title="My tickets">My tickets</a></li>
+							<li><a href="#Shows" title="Show orders">Show orders</a></li>
+							<li><a href="#Parking" title="Parking orders">Parking orders</a></li>
+							<li><a href="#Stores" title="Store orders">Store orders</a></li>
+							<li><a id="settings" href="#MySettings" title="Settings">Settings</a></li>
+						</ul>
+					</nav>
+					<!--//inner navigation-->
+					
+					<section id="Tickets" class="tab-content">
+						<div id="tickets-container"></div>
+					</section>
+					
+					<section id="Shows" class="tab-content">
+						<div id="shows-container"></div>
+					</section>
+					  
+					<section id="Parking" class="tab-content">
+						<div id="parking-container"></div>
+					</section>
+					  
+					<section id="Stores" class="tab-content">
+						<div id="stores-container"></div>
+					</section>
+					
+					
+					<!--MySettings-->
+					<section id="MySettings" class="tab-content">
+						<article class="mysettings">
+							<h2>Personal details</h2>
+							<table>
+								<tr>
+									<th>Name:</th>
+									<td>
+										<span id="nameFieldText"></span>
+										<!--edit fields-->
+										<div class="edit_field" id="field1">
+											<label for="new_name">Your new name:</label>
+											<input type="text" id="new_name"/>
+											<input type="submit" value="save" class="gradient-button" id="submit1"/>
+											
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<th>E-mail address: </th>
+									<td>
+										<span id="emailFieldText"></span>
+										<!--edit fields-->
+										<div class="edit_field" id="field2">
+											<label for="new_email">Your new email:</label>
+											<input type="text" id="new_email"/>
+											<input type="submit" value="save" class="gradient-button" id="submit2"/>
+											
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field2"></a></td>
+								</tr>
+								<tr>
+									<th>Password: </th>
+									<td>
+										<span id="passwordFieldText">********</span>
+										<!--edit fields-->
+										<div class="edit_field" id="field3">
+											<label for="new_password">Your new password:</label>
+											<input type="password" id="new_password"/>
+											<input type="submit" value="save" class="gradient-button" id="submit3"/>
+											
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field3" class="gradient-button edit">Edit</a></td>
+								</tr>
+								<tr>
+									<th>Birthday: </th>
+									<td>
+										<span id="birthdayFieldText"></span>
+										<!--edit fields-->
+										<div class="edit_field" id="field4">
+											<label for="new_birthday">Your new birthday:</label>
+											<input type="text" id="new_birthday"/>
+											<input type="submit" value="save" class="gradient-button" id="submit4"/>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field4" class="gradient-button edit">Edit</a></td>
+								</tr>
+								<tr>
+									<th>Phone Number: </th>
+									<td>
+										<span id="phoneFieldText"></span>
+										<!--edit fields-->
+										<div class="edit_field" id="field5">
+											<label for="">Your new phone number:</label>
+											<input type="text" id="new_phone"/>
+											<input type="submit" value="save" class="gradient-button" id="submit5"/>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field5" class="gradient-button edit">Edit</a></td>
+								</tr>
+
+								<tr>
+									<th>Street Address and number:</th>
+									<td>
+										<span id="addressFieldText"></span>
+										<!--edit fields-->
+										<div class="edit_field" id="field6">
+											<label for="new_address">Your new address:</label>
+											<input type="text" id="new_address"/>
+											<input type="submit" value="save" class="gradient-button" id="submit6"/>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field6" class="gradient-button edit">Edit</a></td>
+								</tr>
+								
+								<tr>
+									<th>City: </th>
+									<td>
+										<span id="cityFieldText"></span>
+										<!--edit fields-->
+										<div class="edit_field" id="field7">
+											<label for="new_city">Your new city:</label>
+											<input type="text" id="new_city"/>
+											<input type="submit" value="save" class="gradient-button" id="submit7"/>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field7" class="gradient-button edit">Edit</a></td>
+								</tr>
+								
+
+								<tr>
+									<th>State:</th>
+									<td>
+										<span id="stateFieldText"></span>
+										<!--edit fields-->
+										<div class="edit_field" id="field8">
+											<label for="new_state">Your new state:</label>
+											<input type="text" id="new_state"/>
+											<input type="submit" value="save" class="gradient-button" id="submit8"/>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field8" class="gradient-button edit">Edit</a></td>
+								</tr>
+
+								<tr>
+									<th>ZIP code:</th>
+									<td>
+										<span id="zipFieldText">********</span>
+										<!--edit fields-->
+										<div class="edit_field" id="field9">
+											<label for="new_zip">Your new ZIP code:</label>
+											<input type="text" id="new_zip"/>
+											<input type="submit" value="save" class="gradient-button" id="submit9"/>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field9" class="gradient-button edit">Edit</a></td>
+								</tr>
+
+								<tr>
+									<th>Visitor Type:</th>
+									<td>
+										<span id="visitorTFieldText"></span>
+										<!--edit fields-->
+										<div class="edit_field" id="field10">
+											<label for="new_visitorT"></label>
+											<input type="text" id="new_visitortype"/>
+											<input type="submit" value="save" class="gradient-button" id="submit10"/>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field10"></a></td>
+								</tr>
+								
+							</table>
+
+						</article>
+					</section>
+					<!--//MySettings-->
+					
+				</section>
+				<!--//three-fourth content-->
+				
+				<!--sidebar-->
+				<aside class="one-fourth right-sidebar">
+					<!--Need Help Booking?-->
+					<article class="widget">
+						<h4>Need Help Booking?</h4>
+						<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
+						<p class="number">1- 555 - 555 - 555</p>
+					</article>
+					<!--//Need Help Booking?-->
+					
+					<!--Why Book with us?-->
+					<article class="widget">
+						<h4>Why Book with us?</h4>
+						<h5>Low rates</h5>
+						<p>Get the best rates, or get a refund.<br>No booking fees. Save money!</p>
+						<h5>Largest Selection</h5>
+						<p>140,000+ hotels worldwide<br>130+ airlines<br>Over 3 million guest reviews</p>
+						<h5>We’re Always Here</h5>
+						<p>Call or email us, anytime<br>Get 24-hour support before, during, and after your trip</p>
+					</article>
+					<!--//Why Book with us?-->
+					
+				</aside>
+				<!--//sidebar-->
+			</div>
+			<!--//main content-->
+		</div>
+	</main>
+	<!--//main-->
+	
+	<!--footer-->
+	<footer class="footer">
+		<div class="wrap">
+			<div class="row">
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Book Your Travel</h6>
+					<p>1400 PennsylSUVia Ave. Washington, DC</p>
+					<p><em>P:</em> 24/7 customer support: 1-555-555-5555</p>
+					<p><em>E:</em> <a href="#" title="booking@mail.com">booking@mail.com</a></p>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Customer support</h6>
+					<ul>
+						<li><a href="#" title="Faq">Faq</a></li>
+						<li><a href="#" title="How do I make a reservation?">How do I make a reservation?</a></li>
+						<li><a href="#" title="Payment options">Payment options</a></li>
+						<li><a href="#" title="Booking tips">Booking tips</a></li>
+					</ul>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Follow us</h6>
+					<ul class="social">
+							<li><a href="#" title="facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
+							<li><a href="#" title="youtube"><i class="fa  fa-fw fa-youtube"></i></a></li>
+							<li><a href="#" title="rss"><i class="fa  fa-fw fa-rss"></i></a></li>
+							<li><a href="#" title="gplus"><i class="fa fa-fw fa-google-plus"></i></a></li>
+							<li><a href="#" title="linkedin"><i class="fa fa-fw fa-linkedin"></i></a></li>
+							<li><a href="#" title="twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+							<li><a href="#" title="pinterest"><i class="fa fa-fw fa-pinterest-p"></i></a></li>
+							<li><a href="#" title="vimeo"><i class="fa fa-fw fa-vimeo"></i></a></li>
+						</ul>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Don’t miss our exclusive offers</h6>
+					<form id="newsletter" action="newsletter.php" method="post">
+						<fieldset>
+							<input type="email" id="newsletter_signup" name="newsletter_signup" placeholder="Enter your email here" />
+							<input type="submit" id="newsletter_submit" name="newsletter_submit" value="Signup" class="gradient-button" />
+						</fieldset>
+					</form>
+				</article>
+				<!--//column-->
+				
+				<div class="bottom full-width">
+					<p class="copy">Copyright 2016 Book your travel ltd. All rights reserved</p>
+					<nav>
+						<ul>
+							<li><a href="#" title="About us">About us</a></li>
+							<li><a href="contact.html" title="Contact">Contact</a></li>
+							<li><a href="#" title="Partners">Partners</a></li>
+							<li><a href="#" title="Customer service">Customer service</a></li>
+							<li><a href="#" title="FAQ">FAQ</a></li>
+							<li><a href="#" title="Careers">Careers</a></li>
+							<li><a href="#" title="Terms & Conditions">Terms &amp; Conditions</a></li>
+							<li><a href="#" title="Privacy statement">Privacy statement</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!---footer-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.uniform.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script src="js/displaybooking.js"></script>
+	
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('.login-button').hide();
+			$('.logout-button').show();
+
+			$('.logout-button').click(function() {
+				console.log("Logged out")
+            	sessionStorage.removeItem('userId');
+				window.location.href = "/index.html";
+        	});
+
+		});
+	</script>
+
+	<script>
+		// This scripts used to log out the user
+		$(document).ready(function() {
+			$("#logout-btn").click(function(event) {
+				event.preventDefault();  // prevent the default action of following the link
+	
+				$.ajax({
+					url: 'http://127.0.0.1:8000/api/data_models/user_logout/',  
+					type: "GET",     
+					success: function(response, textStatus, jqXHR) {
+						if (jqXHR.status === 200) {
+							sessionStorage.removeItem('userId');
+							alert("Successfully logged out!")
+							window.location.href = "/index.html";
+						} else if (jqXHR.status === 400){
+							alert("Something wrong")
+						}
+					},
+					error: function(response) {
+						alert(textStatus)
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>
