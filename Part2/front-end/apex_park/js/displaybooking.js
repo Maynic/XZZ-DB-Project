@@ -26,7 +26,7 @@ fetch('http://127.0.0.1:8000/api/data_models/booking_details/' + sessionStorage.
       html += '<div class="b-info">';
       html += '<table>';
       html += '<tr><th>Ticket Type</th><td>' + tickets.ticket_method + '</td></tr>';
-      html += '<tr><th>Visit Date</th><td>' + tickets.visit_date + '</td></tr>';
+      html += '<tr><th>Visit Date</th><td>' + ticket_date + '</td></tr>';
       html += '<tr><th>Purchase price</th><td><strong>$</strong>' + tickets.ticket_price + '</td></tr>';
       html += '</table></div></article>';
 

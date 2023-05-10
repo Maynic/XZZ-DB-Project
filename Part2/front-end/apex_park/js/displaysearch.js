@@ -165,6 +165,7 @@ function calculateTotalPrice(booking_info) {
         const numAdults = parseInt(booking_info.tadults);
         const numChildren = parseInt(booking_info.tchildren);
         const numSeniors = parseInt(booking_info.tsenior);
+        
 
         totalPrice += (numAdults + numChildren) * basePrice;
         totalPrice += numSeniors * basePrice * 0.85; // 15% discount for seniors
@@ -253,7 +254,7 @@ submitButton.addEventListener('click', (event) => {
       if (checkbox.checked) {
         data_payment = {
           payment_amount: total_price.toFixed(2),
-          payment_method: 'CA',
+          payment_method: 'Cash',
           order: '' + response1.order_id
         }
       } else {
