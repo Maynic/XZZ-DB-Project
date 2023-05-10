@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	
 	
-	<title>Apex Park - Booking step 2</title>
+	<title>Apex Park - Home</title>
 	
 
 	<link rel="stylesheet" href="css/style.css" />
@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
 	<link rel="shortcut icon" href="images/favicon.ico" />
-
+	
 </head>
 <body>
 	<!--- loading animation -->
@@ -35,14 +35,19 @@
 			<div class="ribbon">
 				<nav>
 					<ul class="profile-nav">
-						<li class="active" id="my-account-link"><a href="#" title="My Account">My Account</a></li>
-						<li class="login-button"><a href="login.html" title="Login">Login</a></li>
-						<li class="logout-button"><a title="Logout">Logout</a></li>
+						<li class="active"><a href="#" title="My Account">My Account</a></li>
+						<li><a href="login.html" title="Login">Login</a></li>
 						<li><a href="my_account.html" title="Settings">Settings</a></li>
 					</ul>
 				</nav>
 			</div>
 			<!--//ribbon-->
+			
+			<!--search-->
+			<div class="search">
+				
+			</div>
+			<!--//search-->
 		</div>
 		
 		<!--main navigation-->
@@ -51,9 +56,79 @@
 				<ul class="slimmenu" id="nav">
 
 					<li><a href="attractions.html" title="Attractions">Attractions</a></li>
-					<li><a href="shows.html" title="Show">Show</a></li>
+					<!-- <li><a href="flights.html" title="Flights">Flights</a></li> -->
+
+					<!-- hotel-->
+					<li><a href="shows.html" title="Show">Show</a>
+						<ul>
+							<li><a href="#">Book for new show</a></li>
+							<li><a href="#">Check my ticket status</a>
+								<ul>
+									<li><a href="#">By ticket number</a></li>
+									<li><a href="#">By show name</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+
 					<li><a href="store.html" title="store">Store</a></li>
-					<li><a href="Parking.html" title="Parking">Parking</a></li>
+					<li><a href="parking.html" title="Parking">Parking</a></li>
+
+					<li class="has-mega"><a href="#" title="Pages">Pages</a>
+						<ul class="mega">
+							<li>
+								<div class="row">
+									<div class="one-fifth">
+										<p>COMMON PAGES</p>
+										<ul>
+											<li><a href="page_left_sidebar.html" title="Page with left sidebar">Page with left sidebar</a></li>
+											<li><a href="page_right_sidebar.html" title="Page with right sidebar">Page with right sidebar</a></li>
+											<li><a href="page_both_sidebars.html" title="Page with both sidebars">Page with both sidebars</a></li>
+											<li><a href="page_no_sidebars.html" title="Page with no sidebars">Page with no sidebars</a></li>
+										</ul>
+									</div>
+									<div class="one-fifth">
+										<p>LISTING LAYOUTS</p>
+										<ul>
+											<li><a href="hotels_2col.html" title="Listing 2 columns">Listing 2 columns</a></li>
+											<li><a href="hotels_3col.html" title="Listing 3 columns">Listing 3 columns</a></li>
+											<li><a href="hotels.html" title="Listing 4 columns">Listing 4 columns</a></li>
+											<li><a href="hotel.html" title="Single listing">Single listing</a></li>
+										</ul>
+									</div>
+									<div class="one-fifth">
+										<p>USER PAGES</p>
+										<ul>
+											<li><a href="login.html" title="Login">Login</a></li>
+											<li><a href="register.html" title="Register">Register</a></li>
+											<li><a href="my_account.html" title="My Account">My account</a></li>
+											<li><a href="error.html" title="Error 404">Error 404</a></li>
+										</ul>
+									</div>
+									<div class="one-fifth">
+										<p>SPECIALTY PAGES</p>
+										<ul>
+											<li><a href="search_results.html" title="Search results hotels">Search results hotels</a></li>
+											<li><a href="search_results_flights.html" title="Search results flights">Search results flights</a></li>
+											<li><a href="get_inspired.html" title="Get inspired">Get inspired</a></li>
+											<li><a href="get_inspired_results.html" title="Get inspired results">Get inspired results</a></li>
+										</ul>
+									</div>
+									<div class="one-fifth">
+										<p>&nbsp;</p>
+										<ul>
+											<li><a href="booking-step1.html" title="Booking step 1">Booking step 1</a></li>
+											<li><a href="booking-step2.html" title="Booking step 2">Booking step 2</a></li>
+											<li><a href="booking-step3.html" title="Booking step 3">Booking step 3</a></li>
+											<li><a href="loading.html" title="Loading">Loading</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li><a href="contact.html" title="Contact">Contact</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -71,77 +146,50 @@
 			
 			<div class="row">
 				<!--three-fourth content-->
-				<div class="three-fourth">
-					<form name="payment" id="payment" method="post" action="booking-step3.html" class="static-content booking">
-						<h2><span>&nbsp;</span>Make Online Payment</h2>
-						<div class="row">
-							<div class="f-item one-half">
-								<label>Card type</label>
-								<select name="card_type">
-									<option value="CA" selected>Select card type</option>
-									<option value="CR">Credit</option>
-									<option value="DE">Debit</option>
-								</select>
-							</div>
-							<div class="f-item one-half">
-								<label for="card_number">Card number</label>
-								<input type="number" id="card_number" name="card_number" />
-							</div>
-						</div>
-						<div class="row">
-							<div class="f-item one-third">
-								<label for="card_holder">Name on card</label>
-								<input type="text" id="card_holder" name="card_holder" />
-							</div>
-							<div class="f-item one-third datepicker">
-								<label for="expiration_date">Expiration Date </label>
-								<div class="datepicker-wrap"><input type="text" id="expiration_date" name="expiration_date" /></div>
-							</div>
-							<div class="f-item one-third">
-								<label for="cv2_number">CV2 Number</label>
-								<input type="number" id="cv2_number" name="cv2_number" />
-							</div>
-						</div>
-						<h2><span>OR&nbsp;</span>Pay by Cash</h2>
-						<div class="f-item full-width checkbox">
-							<input type="checkbox" name="cash" id="cash" value="yes" />
-							<label>I'd love to pay by cash <a href="#"> in person</a>.</label>
-						</div>
-						<div class="row">
-							<div class="full-width">
-								<button id="next-step" type="button" style="display: block; margin: auto;">Submit booking</button>
-							</div>
-						</div>
-			
-					</form>
-				</div>
-				<!--//three-fourth content-->
+				<div class="full-width">
+					<h1>Contact us</h1>
+				</div>	
+				<!--three-fourth content-->
 				
-				<!--right sidebar-->
-				<aside class="one-fourth right-sidebar">
-					<!--Booking details-->
-					<article class="hotel-details booking-details">
-						<h1>Order Details
-						</h1>
-						<span class="address">Apex park</span>
-						<dl class="booking-info" id="booking-info">
-							<!-- booking details will be displayed here -->
-						</dl>
-						<div class="price">
-							<p class="total" id="total-price"></p>
-							<p>VAT (20%) included</p>
-						</div>
-						</article>
-						<!--//Booking details-->
-					<!--Need Help Booking?-->
+				<!--sidebar-->
+				<aside class="full-width">
+					<!--contact form-->
 					<article class="widget">
-						<h4>Need Help Booking?</h4>
-						<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
-						<p class="number">I-am-fake-number</p>
+						<h4>Send us a message</h4>
+						<form method="post" action="contact_form_message.php" name="contactform" id="contactform">
+							<fieldset>
+								<div id="message"></div>
+								<div class="row">
+									<div class="f-item full-width">
+										<label for="name">Your name</label>
+										<input type="text" id="name" name="name" value="" />
+									</div>
+									<div class="f-item full-width">
+										<label for="email">Your e-mail</label>
+										<input type="email" id="email" name="email" value="" />
+									</div>
+									<div class="f-item full-width">
+										<label for="comments">Your message</label>
+										<textarea id="comments" rows="10" cols="10"></textarea>
+									</div>
+									<div class="f-item full-width">
+										<input type="submit" value="Send" id="submit" name="submit" class="gradient-button" />
+									</div>
+								</div>
+							</fieldset>
+						</form>
 					</article>
-					<!--//Need Help Booking?-->
+					<!--//contact form-->
+					
+					<!--contact info-->
+					<article class="widget">
+						<h4>Or contact us directly</h4>
+						<p class="number">1- 555 - 555 - 555</p>
+						<p class="email"><a href="#">booking@mail.com</a></p>
+					</article>
+					<!--//contact info-->
 				</aside>
-				<!--//right sidebar-->
+				<!--//sidebar-->
 			</div>
 			<!--//main content-->
 		</div>
@@ -154,7 +202,7 @@
 			<div class="row">
 				<!--column-->
 				<article class="one-fourth">
-					<h6>Book</h6>
+					<h6>Book Your Travel</h6>
 					<p>1400 PennsylSUVia Ave. Washington, DC</p>
 					<p><em>P:</em> 24/7 customer support: 1-555-555-5555</p>
 					<p><em>E:</em> <a href="#" title="booking@mail.com">booking@mail.com</a></p>
@@ -220,32 +268,13 @@
 		</div>
 	</footer>
 	<!---footer-->
-
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/jquery.uniform.min.js"></script>
 	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
-	<script src="js/displaysearch.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.logout-button').click(function() {
-				console.log("Logged out")
-            	sessionStorage.removeItem('userId');
-				location.reload();
-        	});
-
-
-			checked = getCurrentUser();
-			$('#my-account-link').click(function(e) {
-				e.preventDefault();
-				if (checked) {
-					window.location.href = 'my_account.html';
-				} else {
-					window.location.href = 'login.html';
-				}
-			});
-		});
-	</script>
+	
+	
 </body>
 </html>

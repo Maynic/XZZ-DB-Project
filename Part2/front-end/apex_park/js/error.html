@@ -46,6 +46,18 @@
 						<li><a href="login.html" title="Login">Login</a></li>
 						<li><a href="my_account.html" title="Settings">Settings</a></li>
 					</ul>
+					<ul class="lang-nav">
+						<li class="active"><a href="#" title="English (US)">English (US)</a></li>
+						<li><a href="#" title="English (UK)">English (UK)</a></li>
+						<li><a href="#" title="Deutsch">Deutsch</a></li>
+						<li><a href="#" title="Italiano">Italiano</a></li>
+						<li><a href="#" title="Русский">Русский</a></li>
+					</ul>
+					<ul class="currency-nav">
+						<li class="active"><a href="#" title="$US Dollar">$US Dollar</a></li>
+						<li><a href="#" title="€ Euro">€ Euro</a></li>
+						<li><a href="#" title="£ Pound">£ Pound</a></li>
+					</ul>
 				</nav>
 			</div>
 			<!--//ribbon-->
@@ -156,108 +168,28 @@
 	<!--main-->
 	<main class="main">		
 		<div class="wrap">
-			<!--breadcrumbs-->
-			<nav class="breadcrumbs">
-			</nav>
-			<!--//breadcrumbs-->
-			
-			<div class="row">
-				<!--three-fourth content-->
-				<div class="three-fourth">
-					<form id="booking" method="post" action="booking" class="static-content booking">
-						<fieldset>
-							<h2><span>03 </span>Confirmation</h2>
-							<div class="text-wrap">
-								<a href="#" class="gradient-button right print" title="Print booking" onclick="printpage()">Print booking</a>
-								<p>Thank you. Your booking is now confirmed.</p>
-							</div>
-							
-							<h3>Traveller info</h3>
-							<div class="text-wrap">
-								<div class="output">
-									<p>Booking number:</p>
-									<p>904054553</p>
-									<p>Fist name: </p>
-									<p>John</p>
-									<p>Last name: </p>
-									<p>Livingston</p>
-									<p>E-mail address: </p>
-									<p>mail@google.com</p>
-									<p>Street Address and number:</p>
-									<p>Some street name 55</p>
-									<p>Town / City: </p>
-									<p>Sunnytown</p>
-									<p>ZIP code: </p>
-									<p>9500 - 100</p>
-									<p>Country:</p>
-									<p>Neverland</p>
-								</div>
-							</div>
-						
-							<h3>Special requirements</h3>
-							<div class="text-wrap">
-								<p>I would like to book a twin room with a definite sea view please. Thank you and kind regards, John Livingston</p>
-							</div>
-							
-							<h3>Payment</h3>
-							<div class="text-wrap">
-								<p>You have now confirmed and guaranteed your booking by credit card.All payments are to be made at the hotel during your stay, unless otherwise stated in the hotel policies or in the room conditions.Please note that your credit card may be pre-authorised prior to your arrival. </p>
-								<p><strong class="dark">This hotel accepts the following forms of payment:</strong></p>
-								<p>American Express, Visa, MasterCard</p>
-							</div>
-							
-							<h3>Don’t forget</h3>
-							<div class="text-wrap">
-								<p>You can change or cancel your booking via our online self service tool myBookYourTravel:
-								<a href="#">https://secure.bookyourtravel.com/myreservations.html?tmpl=profile/myreservations;bn=904054553;pincode=6525</a></p>
-								<p><strong>We wish you a pleasant stay</strong><i>your BookYourTravel team</i></p>
-							</div>
-						</fieldset>
-					</form>
-				</div>
-				<!--//three-fourth content-->
-			
-				<!--right sidebar-->
-				<aside class="one-fourth right-sidebar">
-					<!--Booking details-->
-					<article class="hotel-details booking-details">
-						<h1>Best ipsum hotel 
-							<span class="stars">
-								<i class="material-icons">&#xE838;</i>
-								<i class="material-icons">&#xE838;</i>
-								<i class="material-icons">&#xE838;</i>
-							</span>
-						</h1>
-						<span class="address">Marylebone, London</span>
-						<span class="rating"> 8 /10</span>
-						<dl class="booking-info">
-							<dt>Rooms</dt>
-							<dd>Standard twin room</dd>
-							<dt>Room Description</dt>
-							<dd>Room only</dd>
-							<dt>Check-in Date</dt>
-							<dd>14-11-12</dd>
-							<dt>Check-out Date</dt>
-							<dd>15-11-12</dd>
-							<dt>Room(s)</dt>
-							<dd>1 night, 1 room, max. 2 people. </dd>
-						</dl>
-						<div class="price">
-							<p class="total">Total Price:  $ 55,00</p>
-							<p>VAT (20%) included</p>
-						</div>
-					</article>
-					<!--//Booking details-->
+			<!--main content-->
+			<div class="content">
+				<section class="error">
+					<!--Error type-->
+					<div class="error-type">
+						<h1>404</h1>
+						<p>Page not found</p>
+					</div>
+					<!--//Error type-->
 					
-					<!--Need Help Booking?-->
-					<article class="widget">
-						<h4>Need Help Booking?</h4>
-						<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
-						<p class="number">1- 555 - 555 - 555</p>
-					</article>
-					<!--//Need Help Booking?-->
-				</aside>
-				<!--//right sidebar-->
+					<!--Error content-->
+					<div class="error-content">
+						<h2>Whoops, you are in the middle of nowhere.</h2>
+						<h3>Don’t worry. You’ve probably made a wrong turn somewhwere.</h3>
+						<ul>
+							<li>If you typed in the address, check your spelling. Could just be a typo.</li>
+							<li>If you followed a link, it’s probably broken. Please <a href="#">contact us</a> and we’ll fix it.</li>
+							<li>If you’re not sure what you’re looking for, go back to <a href="#">homepage</a>.</li>
+						</ul>
+					</div>
+					<!--//Error content-->
+				</section>
 			</div>
 			<!--//main content-->
 		</div>
@@ -336,35 +268,11 @@
 		</div>
 	</footer>
 	<!---footer-->
-
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/jquery.uniform.min.js"></script>
 	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
-	<script type="text/javascript">
-		function printpage()
-			{window.print()}
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.logout-button').click(function() {
-				console.log("Logged out")
-            	sessionStorage.removeItem('userId');
-				location.reload();
-        	});
-
-
-			checked = getCurrentUser();
-			$('#my-account-link').click(function(e) {
-				e.preventDefault();
-				if (checked) {
-					window.location.href = 'my_account.html';
-				} else {
-					window.location.href = 'login.html';
-				}
-			});
-		});
-	</script>
 </body>
 </html>

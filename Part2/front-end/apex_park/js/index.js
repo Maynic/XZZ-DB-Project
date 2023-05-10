@@ -75,23 +75,23 @@ function getFormData() {
       form: 'ticket',
       tdate: date,
       tchildren: children,
-        tadults: adults,
-        tsenior: senior
+      tadults: adults,
+      tsenior: senior
     };
     //console.log(data)
     return data;
   } else if(formId === 'form2'){
     var show_select = form.querySelector("select[name=show_select]").value;
     var show_date = form.querySelector("input[name=show_date]").value;
-    var children = form.querySelector("input[name=show_c]").value;
-    var adults = form.querySelector("input[name=show_a]").value;
-    var senior = form.querySelector("input[name=show_s]").value;
+    var poeple = form.querySelector("input[name=show_count]").value;
+    // var adults = form.querySelector("input[name=show_a]").value;
+    // var senior = form.querySelector("input[name=show_s]").value;
     var data = {
       form: 'show',
       show_select, show_select,
       sdate: show_date,
-      schildren: children,
-      sadults: adults,
+      sp: poeple,
+      // sadults: adults,
       ssenior: senior
     };
     //console.log(data)
@@ -142,18 +142,14 @@ function submitForm(){
     return;
   }
 
-  console.log(data)
-  $.ajax({
-    url: 'http://127.0.0.1:8000/api/data_models/search/',
-    method: 'POST',
-    data: data,
-    success: function(response) {
-      console.log("submit success")
-      // handle success response from server
-    },
-    error: function(error) {
-      console.log("submit failed")
-      // handle error response from server
-    }
-  });
+  // store those data into local store age
+  sessionStorage.setItem('booking_information', JSON.stringify(data))
+
+  // if store, jumo to store page:
+  if(data.form == 'store'){
+    window.location.href = "/store.html";
+  } else {
+    window.location.href = "/booking-step2.html";
+  }
+  return;
 }
