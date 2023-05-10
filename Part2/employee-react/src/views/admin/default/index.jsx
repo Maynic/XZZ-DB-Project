@@ -81,7 +81,7 @@ export default function UserReports() {
             />
           }
           name='Totol Earning'
-          value='$350.4'
+          value='$7350.4'
         />
         <MiniStatistics
           startContent={
@@ -95,7 +95,7 @@ export default function UserReports() {
             />
           }
           name='Total Orders'
-          value='23'
+          value='30'
         />
         <MiniStatistics
           startContent={
