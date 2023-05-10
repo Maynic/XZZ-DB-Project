@@ -236,7 +236,6 @@ class xzz_store(models.Model):
 
 # Ticket
 class xzz_ticket(models.Model):
-
     # ticket_id = models.AutoField(primary_key=True)
 
     class TicketMethodChoices(models.TextChoices):
