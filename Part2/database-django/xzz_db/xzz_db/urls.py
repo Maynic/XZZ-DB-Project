@@ -20,15 +20,15 @@ from data_models import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/data_models/search/', views.SearchBar),
-    # path('api/data_models/search/', views.SearchBarDetail),
     path('api/data_models/booking_details/<int:userid>', views.BookingDetails),
     path('api/data_models/setting_details/<int:userid>', views.SettingDetails),
+    path('api/data_models/retrieve/', views.retrieve_visitor_id),
 
     path('api/data_models/user_login/', views.user_login),
     path('api/data_models/user/', views.user_list),
     path('api/data_models/update/<int:userid>', views.user_visitor_update),
     path('api/data_models/user_logout/', views.user_logout),
+    path('api/data_models/get_show_name/', views.show_name),
 
     path('api/data_models/visitor/', views.visitor_list, name='visitor_list'),
     path('api/data_models/visitor/<int:pk>', views.visitor_detail, name='visitor_detail'),

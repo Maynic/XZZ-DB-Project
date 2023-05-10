@@ -70,19 +70,6 @@ POST request will be made after checked out by customer
 """
 
 
-@api_view(['GET', 'POST'])
-def SearchBar(request):
-    if request.method == 'POST':
-        print("JSON form: ", request.data)
-        # deal with data
-        # form1 is attraction
-        price = ComputedPrice(request.data['form'], request.data)
-        #print(price)
-        return JsonResponse(price, status=status.HTTP_200_OK)
-
-    return Response(status=status.HTTP_400_BAD_REQUEST)
-
-
 # API for obtain user orders information
 # Or update user orders information
 @api_view(['GET', 'POST'])
@@ -123,8 +110,8 @@ def user_login(request):
                 print("Auth Success")
                 # request.session['user_id'] = user.id
                 # request.session.modified = True
-
-                return Response({"user_id": user.id}, status=status.HTTP_200_OK)
+                visitor_id = get_visitor_id(user.id)
+                return Response({"user_id": user.id, "visitor_id": visitor_id}, status=status.HTTP_200_OK)
             else:
                 # password not right
                 return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
@@ -169,6 +156,18 @@ def user_list(request):
 
 # safely retrieve visitor id from user_id
 # This function return the corresponding visitor id based on userid
+@api_view(['POST'])
+def retrieve_visitor_id(request):
+    if request.method == '{POST}':
+        print("good")
+        visitor_id = get_visitor_id(request.GET['userid'])
+        return Response(visitor_id, status=status.HTTP_200_OK)
+
+    return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+#This function update user information
+
 @api_view(['PUT'])
 def user_visitor_update(request, userid):
     if request.method == 'PUT':
@@ -236,9 +235,10 @@ def order_list(request):
         if request.content_type == 'application/json':
             print("JSON data: ", request.body)
         serializer = OrderSerializer(data=request.data)
+        #print(serializer)
         if serializer.is_valid():
-            serializer.save()
-            return Response(status=status.HTTP_201_CREATED)
+            order = serializer.save()
+            return Response({'order_id': order.order_id}, status=status.HTTP_201_CREATED)
         print(serializer.errors)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -307,7 +307,7 @@ def parking_detail(request, pk):
 @api_view(['GET', 'POST'])
 def payment_list(request):
     if request.method == 'GET':
-        print(request.method)
+        #print(request.method)
         data = xzz_payment.objects.all()
 
         serializer = PaymentSerializer(data, context={'request': request}, many=True)
@@ -317,6 +317,7 @@ def payment_list(request):
     elif request.method == 'POST':
         if request.content_type == 'application/json':
             print("JSON data: ", request.body)
+        #print("JSON data: ", request.data)
         serializer = PaymentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -425,9 +426,12 @@ def ticket_list(request):
 
     elif request.method == 'POST':
         serializer = TicketSerializer(data=request.data)
+        print(request.data)
         if serializer.is_valid():
             serializer.save()
+
             return Response(status=status.HTTP_201_CREATED)
+        print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -498,6 +502,7 @@ def show_order_list(request):
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
+        print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -553,3 +558,12 @@ def store_order_detail(request, pk):
     elif request.method == 'DELETE':
         object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'])
+def show_name(request):
+    try:
+        object = xzz_show.objects.get(show_name=show_name)
+    except xzz_show.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    print(object)
+    return Response({'show_id': object.id}, status=status.HTTP_200_OK)

@@ -129,58 +129,6 @@ def PersonalInfo(id):
     return personalInfo
 
 
-def ComputedPrice(type, data):
-    if type == 'ticket':
-        #look up for ticket price
-        ticket_date = data['tdate']
-        children = data['tchildren']
-        Adult = data['tadults']
-        Senior = data['tsenior']
-
-        # Convert input values to numbers
-        children = int(children) if children else 0
-        Adult = int(Adult) if Adult else 0
-        Senior = int(Senior) if Senior else 0
-
-        # Compute price and return JSON response
-        price_numb = (children + Adult + Senior) * 50
-        price = {'price': price_numb}
-
-        return price
-
-    if type == 'show':
-        show_select = 'The Importance of Being Earnest' #data['show_select']
-        show_date = '04/16/2023' #data['sdate']
-        children = data['schildren']
-        Adult = data['sadults']
-        Senior = data['ssenior']
-
-        # convert children, Adult, Senior to numbers or 0 if empty str
-        children = int(children) if children else 0
-        Adult = int(Adult) if Adult else 0
-        Senior = int(Senior) if Senior else 0
-
-        # find shows that match the show_select and show_date
-        shows = xzz_show.objects.filter(show_name=show_select,
-                                        start_time__date=datetime.strptime(show_date, '%m/%d/%Y').date())
-
-        # extract show_id for each matching show
-        show_ids = [show.id for show in shows]
-
-        print("show_ids", show_ids)
-        pass
-    # form3 is store
-    if type == 'store':
-        #look up for store price
-        pass
-    # form4 is parking
-    if type == 'park':
-        # look up for park price
-        pass
-    pass
-    # This function mainly calculate the price
-    # data depends on type of
-
 ####
 ####
 #### helper functions to locate visitor email from user to database:
