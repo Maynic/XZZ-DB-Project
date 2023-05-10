@@ -19,12 +19,11 @@ import {
 
 // Custom components
 import Card from "components/card/Card";
-import AddVisitor from "views/admin/onetable/components/AddVisitor";
-import VisitorDetail from "views/admin/onetable/components/VisitorDetail";
-// import VisitorDetail from "views/admin/onetable/components/VisitorComp";
+import Detail from "views/admin/Show/detail";
 
-export default function ColumnsTable(props) {
-  const { columnsData, tableData } = props;
+
+export default function Show(props) {
+  const { columnsData, tableData, resetState } = props;
 
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
@@ -47,7 +46,7 @@ export default function ColumnsTable(props) {
     prepareRow,
     initialState,
   } = tableInstance;
-  initialState.pageSize = 30;
+  initialState.pageSize = 100;
 
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const borderColor = useColorModeValue("gray.200", "whiteAlpha.100");
@@ -63,9 +62,11 @@ export default function ColumnsTable(props) {
           fontSize='22px'
           fontWeight='700'
           lineHeight='100%'>
-          Visitor Table
+          All Shows
         </Text>
-        <VisitorDetail />
+        <Detail
+          isEdit={false}
+          resetState={resetState} />
         {/* <AddVisitor /> */}
       </Flex>
       <Table {...getTableProps()} variant='simple' color='gray.500' mb='24px'>
@@ -99,45 +100,33 @@ export default function ColumnsTable(props) {
               <Tr {...row.getRowProps()} key={index}>
                 {row.cells.map((cell, index) => {
                   let data = "";
-                  if (cell.column.Header === "NAME") {
-                    data = (
-                      <Flex align='center'>
-                        <Text color={textColor} fontSize='sm' fontWeight='700'>
-                          {cell.value}
-                        </Text>
-                      </Flex>
-                    );
-                  } else if (cell.column.Header === "PROGRESS") {
-                    data = (
-                      <Flex align='center'>
-                        <Text
-                          me='10px'
-                          color={textColor}
-                          fontSize='sm'
-                          fontWeight='700'>
-                          {cell.value}%
-                        </Text>
-                      </Flex>
-                    );
-                  } else if (cell.column.Header === "QUANTITY") {
-                    data = (
-                      <Text color={textColor} fontSize='sm' fontWeight='700'>
-                        {cell.value}
-                      </Text>
-                    );
-                  } else if (cell.column.Header === "BIRTHDAY") {
-                    data = (
-                      <Text color={textColor} fontSize='sm' fontWeight='700'>
-                        {cell.value.slice(0,10)}
-                      </Text>
-                    );
+                  if (cell.column.Header === "START TIME") {
+                    if (cell.value) {
+                      data = (
+                        <Flex align='center'>
+                          <Text color={textColor} fontSize='sm' fontWeight='700'>
+                            {cell.value.slice(0, 10) + ' [' + cell.value.slice(11, 19) + ']'}
+                          </Text>
+                        </Flex>
+                      );
+                    }
+                  } else if (cell.column.Header === "END TIME") {
+                    if (cell.value) {
+                      data = (
+                        <Flex align='center'>
+                          <Text color={textColor} fontSize='sm' fontWeight='700'>
+                            {cell.value.slice(0, 10) + ' [' + cell.value.slice(11, 19) + ']'}
+                          </Text>
+                        </Flex>
+                      );
+                    }
                   }
-                  else{
+                  else {
                     data = (
                       <Text color={textColor} fontSize='sm' fontWeight='700'>
                         {cell.value}
                       </Text>
-                    );                    
+                    );
                   }
 
                   return (
@@ -148,10 +137,21 @@ export default function ColumnsTable(props) {
                       minW={{ sm: "150px", md: "200px", lg: "auto" }}
                       borderColor='transparent'>
                       {data}
+
                     </Td>
                   );
                 })}
+
+                <Td borderColor='transparent'>
+                  <Detail
+                    row={row}
+                    pk={index}
+                    isEdit={true}
+                    resetState={resetState} />
+
+                </Td>
               </Tr>
+
             );
           })}
         </Tbody>

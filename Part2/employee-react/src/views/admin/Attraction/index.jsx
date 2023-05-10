@@ -22,10 +22,10 @@
 
 // Chakra imports
 import { Box, SimpleGrid } from "@chakra-ui/react";
-import ColumnsTable from "views/admin/onetable/components/ColumnsTable";
+import DataTable from "views/admin/Attraction/table";
 import {
-  visitorColumns,
-} from "views/admin/onetable/variables/columnsData";
+  columns,
+} from "views/admin/Attraction/columns";
 
 import React, { Component } from "react";
 
@@ -35,21 +35,20 @@ import { API_URL, } from "constants";
 
 class Onetable extends Component {
   state = {
-    visitor: []
+    data: []
   };
-  API_Visitor = API_URL + "visitor";
+  API_Ful = API_URL + "attraction";
 
   componentDidMount() {
     this.resetState();
   }
 
-  getVisitors = () => {
-    // window.alert(this.API_Visitor);
-    axios.get(this.API_Visitor).then(res => this.setState({ visitor: res.data }));
+  getData = () => {
+    axios.get(this.API_Ful).then(res => this.setState({ data: res.data }));
   };
 
   resetState = () => {
-    this.getVisitors();
+    this.getData();
   };
 
   render() {
@@ -59,16 +58,12 @@ class Onetable extends Component {
           mb='20px'
           // columns={{ sm: 1, md: 2 }}
           spacing={{ base: "20px", xl: "20px" }}>
-          <ColumnsTable
-            columnsData={visitorColumns}
-            tableData={this.state.visitor}
+          <DataTable
+            columnsData={columns}
+            tableData={this.state.data}
             resetState={this.resetState}
           />
-          {/* <ColumnsTable
-            columnsData={visitorColumns}
-            tableData={this.state.visitor}
-            resetState={this.resetState}
-          /> */}
+
         </SimpleGrid>
       </Box>
     );

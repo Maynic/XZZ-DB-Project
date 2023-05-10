@@ -4,13 +4,18 @@ import axios from "axios";
 import { API_URL } from "constants";
 
 import {
+    AlertDialog,
+    AlertDialogBody,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogContent,
+    AlertDialogOverlay,
     Modal,
     ModalOverlay,
     ModalContent,
     ModalHeader,
     ModalFooter,
     ModalBody,
-    ModalCloseButton,
     Button,
     Input,
     FormControl,
@@ -18,14 +23,80 @@ import {
     useDisclosure,
     useColorModeValue,
     Icon,
-    useStyleConfig,
     Select,
+    Flex,
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
 } from '@chakra-ui/react'
 
 import {
-    MdOutlineAdd,
+    MdOutlineAdd, MdOutlineEdit
 } from "react-icons/md";
 
+function AlertDelete(props) {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const cancelRef = React.useRef()
+    const { deleteData } = props
+
+    return (
+        <>
+            <Button colorScheme='red'
+                onClick={onOpen}
+                align='center'
+                justifyContent='center'>
+                Delete
+            </Button>
+
+            <AlertDialog
+                isOpen={isOpen}
+                leastDestructiveRef={cancelRef}
+                onClose={onClose}
+                motionPreset='scale'
+                isCentered
+            >
+                <AlertDialogOverlay>
+                    <AlertDialogContent>
+                        <AlertDialogHeader fontSize='lg' fontWeight='bold'>
+                            Delete Data
+                        </AlertDialogHeader>
+
+                        <AlertDialogBody>
+                            Are you sure? You can't undo this action afterwards.
+                        </AlertDialogBody>
+
+                        <AlertDialogFooter>
+                            <Button ref={cancelRef} onClick={onClose}>
+                                Cancel
+                            </Button>
+                            <Button colorScheme='red' onClick={deleteData} ml={3}>
+                                Delete
+                            </Button>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                </AlertDialogOverlay>
+            </AlertDialog>
+        </>
+    )
+}
+
+function AlertError(props) {
+    const { message } = props
+    return (
+        <>
+            <Alert status='error'>
+                <AlertIcon />
+                <AlertTitle>Failed!</AlertTitle>
+                <AlertDescription>
+                    Please check data format!
+                </AlertDescription>
+
+            </Alert>
+
+        </>
+    )
+}
 
 export default function VisitorDetail(props) {
     const [visitorData, setVisitorData] = useState({
@@ -38,16 +109,31 @@ export default function VisitorDetail(props) {
         city: '',
         state: '',
         zip: '',
-        visitor_type: '',
+        visitor_type: 'IN',
     });
+
+
+    const [Error, setError] = useState(
+        {
+            hasError: false,
+            errorInfo: ''
+        }
+    )
+
     const API_Visitor = useRef(API_URL + "visitor/");
+    const { resetState, isEdit, row, } = props;
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const initialRef = React.useRef(null)
+    const finalRef = React.useRef(null)
 
     useEffect(() => {
-        if (props.visitor) {
-            const { pk, visitor_name, email, birth_date, phone, address, city, state, zip, visitor_type } = props.visitor;
-            setVisitorData({ pk, visitor_name, email, birth_date, phone, address, city, state, zip, visitor_type });
+        if (row?.values) {
+            const { address, birth_date, city, email, id, phone, state, visitor_name, visitor_type, zip, } = row?.original;
+            const bd = birth_date.slice(0, 10)
+            setVisitorData({ pk: id, visitor_name, email, birth_date: bd, phone, address, city, state, zip, visitor_type });
         }
     }, []);
+
 
     const onChange = (e) => {
         setVisitorData({ ...visitorData, [e.target.name]: e.target.value });
@@ -56,27 +142,35 @@ export default function VisitorDetail(props) {
     const createVisitor = (e) => {
         e.preventDefault();
         axios.post(API_Visitor.current, visitorData).then(() => {
-            props.resetState();
-            props.toggle();
+            resetState();
+            setError({ hasError: false, errorInfo: '' });
+            onClose();
+        }).catch(error => {
+            setError({ hasError: true, errorInfo: error.response.data });
+            // console.log(error.response.data)
         });
     };
 
     const editVisitor = (e) => {
         e.preventDefault();
         axios.put(API_Visitor.current + visitorData.pk, visitorData).then(() => {
-            props.resetState();
-            props.toggle();
+            resetState();
+            setError({ hasError: false, errorInfo: '' });
+            onClose();
+        });
+    };
+
+    const deleteData = (e) => {
+        e.preventDefault();
+        axios.delete(API_Visitor.current + visitorData.pk).then(() => {
+            resetState();
+            onClose();
         });
     };
 
     const defaultIfEmpty = (value) => {
         return value === '' ? '' : value;
     };
-
-    const { ...rest } = props;
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const initialRef = React.useRef(null)
-    const finalRef = React.useRef(null)
 
     // Styling
     const bgButton = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
@@ -91,26 +185,46 @@ export default function VisitorDetail(props) {
     const iconColor = useColorModeValue("brand.500", "white");
 
 
-
     return (
         <>
-            <Button onClick={() => { onOpen() }}
-                align='center'
-                justifyContent='center'
-                bg={bgButton}
-                _hover={bgHover}
-                _focus={bgFocus}
-                _active={bgFocus}
-                w='37px'
-                h='37px'
-                lineHeight='100%'
-                borderRadius='10px'
-                {...rest}>
-                <Icon as={MdOutlineAdd} color={iconColor} w='24px' h='24px' />
+            {isEdit ? (
+                <Button onClick={() => {
+                    onOpen();
+                }}
+                    align='center'
+                    justifyContent='center'
+                    bg={bgButton}
+                    _hover={bgHover}
+                    _focus={bgFocus}
+                    _active={bgFocus}
+                    w='37px'
+                    h='37px'
+                    lineHeight='100%'
+                    borderRadius='10px'
+                // {...rest}
+                >
+                    <Icon as={MdOutlineEdit} color={iconColor} w='24px' h='24px' />
 
-            </Button>
+                </Button>) : (
+                <Button onClick={() => { onOpen() }}
+                    align='center'
+                    justifyContent='center'
+                    bg={bgButton}
+                    _hover={bgHover}
+                    _focus={bgFocus}
+                    _active={bgFocus}
+                    w='37px'
+                    h='37px'
+                    lineHeight='100%'
+                    borderRadius='10px'
+                // {...rest}
+                >
+                    <Icon as={MdOutlineAdd} color={iconColor} w='24px' h='24px' />
 
-            <Modal
+                </Button>
+            )}
+
+            < Modal
                 initialFocusRef={initialRef}
                 finalFocusRef={finalRef}
                 isOpen={isOpen}
@@ -125,9 +239,21 @@ export default function VisitorDetail(props) {
                 />
 
                 <ModalContent>
-                    {/* <ModalHeader align='center'>Add/Modify Visitor</ModalHeader> */}
-                    <ModalHeader >Add/Modify Visitor</ModalHeader>
-                    {/* <ModalCloseButton /> */}
+                    {Error.hasError ? (
+                        <AlertError />
+                    ) : (<></>)}
+
+                    <ModalHeader >
+                        <Flex justifyContent="space-between" alignItems="center" w="100%">
+
+                            {isEdit ? (<>
+                                <div>Modify Visitor</div>
+                                <AlertDelete deleteData={deleteData} />
+                            </>
+                            ) : (<><div>Add Visitor</div></>)}
+                        </Flex>
+                    </ModalHeader>
+
                     <ModalBody pb={6}>
 
                         <FormControl>
@@ -135,7 +261,7 @@ export default function VisitorDetail(props) {
                             <Input
                                 name='visitor_name'
                                 type='text'
-                                placeholder='Name'
+                                placeholder='Full Name'
                                 onChange={onChange}
                                 defaultValue={defaultIfEmpty(visitorData.visitor_name)}
                             />
@@ -146,7 +272,7 @@ export default function VisitorDetail(props) {
                             <Input
                                 name='email'
                                 type='email'
-                                placeholder='Email'
+                                placeholder='addr@example.com'
                                 onChange={onChange}
                                 defaultValue={defaultIfEmpty(visitorData.email)}
                             />
@@ -157,7 +283,6 @@ export default function VisitorDetail(props) {
                             <Input
                                 name='birth_date'
                                 type='date'
-                                placeholder='Birthday'
                                 onChange={onChange}
                                 defaultValue={defaultIfEmpty(visitorData.birth_date)}
                             />
@@ -168,7 +293,7 @@ export default function VisitorDetail(props) {
                             <Input
                                 name='phone'
                                 type='number'
-                                placeholder='Phone'
+                                placeholder='0123456789'
                                 onChange={onChange}
                                 defaultValue={defaultIfEmpty(visitorData.phone)}
                             />
@@ -201,7 +326,7 @@ export default function VisitorDetail(props) {
                             <Input
                                 name='state'
                                 type='text'
-                                placeholder='State'
+                                placeholder='NY'
                                 onChange={onChange}
                                 defaultValue={defaultIfEmpty(visitorData.state)}
                             />
@@ -212,7 +337,7 @@ export default function VisitorDetail(props) {
                             <Input
                                 name='zip'
                                 type='number'
-                                placeholder='ZIP Code'
+                                placeholder='12345'
                                 onChange={onChange}
                                 defaultValue={defaultIfEmpty(visitorData.zip)}
                             />
@@ -223,7 +348,6 @@ export default function VisitorDetail(props) {
                             <Select
                                 name='visitor_type'
                                 type='text'
-                                placeholder='Visitor Type'
                                 onChange={onChange}
                                 defaultValue={defaultIfEmpty(visitorData.visitor_type)}>
                                 <option value='IN'>Individual</option>
@@ -236,13 +360,18 @@ export default function VisitorDetail(props) {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button colorScheme='blue' mr={3} onClick={props.visitor ? editVisitor : createVisitor}>
-                            Save
-                        </Button>
-                        <Button onClick={onClose} ref={initialRef}>Cancel</Button>
+                        {isEdit ? (
+                            <Button colorScheme='blue' mr={3} onClick={editVisitor}>
+                                Save Change
+                            </Button>) : (
+                            <Button colorScheme='blue' mr={3} onClick={createVisitor}>
+                                Add
+                            </Button>
+                        )}
+                        <Button onClick={function () { onClose(); setError({ hasError: false, errorInfo: '' }) }} ref={initialRef}>Cancel</Button>
                     </ModalFooter>
                 </ModalContent>
-            </Modal>
+            </Modal >
         </>
     )
 }

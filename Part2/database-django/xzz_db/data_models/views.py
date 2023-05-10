@@ -16,17 +16,18 @@ from .serializers import *
 
 @api_view(['GET', 'POST'])
 def visitor_list(request):
-    print(request.method)
+    # print("22222")
+
     if request.method == 'GET':
         print(request.method)
         data = xzz_visitor.objects.all()
         serializer = VisitorSerializer(data, context={'request': request}, many=True)
-        print(serializer.data)
+        # print(serializer.data)
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        if request.content_type == 'application/json':
-            print("JSON data: ", request.body)
+        # if request.content_type == 'application/json':
+        #     print("JSON data: ", request.body) 
         serializer = VisitorSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -38,10 +39,16 @@ def visitor_list(request):
 
 @api_view(['PUT', 'DELETE'])
 def visitor_detail(request, pk):
+    # print("1111")
+ 
     try:
         object = xzz_visitor.objects.get(pk=pk)
     except xzz_visitor.DoesNotExist:
+        # if request.content_type == 'application/json':
+        #     print("JSON data: ", request.body)
         return Response(status=status.HTTP_404_NOT_FOUND)
+        # return Response(status=status.HTTP_400_BAD_REQUEST)
+
     if request.method == 'PUT':
         serializer = VisitorSerializer(object, data=request.data, context={'request': request})
         print(serializer)

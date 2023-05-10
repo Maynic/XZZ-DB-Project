@@ -43,6 +43,9 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class AttractionSerializer(serializers.ModelSerializer):
+    attraction_type_full = serializers.CharField(required=False, source='get_attraction_type_display')
+    attraction_status_full = serializers.CharField(required=False, source='get_attraction_status_display')
+
     class Meta:
         model = xzz_attraction
         fields = '__all__'
@@ -58,6 +61,7 @@ class ParkingSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PaymentSerializer(serializers.ModelSerializer):
+    payment_method_full = serializers.CharField(required=False, source='get_payment_method_display')
     class Meta:
         model = xzz_payment
         fields = '__all__'

@@ -12,15 +12,15 @@ export default function FixedPlugin(props) {
   return (
     <Button
       {...rest}
-      h='60px'
-      w='60px'
+      h='45px'
+      w='45px'
       bg={bgButton}
       zIndex='99'
-      position='fixed'
+      // position='fixed'
       variant='no-effects'
-      left={document.documentElement.dir === "rtl" ? "35px" : ""}
-      right={document.documentElement.dir === "rtl" ? "" : "35px"}
-      bottom='30px'
+      // left={document.documentElement.dir === "rtl" ? "35px" : ""}
+      // right={document.documentElement.dir === "rtl" ? "" : "35px"}
+      // bottom='30px'
       border='1px solid'
       borderColor='#6A53FF'
       borderRadius='50px'
