@@ -241,44 +241,46 @@ console.log("paymentform", paymentform)
 
 submitButton.addEventListener('click', (event) => {
     event.preventDefault();
-
+    
     // First create new order and get order_id back
     $.ajax({
         url: API+'api/data_models/order/',
         method: 'POST',
         data: orderdata,
-    }).then(function(response1) {
-        sessionStorage.setItem('order_id', response1.order_id)
+    }).then(function (response1) {
+      sessionStorage.setItem('order_id', response1.order_id)
+      const checkbox = document.querySelector('#cash');
+      if (checkbox.checked) {
+        data_payment = {
+          payment_amount: total_price.toFixed(2),
+          payment_method: 'CA',
+          order: '' + response1.order_id
+        }
+      } else {
         var card_type = paymentform.querySelector("select[name=card_type]").value;
         var card_number = paymentform.querySelector("input[name=card_number]").value;
         var name_on_card = paymentform.querySelector("input[name=card_holder]").value;
         var expiration_date = paymentform.querySelector("input[name=expiration_date]").value;
         var cvv = paymentform.querySelector("input[name=cv2_number]").value;
-
         const date = new Date(expiration_date);
         const formattedDate = date.toISOString();
-
-        const checkbox = document.querySelector('#cash');
-        if(checkbox.checked){
-            card_type = 'CA';
-        }
-
-        console.log("price", totalPriceElement.textContent)
         data_payment = {
-            payment_method: card_type,
-            payment_amount: total_price.toFixed(2),
-            card_number: card_number,
-            name_on_card: name_on_card,
-            expiration_date: formattedDate,
-            cvv : cvv,
-            order: ''+response1.order_id
+          payment_method: card_type,
+          payment_amount: total_price.toFixed(2),
+          card_number: card_number,
+          name_on_card: name_on_card,
+          expiration_date: formattedDate,
+          cvv: cvv,
+          order: '' + response1.order_id
         }
-        
-        return $.ajax({
-            url: API + 'api/data_models/payment/',
-            method: 'POST',
-            data: data_payment,
-          });
+      }
+
+
+      return $.ajax({
+        url: API + 'api/data_models/payment/',
+        method: 'POST',
+        data: data_payment,
+      });
     })
     .then(function(response2) {
         switch (booking_info.form) {
@@ -339,8 +341,10 @@ submitButton.addEventListener('click', (event) => {
                 console.log('Invalid booking form');
                 break;
         }
+    })
+    .then(function() {
+      //change window after all things has submit:
+      window.location.href = '/my_account.html'
     });
-
-    //change window after all things has submit:
-    window.location.href = '/booking-step3.html'
 });
+
